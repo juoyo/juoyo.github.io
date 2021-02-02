@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+/**
+ * @author  yaozhu
+ * @date    20210202
+ */
+html {
+	height: -webkit-fill-available;
+}
+body {
+	margin: 0px;
+	height: -webkit-fill-available;
+}
+
+/* 整个容器*/
+.flip-container {
+	width: 100%;
+	height: -webkit-fill-available;
+}
+@media screen and (min-width:1099px) {
+	.flip-container {
+		width: 420px !important;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.time {
+		font-size: 1.8em !important;
+	}
+	.phead {
+		font-size: 1.4em !important;
+	}
+	.table table {
+		font-size: 1.4em !important;
+	}
+	.btn {
+		font-size: 1.4em !important;
+	}
+	#vertical {
+		font-size: 5rem !important;
+	}
+	#d_table td {
+		height: 3rem !important;
+	}
+}
+
+/* 翻转速度设置 */
+.flipper {
+	width: 100%;
+	transition: 1s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* 翻转页的时候隐藏背面 */
+.front, .back {
+	width: 100%;
+	height: -webkit-fill-available;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* 前面板放在上面 */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+	background-color: white;
+}
+
+/* 背面初始的时候隐藏 */
+.back {
+	transform: rotateY(180deg);
+	background-color: black;
+}
+body {
+	background-color: #454545c7;
+}
+.btn {
+	border: 1px solid grey;
+	width: 40%;
+	border-radius: 50px;
+	text-align: center;
+	height: 5%;
+	//padding-top: 6px;
+	color: grey;
+	font-size: 2em;
+	position: absolute;
+	bottom: 10%;
+	left: 30%;
+}
+#death, #life {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.btn:hover {
+	background: #e5e5e5;
+}
+.clock {
+	background-image: url('src/clock_bg.png');
+	background-position: center 10%;
+	background-size: 38%;
+	background-repeat: no-repeat;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+.death_clock {
+	background-image: url('src/death_clock_bg.png');
+	background-position: center 10%;
+	background-size: 38%;
+	background-repeat: no-repeat;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+#cover {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 8.5%;
+	width: 35%;
+	//height: 35vw;
+	color: #80808057;
+}
+#vertical {
+	font-size: 9rem;
+	top: 50%;
+	position: absolute;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+}
+#canvas {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 8.5%;
+	width: 35%;
+}
+#d_canvas {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 8.5%;
+	width: 35%;
+}
+.time {
+	position: absolute;
+	top: 40%;
+	font-size: 2.3em;
+	text-align: center;
+	width: 100%;
+}
+.phead {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	font-size: 1.8em;
+	color: grey;
+}
+.table {
+	position: absolute;
+	top: 70%;
+	width: 90%;
+	left: 5%;
+}
+.table table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	font-size: 1.9em;
+}
+#table td {
+	border: 1px solid grey;
+	width: 33.3%;
+}
+#d_table td {
+	border: 1px solid grey;
+	width: 50%;
+	height: 4.5rem;
+	color: grey;
+}
+.num {
+	margin: 0px;
+}

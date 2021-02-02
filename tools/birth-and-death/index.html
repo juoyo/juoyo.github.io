@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="flip-container" >
+    <div class="flipper">
+    
+        <div class="front">
+            <!-- 正面内容 -->
+            <div class="clock">
+            	<canvas id="canvas" width="300" height="300"></canvas>
+            </div>
+			
+			
+            <div class="time"><p>你已经<span id="old"></span>岁了</p></div>
+            
+            <p class="phead">在这个世界上，你已经存在</p>
+            
+            <div class="table"><table id="table">
+            	<tr>
+            		<td><p class="num" id="year"></p>年</td>
+            		<td><p class="num" id="mon"></p>月</td>
+            		<td><p class="num" id="week"></p>周</td>
+            	</tr>
+            	<tr>
+            		<td><p class="num" id="day"></p>天</td>
+            		<td><p class="num" id="hour"></p>小时</td>
+            		<td><p class="num" id="min"></p>分钟</td>
+            	</tr>
+            </table></div>
+            
+            <div class ="btn">
+            	<div id="death">死之钟</div>
+            </div>
+        </div>
+
+
+        <div class="back">
+            <!-- 反面内容 -->
+            <div class="death_clock">
+                <span id="cover">
+                    <span id = "vertical"></span>
+                </span>
+
+            	<canvas id = "d_canvas" width="300" height="300"></canvas>
+            </div>
+            <div class='time'><p style="color:white;">这是你一生中的<span id="d_old"></span></p></div>
+            <p class="phead">剩下的日子里,你大约可以</p>
+            
+            <div class="table">
+                <table id = 'd_table'>
+                    <tr>
+                        <td>吃<span class="" id='food'></span>顿饭</td>
+                        <td>做<span class="" id="mLove"></span>次爱</td>
+                    </tr>
+                    <tr>
+                        <td>度过<span class="" id="weekend"></span>次周末</td>
+                        <td>享受个<span class="" id="holiday"></span>长假</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="btn">
+            	<div id="life">生之时</div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+</script>
+
+<script src="main.js" charset="utf-8"></script>
+</body>
+</html>
