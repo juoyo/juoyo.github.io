@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zn">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>GraphVis-节点样式扩展及字体图标使用</title>
+		<link rel="stylesheet" href="style/layui.css" />
+		<link rel="stylesheet" href="common/fontawesome/css/font-awesome.css">
+		<link rel="stylesheet" href="style/style.css">
+	</head>
+	<body style="background:#F2F2F2;">
+		<div class="layui-fluid" style="margin-top:10px;">
+			<div class="layui-row layui-col-space10">
+				<div class="layui-col-md6">
+					<div class="layui-card">
+						<div class="layui-card-header">标签使用字体图标</div>
+						<div class="layui-card-body" style="height:600px;">
+							<div id="graph-panel" class="wrapper-panel" style="background:#fff;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-md6">
+					<div class="layui-card">
+						<div class="layui-card-header">自定字体图标及文字位置</div>
+						<div class="layui-card-body" style="height:600px;">
+							<div id="graph-panel2" class="wrapper-panel" style="background:#fff;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+	
+	<style type="text/css">
+		@font-face {
+		  font-family: 'nep-icon';
+		  src: url('common/font/iconfont.eot');
+		  src: url('common/font/iconfont.eot#iefix') format('embedded-opentype'),
+		  url('common/font/iconfont.svg#iconfont') format('svg'),
+		  url('common/font/iconfont.woff') format('woff'),
+		  url('common/font/iconfont.ttf') format('truetype');
+		}
+		
+		* {
+		  font-family:'nep-icon' !important;
+		}
+	</style>
+	
+	<script type="text/javascript" src="js/visgraph.min.js?v=20201008"></script>
+	<script type="text/javascript" src="js/visgraph-layout.min.js?v=20201008"></script>
+	<script type="text/javascript" src="js/icons.js?v=20201008"></script>
+</html>
