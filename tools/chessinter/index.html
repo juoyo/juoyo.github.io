@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<script type="text/ecmascript" src="common/xhr.js"></script>
+<script type="text/ecmascript" src="chess.js"></script>
+<link type="text/css" rel="stylesheet" href="css/chess.css" />
+<link type="text/css" rel="stylesheet" href="skins/gnomechess.css" />
+<title>Kindle-Chess</title>
+<script type="text/javascript">
+var nVwPressed = false;
+
+// Firefox only
+function onPGNLoaded(frEvnt) {
+	var sFBody = frEvnt.target.result;
+	chess.readPGN(sFBody, document.chessCtrl3.plyerClr2[1].checked);
+}
+
+// Firefox only
+function loadPGNFile() {
+	var oFile = document.getElementById("PGNFileData").files[0];
+	if (oFile) {
+		var oFReader = new FileReader();
+		oFReader.onload = onPGNLoaded;
+		oFReader.readAsText(oFile);
+	}
+}
+
+function initChess() {
+	chess.useAI(document.chessCtrl1.useAI.checked);
+	chess.setPromotion(document.chessCtrl1.selPromo.selectedIndex);
+	chess.setFrameRate(Math.abs(Number(document.chessCtrl2.frameRateCtrl.value)) || 1000);
+	chess.setSide(document.chessCtrl2.selSide.selectedIndex);
+	chess.useKeyboard(document.chessCtrl2.KeybCtrl.checked);
+	chess.placeById("chessDesk");
+	document.chessCtrl1.plyDepthCtrl.value = "0";
+	chess.setView(1);
+}
+</script>
+<style type="text/css">
+#chessDesk {
+	clear: both;
+	width: auto;
+	height: auto;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+</style>
+</head>
+
+<body onload="initChess();">
+
+<form name="chessCtrl1" onsubmit="return(false);">
+<h3 style="text-align:center;">[&nbsp;<input id="useAIAsk" name="useAI" type="checkbox" onclick="chess.useAI(this.checked);" checked hidden /> <label for="useAIAsk" hidden>人机</label><select onchange="chess.setPromotion(this.selectedIndex);" name="selPromo" hidden><option>Queen</option><option>Rook</option><option>Bishop</option><option>Knight</option></select><input type="button" name="strtBtn" value="New game" onclick="chess.organize(this.form.plyerClr1[1].checked);" hidden /><input type="radio" name="plyerClr1" id="white1" checked hidden /> <label for="white1" hidden>white</label> <input type="radio" name="plyerClr1" id="black1" hidden /> <label for="black1" hidden>black</label>AI等级: <input type="text" name="plyDepthCtrl" value="0" size="2" onkeypress=";if(event.keyCode===13&&chess.setPlyDepth(this.value)){alert('Ply depth setted.' + (Number(this.value) > 2 ? '\nAttention! The game could be very slow.' : ' Good game :)'));}" />&nbsp;]</h3>
+<!--
+<p style="text-align:center;">[&nbsp;<input id="useAIAsk" name="useAI" type="checkbox" onclick="chess.useAI(this.checked);" checked /> <label for="useAIAsk">Against machine</label> | Promotion to: <select onchange="chess.setPromotion(this.selectedIndex);" name="selPromo" hidden><option>Queen</option><option>Rook</option><option>Bishop</option><option>Knight</option></select> | <input type="button" name="strtBtn" value="New game" onclick="chess.organize(this.form.plyerClr1[1].checked);" hidden /> (Human: <input type="radio" name="plyerClr1" id="white1" checked hidden /> <label for="white1">white</label> <input type="radio" name="plyerClr1" id="black1" hidden /> <label for="black1">black</label>) | Machine meditation level (press return to save): <input type="text" name="plyDepthCtrl" value="0" size="2" onkeypress=";if(event.keyCode===13&&chess.setPlyDepth(this.value)){alert('Ply depth setted.' + (Number(this.value) > 2 ? '\nAttention! The game could be very slow.' : ' Good game :)'));}" />&nbsp;]</p>
+-->
+
+</form>
+
+<div id="chessDesk"></div>
+
+<form name="chessCtrl2" onsubmit="return(false);">
+<p style="text-align:center;" hidden>[&nbsp;View side: <select onchange="chess.setSide(this.selectedIndex);" name="selSide"><option>White</option><option>Black</option><option selected>Human side</option></select> | <input id="useKeybAsk" name="KeybCtrl" type="checkbox" onclick="chess.useKeyboard(this.checked);" checked /> <label for="useKeybAsk">Enable keyboard</label> | Motion frame rate: <input type="text" name="frameRateCtrl" value="1000" size="5" onchange="var nMs=new Number(this.value);if(!isNaN(nMs)&&nMs>0){chess.setFrameRate(nMs);}" /> ms&nbsp;]</p>
+</form>
+
+
+<!--
+<hr />
+<h3 style="text-align:center;">Running code within the "chess" object.</h3>
+<p style="text-align:center;">Please uncomment the function chess.runInside(<em>sCode</em>) to execute your code.<br />
+<textarea rows="10" cols="55" id="debugArea" onkeyup="if(event.ctrlKey&&event.shiftKey&&event.keyCode===32){chess.runInside(this.value);}">
+/**
+* Javascript Console.
+* Press Ctrl+Shift+Space to run code
+* within the "chess" object.
+*/
+
+var sRappr = "";
+for (nBoardX = 0; nBoardX &lt; 12; nBoardX++) {
+	var nBoardY = 0;
+	for (nBoardY = 0; nBoardY &lt; 10; nBoardY++) { sRappr += (etc.aBoard[nBoardX * 10 + nBoardY]) + ", "; }
+	sRappr = sRappr.substr(0, sRappr.length - 2) + "\n";
+}
+alert("This is the numeric rappresentation of the chessboard:\n\n" + sRappr); 
+</textarea></p>
+-->
+</body>
+</html>
