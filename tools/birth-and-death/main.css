@@ -86,7 +86,7 @@ body {
 	//padding-top: 6px;
 	color: grey;
 	font-size: 2em;
-	position: absolute;
+	position: relative;
 	bottom: 10%;
 	left: 30%;
 }
@@ -103,7 +103,7 @@ body {
 	background-position: center 10%;
 	background-size: 38%;
 	background-repeat: no-repeat;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 100%;
 }
@@ -112,12 +112,12 @@ body {
 	background-position: center 10%;
 	background-size: 38%;
 	background-repeat: no-repeat;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 100%;
 }
 #cover {
-	position: absolute;
+	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
 	top: 8.5%;
@@ -128,41 +128,41 @@ body {
 #vertical {
 	font-size: 9rem;
 	top: 50%;
-	position: absolute;
+	position: relative;
 	transform: translateY(-50%);
 	width: 100%;
 	text-align: center;
 }
 #canvas {
-	position: absolute;
+	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
 	top: 8.5%;
 	width: 35%;
 }
 #d_canvas {
-	position: absolute;
+	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
 	top: 8.5%;
 	width: 35%;
 }
 .time {
-	position: absolute;
+	position: relative;
 	top: 40%;
 	font-size: 2.3em;
 	text-align: center;
 	width: 100%;
 }
 .phead {
-	position: absolute;
+	position: relative;
 	top: 50%;
 	left: 5%;
 	font-size: 1.8em;
 	color: grey;
 }
 .table {
-	position: absolute;
+	position: relative;
 	top: 58%;
 	width: 90%;
 	left: 5%;
