@@ -767,13 +767,6 @@
 
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E7%94%B3%E8%AE%BA/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/JavaScript/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -830,6 +823,13 @@
   </url>
   
   <url>
+    <loc>https://zhuyaochn.github.io/tags/%E7%94%B3%E8%AE%BA/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhuyaochn.github.io/tags/%E9%81%8D%E5%8E%86/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -858,7 +858,28 @@
   </url>
   
   <url>
+    <loc>https://zhuyaochn.github.io/tags/%E6%B3%A8%E8%A7%A3/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/Annotation/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhuyaochn.github.io/tags/%E5%BC%82%E5%B8%B8/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E9%9B%86%E5%90%88/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -879,27 +900,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E6%B3%A8%E8%A7%A3/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/Annotation/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/%E6%B3%9B%E5%9E%8B/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -908,13 +908,6 @@
   
   <url>
     <loc>https://zhuyaochn.github.io/tags/IO/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/%E6%AD%A3%E5%88%99/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -943,6 +936,13 @@
   
   <url>
     <loc>https://zhuyaochn.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E6%AD%A3%E5%88%99/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1068,21 +1068,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E6%95%B0%E7%BB%84/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1117,7 +1110,7 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
+    <loc>https://zhuyaochn.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1125,6 +1118,13 @@
   
   <url>
     <loc>https://zhuyaochn.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1173,27 +1173,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/Cheat-Sheet/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1208,7 +1187,42 @@
   </url>
   
   <url>
+    <loc>https://zhuyaochn.github.io/tags/%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/Cheat-Sheet/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/Python%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhuyaochn.github.io/tags/New-Concept-English/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/Lesson-2/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1229,20 +1243,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/Lesson-2/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/Python%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/hexo/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1257,13 +1257,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/word2vec/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/jieba%E5%88%86%E8%AF%8D/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1271,14 +1264,7 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
+    <loc>https://zhuyaochn.github.io/tags/word2vec/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1293,6 +1279,20 @@
   
   <url>
     <loc>https://zhuyaochn.github.io/tags/%E6%A8%A1%E7%89%88/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1474,20 +1474,6 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhuyaochn.github.io/tags/LL%EF%BC%881%EF%BC%89/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zhuyaochn.github.io/tags/First%E9%9B%86/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -1503,6 +1489,20 @@
   
   <url>
     <loc>https://zhuyaochn.github.io/tags/%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E6%B3%95/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhuyaochn.github.io/tags/LL%EF%BC%881%EF%BC%89/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1812,14 +1812,14 @@
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/categories/Python-For-Data-Science/</loc>
+    <loc>https://zhuyaochn.github.io/categories/Python%E6%B1%82%E7%94%9F/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://zhuyaochn.github.io/categories/Python%E6%B1%82%E7%94%9F/</loc>
+    <loc>https://zhuyaochn.github.io/categories/Python-For-Data-Science/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
