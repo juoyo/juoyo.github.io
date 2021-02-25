@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>视频学习</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="css/video.css">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="1.js"></script>
+
+<style type="text/css">
+.outsitepanel {display: none !important; }
+</style>
+
+</head>
+<body>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+            $(function() {
+                console.log( "ready!" );
+                var iframe = $("div.video_bofang iframe"); //播放页面
+                $('ul.video_show_con li a').click(function() {
+                    iframe.attr("src", $(this).attr("name")); //更改iframe src
+                    $('ul.video_show_con li a').removeClass('on');
+                    $(this).addClass('on'); //给点击的元素添加正在播放标识
+                });
+            }); 
+            /*title切换*/
+            function showTitle(title) {
+                
+                var TitleType = title.getAttribute("data-title");
+                document.getElementById("video_con_title").innerHTML = TitleType;
+            }
+            /*向上滚动*/
+            function AutoScroll(obj) {
+                                $(obj).find("ul:first").animate({
+                                    marginTop: "-40px"
+                                },
+                                800,
+                                function() {
+                                    $(this).css({
+                                        marginTop: "0px"
+                                    }).find("li:first").appendTo(this);
+                                });
+                            }
+            $(document).ready(function() {
+                setInterval('AutoScroll("#scroll")', 2500)
+            });
+
+        </script>
+
+    <section class="public_width">
+    <dl class="video_con">
+                <figure class="video_con_show tab">
+                    <div class="video_bofang tab-box">
+                        <dt class="video_con_title" ><b style="font-size: 30px;">视频标题：</b><span id="video_con_title">视频</span></dt>
+
+                       <iframe id="iframe_video" height=512 width=900 src='video/Python.mp4' frameborder=0 'allowfullscreen'></iframe>
+                        
+                        <div class="video_bofang_mtbd">
+                           <div id="scroll" class="scroll clearfix">
+                              <ul class="mingdan" id="holder">
+                                <li>热门：<script type="text/javascript">document.writeln("热门1")</script></li>
+                                <li>热门：<script type="text/javascript">document.writeln("热门2")</script></li>
+                                <li>热门：<script type="text/javascript">document.writeln("热门3")</script></li>
+                              </ul>
+                            </div>
+                        </div>
+                </div>  
+                    <figcaption class="video_show_zs">
+                        <div class="video_show_zj">
+                            <img class="video_show_zj_img" src="images/Python.jpg">
+                            <p class="video_show_zj_js">
+                                <b class="video_show_zj_name">标题</b>
+                                <span class="video_show_zj_zc">描述</span>
+                            </p>
+                            <a href="https://space.bilibili.com/313816347/"><font color="green">去B站观看此视频</font></a>
+                        </div>
+                        <span class="video_show_title">播放列表</span>
+                        <ul class="video_show_con tab-menu">
+
+                             <li class="video_show_list">
+                                <a name="video/Python.mp4" data-title="Python Programming" onclick="showTitle(this)">
+                                    <img src="images/Python.jpg">
+                                    <span>
+                                        <font color="white">Python Programming</font><br>
+                                        <img src="images/bof.png" width="10" height="10">
+                                        <font color="white">1.5万</font>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="video_show_list">
+                                <a name="https://www.bilibili.com/video/BV1zU4y1W7s7" data-title="Java Programming" onclick="showTitle(this)">
+                                    <img src="images/Java.jpg">
+                                    <span>
+                                        <font color="white">Java Programming</font><br>
+                                        <img src="images/bof.png">
+                                        <font color="white">2.0万</font>
+                                    </span>
+                                </a>
+                            </li>                           
+							
+                        </ul>
+                    </figcaption>
+                </figure>
+            </dl>
+    </section>
+</body>
+</html>
