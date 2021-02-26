@@ -9,19 +9,7 @@
         <title></title> 
 		<script src="hls/hls.js"></script>    <!-- hls.js必须引入，可下载至本地 -->
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript">
-			$("#btn_submit").click( function(){
-				var urlValue = $("#m3u8Url").val()
-				if( !urlValue ){
-					alert("输入资源链接为空!");
-					return false; // 返回值为false，将阻止表单提交
-				} else {
-					//换地址后方法重新调用
-					alert("稍等片刻，流畅播放:  " +  urlValue);
-					loadVideo(urlValue, urlValue);
-				}
-			} );
-		</script>
+		
         <style type="text/css">  
            
         </style>  
@@ -64,12 +52,9 @@
 				 </select>
 				</form> 
 				
-				<form action="#" method="post">
-					<p>
-						m3u8: <input type="text" name="m3u8Url">
-					</p>
-					<input type="submit" id="btn_submit" value="提交">
-				</form>
+				
+				m3u8: <input type="text" id="m3u8Url_text" value="">
+				<button onclick="input_change_hlsUrl()">确定</button>
 				
 			</div>
 			<div id="id4" style="clear:both"></div> 
@@ -81,6 +66,7 @@
 	var hlsUrl="http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8";//需要替换为自己的视频流地址
 	var tvName = "CCTV-6电影"
 	
+	// 下拉列表修改源
 	var change_hlsUrl = function(t){
         tvName = t.options[t.selectedIndex].text;
         hlsUrl = t.value;
@@ -88,6 +74,15 @@
         //换地址后方法重新调用
         alert("稍等片刻，流畅播放:  " +  tvName);
 		loadVideo(hlsUrl, tvName);
+    }
+    
+    // 输入修改源
+    function input_change_hlsUrl(){
+		var hlsUrl = document.getElementById('m3u8Url_text').value;
+		
+		//换地址后方法重新调用
+        alert("稍等片刻，流畅播放:  " +  hlsUrl);
+		loadVideo(hlsUrl, hlsUrl);
     }
 	
 	//播放视频流 
