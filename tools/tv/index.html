@@ -53,7 +53,7 @@
 					<p>
 						m3u8: <input type="text" name="m3u8Url">
 					</p>
-					<input type="submit" id="btn_submit" onclick="change_hlsUrl(this)" value="提交">
+					<input type="submit" id="btn_submit" value="提交">
 				</form>
 				
 			</div>
@@ -92,6 +92,18 @@
 	          });
 	      }
     }
+    
+    $("form").submit( function(event){
+		var urlValue = $("#m3u8Url").val()
+		if( !urlValue ){
+			alert("输入资源链接为空!");
+			return false; // 返回值为false，将阻止表单提交
+		} else {
+			//换地址后方法重新调用
+			alert("稍等片刻，流畅播放:  " +  urlValue);
+			loadVideo(urlValue, urlValue);
+		}
+	} );
 		
   //方法调用
   loadVideo(hlsUrl, tvName);
