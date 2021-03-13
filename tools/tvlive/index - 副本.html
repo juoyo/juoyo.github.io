@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://zhuyaochn.github.io">
   <title>Yao - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在线工具          	在线玩具列表 	 	 	 		看电视直播 	 	 	 		看视频 	 	 	 		知识图谱可视化 	 	 	 		在线生成二维码 	 	 	 		生辰时钟 	 	 	 		旋转相册演示 	 	 	 		在线pdf 	 	 	 		五子棋 	 	 	 		中国象棋 	 	 	 		国际象棋 	 	 	 		超级玛丽 	 	 	 		帮助文档">
+  <meta name="description" content="播放列表 				  				 ------请选择----- 				 CC">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yao - Home">
-<meta property="og:url" content="http://zhuyaochn.github.io/tools/index.html">
+<meta property="og:url" content="http://zhuyaochn.github.io/tools/tvlive/index%20-%20%E5%89%AF%E6%9C%AC.html">
 <meta property="og:site_name" content="Yao - Home">
-<meta property="og:description" content="在线工具          	在线玩具列表 	 	 	 		看电视直播 	 	 	 		看视频 	 	 	 		知识图谱可视化 	 	 	 		在线生成二维码 	 	 	 		生辰时钟 	 	 	 		旋转相册演示 	 	 	 		在线pdf 	 	 	 		五子棋 	 	 	 		中国象棋 	 	 	 		国际象棋 	 	 	 		超级玛丽 	 	 	 		帮助文档">
+<meta property="og:description" content="播放列表 				  				 ------请选择----- 				 CC">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-13T05:37:36.237Z">
-<meta property="article:modified_time" content="2021-03-13T05:37:36.237Z">
+<meta property="article:published_time" content="2021-02-26T11:40:34.600Z">
+<meta property="article:modified_time" content="2021-02-26T11:40:34.600Z">
 <meta property="article:author" content="Yao Zhu">
 <meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary">
@@ -198,75 +198,113 @@
 				
 				<!-- <结束引入 tags 页面的代码> -->
 
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
-<head>
-<title>在线工具</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 解决https下请求http资源 -->
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-<script type="text/javascript" src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
-</head>
-
-<body>
-	<h1 align="center">在线玩具列表</h1>
-	<hr>
+        
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="UTF-8">  
+        
+        <!-- 解决https下请求http资源 -->
+        <!--  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />  -->
+        <title></title> 
+		<script src="hls/hls.js"></script>    <!-- hls.js必须引入，可下载至本地 -->
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		
+        <style type="text/css">  
+           
+        </style>  
+    </head>  
+    
+    <body>  
+        <div id="id1" style="solid black">
+			<div id="id2" style="float:left; solid">
+				<video id="video" width="auto" height="600" src controls="controls" autoplay muted></video>
+			</div>
+			
+			<div id="id3" style="width:100px;height:20px;float:left;solid">
+				播放列表
+				 <select onchange="change_hlsUrl(this)" id="select0">
+				 <option value selected>------请选择-----</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8">CCTV-1综合</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv4.m3u8">CCTV-4财经</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8">CCTV-6电影</option>
+				 
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv9.m3u8">CCTV-9纪录</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv12.m3u8">CCTV-12社会与法</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv13.m3u8">CCTV-13新闻</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv15.m3u8">CCTV-15音乐</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/cctv5phd.m3u8">CCTV-5+体育</option>
+				 <option value="http://ivi.bupt.edu.cn/hls/btv4.m3u8">北京影视</option>
+				 				 <option value="http://223.82.250.72/live/fhchinese/1.m3u8">凤凰中文HD</option>
+				 <option value="http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8">凤凰卫视高清</option>
+				 <option value="http://tx.hls.huya.com/huyalive/94525224-2460685774-10568564925062447104-2789253840-10057-A-0-1.m3u8">周润发电影</option>
+				 
+				 <option value="https://vip888.kuyun99.com/20180824/WJB07qKa/index.m3u8">系列惊悚片Friday-the-13th</option>
+				 
+				 <option value="http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8">香港卫视</option>
+				 <option value="http://223.110.241.206:6610/gitv/live1/G_CCTV-NEWS/G_CCTV-NEWS/">CGTN-国际电视台1</option>
+				 
+				 <option value="https://live.cgtn.com/1000/prog_index.m3u8">CGTN-国际电视台2</option>
+				 
+				 <option value="http://hls-ott-zhibo.wasu.tv/live/332/index.m3u8">睡前故事</option>
+				 
+				 </select>
+				
+				
+				m3u8: <input type="text" id="m3u8Url_text" value>
+				<button onclick="input_change_hlsUrl()">确定</button>
+				
+			</div>
+			<div id="id4" style="clear:both"></div> 
+        </div> 
+        
+    </body>  
+  <script type="text/javascript">
+	//播放地址
+	var hlsUrl="http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8";//需要替换为自己的视频流地址
+	var tvName = "CCTV-6电影"
 	
-	<div>
-		<a href="tvlive/index.html">看电视直播</a>
-	</div>
+	// 下拉列表修改源
+	var change_hlsUrl = function(t){
+        tvName = t.options[t.selectedIndex].text;
+        hlsUrl = t.value;
+        
+        //换地址后方法重新调用
+        alert("稍等片刻，流畅播放:  " +  tvName);
+		loadVideo(hlsUrl, tvName);
+    }
+    
+    // 输入修改源
+    function input_change_hlsUrl(){
+		var hlsUrl = document.getElementById('m3u8Url_text').value;
+		
+		//换地址后方法重新调用
+        alert("稍等片刻，流畅播放:  " +  hlsUrl);
+		loadVideo(hlsUrl, hlsUrl);
+    }
 	
-	<div>
-		<a href="videos/index.html">看视频</a>
-	</div>
-	
-	<div>
-		<a href="KgVisualization/demo/demo.html">知识图谱可视化</a>
-	</div>
-	
-	<div>
-		<a href="QRcode/index.html">在线生成二维码</a>
-	</div>
-	
-	<div>
-		<a href="birth-and-death/index.html">生辰时钟</a>
-	</div>
-	
-	<div>
-		<a href="album_index/index.html">旋转相册演示</a>
-	</div>
-	
-	<div>
-		<a href="html5-online-pdf-viewer/web/viewer2.html">在线pdf</a>
-	</div>
-	
-	<div>
-		<a href="gobang/index.html">五子棋</a>
-	</div>
-	
-	<div>
-		<a href="chess/index.html">中国象棋</a>
-	</div>
-	
-	<div>
-		<a href="chessinter/index.html">国际象棋</a>
-	</div>
-	
-	<div>
-		<a href="supermario/index.html">超级玛丽</a>
-	</div>
-	
-	<div>
-		<a href="help.html">帮助文档</a>
-	</div>
-	
-	
-
-</body>
+	//播放视频流 
+    function loadVideo(hlsUrl, tvName){
+	var video = document.getElementById('video');//获取 video 标签
+	if(Hls.isSupported()) {
+	var hls = new Hls();//实例化 Hls 对象
+	hls.loadSource(hlsUrl);//传入路径
+	hls.attachMedia(video);
+	hls.on(Hls.Events.MANIFEST_PARSED,function() {
+		   video.play();//调用播放 API
+		});
+	} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+	          video.src = hlsUrl;
+	          video.addEventListener('loadedmetadata',function() {
+	              video.play();
+	          });
+	      }
+    }
+		
+  //方法调用
+  loadVideo(hlsUrl, tvName);
+  </script>
 </html>
-
       
 	
 	<!- 百度自动推送方式提交 -->
@@ -382,7 +420,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://zhuyaochn.github.io/tools/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://zhuyaochn.github.io/tools/tvlive/index%20-%20%E5%89%AF%E6%9C%AC.html" alt="微信分享二维码">
     </div>
 </div>
 
