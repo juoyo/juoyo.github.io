@@ -2148,14 +2148,12 @@
     <link href="https://zhuyaochn.github.io/posts/783202da.html"/>
     <id>https://zhuyaochn.github.io/posts/783202da.html</id>
     <published>2019-05-28T07:06:04.000Z</published>
-    <updated>2019-07-21T03:50:42.000Z</updated>
+    <updated>2021-03-14T16:32:02.213Z</updated>
     
-    <content type="html"><![CDATA[<p>==Hexo+GitHub带图博客写作==</p><ol><li><p>到博客根目录下 查看_config.yml文件,查找 post_asset_folder 字段,确定post_asset_folder设置为true.</p><a id="more"></a></li><li><p>设置 post_asset_folder 参数后，在建立文件时，Hexo 会自动建立一个与文章同名的文件夹，可以把与该文章相关的所有资源都放到此文件夹内，这样就可以更方便的使用资源。</p></li><li><p>博客的根目录下执行 npm install <a href="https://github.com/CodeFalling/hexo-asset-image">https://github.com/CodeFalling/hexo-asset-image</a> –save 命令来进行插件的安装。</p></li><li><p>写博客时使用文件内的图片</p></li><li><p>本地测试<br>hexo s</p></li><li><p>将本地博客推送到远程  </p></li><li><p>1 hexo clean  </p></li><li><p>2 hexo g  </p></li><li><p>3 hexo d</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>==Hexo+GitHub带图博客写作==</p><a id="more"></a><p>新建页面</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;name&quot;</span><br></pre></td></tr></table></figure><p>新建页面后，如使用html文件，需在根目录配置文件skip_render中修改配置项，使得新页面html不被主题渲染</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">示例</span><br><span class="line">skip_render: # 以下文件不进行渲染</span><br><span class="line">  - README.md</span><br><span class="line">  - &quot;tools/index.md&quot;  # 不渲染index.md，直接使用同目录下index.html</span><br><span class="line">  - &quot;bookcase/**&quot;  # 不渲染index.md，直接使用同目录下index.html</span><br><span class="line">  - &quot;videos/**&quot;  # 不渲染index.md，直接使用同目录下index.html</span><br></pre></td></tr></table></figure><p>新建文章</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;name&quot;</span><br></pre></td></tr></table></figure><ol start="5"><li><p>本地测试<br>hexo s</p></li><li><p>将本地博客推送到远程  </p></li></ol><ul><li>hexo clean   </li><li>hexo g  </li><li>hexo d</li></ul>]]></content>
     
     
-    <summary type="html">&lt;p&gt;==Hexo+GitHub带图博客写作==&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;到博客根目录下 查看_config.yml文件,查找 post_asset_folder 字段,确定post_asset_folder设置为true.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    <summary type="html">&lt;p&gt;==Hexo+GitHub带图博客写作==&lt;/p&gt;</summary>
     
     
     
