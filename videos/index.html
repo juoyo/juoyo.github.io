@@ -58,14 +58,15 @@
                     <div class="video_bofang tab-box">
                         <dt class="video_con_title" ><b style="font-size: 30px;">视频标题：</b><span id="video_con_title">视频</span></dt>
 
-                       <iframe id="iframe_video" height=512 width=900 src='video/Python.mp4' frameborder=0 'allowfullscreen'></iframe>
+                        <!-- <iframe id="iframe_video" height=512 width=900 src='https://www.bilibili.com/video/BV1zU4y1W7s7' frameborder=0 'allowfullscreen'></iframe>  -->
+                        <iframe src="https://player.bilibili.com/player.html?aid=672094649&high_quality=1" allowfullscreen="allowfullscreen" width="95%" height="512px" scrolling="no" frameborder="0" ></iframe>
                         
                         <div class="video_bofang_mtbd">
                            <div id="scroll" class="scroll clearfix">
                               <ul class="mingdan" id="holder">
-                                <li>热门：<script type="text/javascript">document.writeln("热门1")</script></li>
-                                <li>热门：<script type="text/javascript">document.writeln("热门2")</script></li>
-                                <li>热门：<script type="text/javascript">document.writeln("热门3")</script></li>
+                                <li>热门：<script type="text/javascript">document.writeln("Python")</script></li>
+                                <li>热门：<script type="text/javascript">document.writeln("Java")</script></li>
+                                <li>热门：<script type="text/javascript">document.writeln("Go")</script></li>
                               </ul>
                             </div>
                         </div>
@@ -75,7 +76,7 @@
                             <img class="video_show_zj_img" src="images/Python.jpg">
                             <p class="video_show_zj_js">
                                 <b class="video_show_zj_name">标题</b>
-                                <span class="video_show_zj_zc">描述</span>
+                                <span class="video_show_zj_zc">源视频</span>
                             </p>
                             <a href="https://space.bilibili.com/313816347/"><font color="green">去B站观看此视频</font></a>
                         </div>
@@ -83,7 +84,7 @@
                         <ul class="video_show_con tab-menu">
 
                              <li class="video_show_list">
-                                <a name="video/Python.mp4" data-title="Python Programming" onclick="showTitle(this)">
+                                <a name="https://player.bilibili.com/player.html?aid=756738261&high_quality=1" data-title="Python Programming" onclick="showTitle(this)">
                                     <img src="images/Python.jpg">
                                     <span>
                                         <font color="white">Python Programming</font><br>
@@ -92,12 +93,46 @@
                                     </span>
                                 </a>
                             </li>
-
+                            
                             <li class="video_show_list">
-                                <a name="https://www.bilibili.com/video/BV1zU4y1W7s7" data-title="Java Programming" onclick="showTitle(this)">
+                                <a name="https://player.bilibili.com/player.html?aid=501634754&high_quality=1" data-title="Java Programming" onclick="showTitle(this)">
                                     <img src="images/Java.jpg">
                                     <span>
                                         <font color="white">Java Programming</font><br>
+                                        <img src="images/bof.png" width="10" height="10">
+                                        <font color="white">1.5万</font>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            <li class="video_show_list">
+                                <a name="https://player.bilibili.com/player.html?aid=671766298&high_quality=1" data-title="Go Programming" onclick="showTitle(this)">
+                                    <img src="images/temp.jpg">
+                                    <span>
+                                        <font color="white">Go Programming</font><br>
+                                        <img src="images/bof.png" width="10" height="10">
+                                        <font color="white">1.5万</font>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li class="video_show_list">
+                                <a name="https://player.bilibili.com/player.html?aid=417042569&high_quality=1" data-title="MySQL" onclick="showTitle(this)">
+                                    <img src="images/temp.jpg">
+                                    <span>
+                                        <font color="white">MySQL</font><br>
+                                        <img src="images/bof.png" width="10" height="10">
+                                        <font color="white">1.5万</font>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="video_show_list">
+                                <a name="https://player.bilibili.com/player.html?aid=672094649&high_quality=1" data-title="HTML" onclick="showTitle(this)">
+                                    <img src="images/Java.jpg">
+                                    <span>
+                                        <font color="white">HTML</font><br>
                                         <img src="images/bof.png">
                                         <font color="white">2.0万</font>
                                     </span>
