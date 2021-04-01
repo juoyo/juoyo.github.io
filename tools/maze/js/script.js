@@ -126,7 +126,137 @@ MG.prototype = {
 		return false;
 	},
 	_getNext0: function () {
-		for (var i = 0, l = this.grids.length; i <= 2 l; i ++) { if (this.grids[i]="=" 0) return i; } -1; }, init: function () this.grids="[];" this.gridob="[];" this.gridstr ; for (var y="0;" < this.h; x="0;" this.w; this.grids.push(math.floor(math.random() * 16).tostring(16)); this.grids.push(0); this; clear: while (this.ob.childnodes[0]) this.ob.removechild(this.ob.childnodes[0]); show: this.clear(); var tmpob, v; this.ob.style.width="this.gridSize" this.w + "px"; this.ob.style.height="this.gridSize" this.h this.ob.style.border="none" tmpob="document.createElement("div");" tmpob.setattribute("class", "grid"); tmpob.setattribute("classname", tmpob.style.width="this.gridSize" tmpob.style.height="this.gridSize" tmpob.style.left="this.gridSize" tmpob.style.top="this.gridSize" v="parseInt(this.gridStr.substr(y" x, 1) || "0", 16); x]; mg.border(tmpob, v); tmpob.appendchild(document.createtextnode(v)); this.gridob.push(tmpob); this.ob.appendchild(tmpob); "grid mg_finish"); this.me="new" mg_me(this); }; mg.border="function" (ob, v) (v="=" ob.style.backgroundcolor="#666" return; & ob.style.bordertop="solid 1px #f5f5f5" 2) ob.style.borderright="solid 1px #f5f5f5" 4) ob.style.borderbottom="solid 1px #f5f5f5" 8) ob.style.borderleft="solid 1px #f5f5f5" mg_me(mg) this.mg="mg" null; this.pos="0;" this.history="[0];" this.history2="[0];" this.ismoving="false;" this.lastmove="new" date(); this.finished="false;" this.emotions="{" normal: "images me_surprised.gif", happy: unhappy: surprised: tongue: me_surprised.gif" (this.mg) this.init(); mg_me.prototype="{" tmpimg="document.createElement("img")," tmpinfo="document.createElement("div")," tmpspan="document.createElement("p")," _this="this;" tmpinfo.setattribute("class", "inform"); tmpinfo.setattribute("classname", this.informbox="tmpInfo;" this.informspan="tmpSpan;" tmpinfo.appendchild(tmpspan); tmpob.appendchild(tmpinfo); tmpimg.setattribute("src", me.gif"); this.meimg="tmpImg;" "me"); tmpob.appendchild(tmpimg); this.ob="tmpOb;" this.mg.ob.appendchild(this.ob); $.hotkeys.add("up", _this.move(0); }); $.hotkeys.add("right", _this.move(1); $.hotkeys.add("down", _this.move(2); $.hotkeys.add("left", _this.move(3); settimeout(function (_this.mg.ismoved) _this.inform("提示：您可以使用键盘上的上丶下丶左丶右方向键控制我的移动。"); 3000); this.itvl="setInterval(function" (!_this.mg.ismoved) now="new" (now - _this.lastmove> 10000) {
+		for (var i = 0, l = this.grids.length; i <= l; i ++) {
+			if (this.grids[i] == 0)
+				return i;
+		}
+		return -1;
+	},
+	init: function () {
+		this.grids = [];
+		this.gridOb = [];
+		this.gridStr = "";
+		for (var y = 0; y < this.h; y ++)
+			for (var x = 0; x < this.w; x ++) {
+				//this.grids.push(Math.floor(Math.random() * 16).toString(16));
+				this.grids.push(0);
+			}
+		//this.gridStr = this.grids.join("");
+		return this;
+	},
+	clear: function () {
+		while (this.ob.childNodes[0])
+			this.ob.removeChild(this.ob.childNodes[0]);
+		return this;
+	},
+	show: function () {
+		this.clear();
+		var tmpOb, v;
+		this.ob.style.width = this.gridSize * this.w + 2 + "px";
+		this.ob.style.height= this.gridSize * this.h + 2 + "px";
+		this.ob.style.border= "none";
+		for (var y = 0; y < this.h; y ++) {
+			for (var x = 0; x < this.w; x ++) {
+				tmpOb = document.createElement("div");
+				tmpOb.setAttribute("class", "grid");
+				tmpOb.setAttribute("className", "grid");
+				tmpOb.style.width = this.gridSize + "px";
+				tmpOb.style.height = this.gridSize + "px";
+				tmpOb.style.left = this.gridSize * x + "px";
+				tmpOb.style.top = this.gridSize * y + "px";
+				//v = parseInt(this.gridStr.substr(y * this.w + x, 1) || "0", 16);
+				v = this.grids[y * this.w + x];
+				MG.border(tmpOb, v);
+				//tmpOb.appendChild(document.createTextNode(v));
+				this.gridOb.push(tmpOb);
+				this.ob.appendChild(tmpOb);
+			}
+		}
+		tmpOb.setAttribute("class", "grid mg_finish");
+		tmpOb.setAttribute("className", "grid mg_finish");
+		this.me = new MG_Me(this);
+		return this;
+	}
+};
+
+MG.border = function (ob, v) {
+	if (v == 0) {
+		ob.style.backgroundColor = "#666";
+		return;
+	}
+	if (v & 1)
+		ob.style.borderTop = "solid 1px #f5f5f5";
+	if (v & 2)
+		ob.style.borderRight = "solid 1px #f5f5f5";
+	if (v & 4)
+		ob.style.borderBottom = "solid 1px #f5f5f5";
+	if (v & 8)
+		ob.style.borderLeft = "solid 1px #f5f5f5";
+};
+
+function MG_Me(mg) {
+	this.mg = mg || null;
+	this.pos = 0;
+	this.history = [0];
+	this.history2 = [0];
+	this.isMoving = false;
+	this.lastMove = new Date();
+	this.finished = false;
+	this.emotions = {
+		normal: "images/me_surprised.gif",
+		happy: "images/me_surprised.gif",
+		unhappy: "images/me_surprised.gif",
+		surprised: "images/me_surprised.gif",
+		tongue: "images/me_surprised.gif"
+	};
+
+	if (this.mg) this.init();
+}
+
+MG_Me.prototype = {
+	init: function () {
+		var tmpOb = document.createElement("div"),
+			tmpImg = document.createElement("img"),
+			tmpInfo = document.createElement("div"),
+			tmpSpan = document.createElement("p"),
+			_this = this;
+		tmpInfo.setAttribute("class", "inform");
+		tmpInfo.setAttribute("className", "inform");
+		this.informBox = tmpInfo;
+		this.informSpan = tmpSpan;
+		tmpInfo.appendChild(tmpSpan);
+		tmpOb.appendChild(tmpInfo);
+		tmpImg.setAttribute("src", "images/me.gif");
+		this.meImg = tmpImg;
+		tmpOb.setAttribute("class", "me");
+		tmpOb.setAttribute("className", "me");
+		tmpOb.appendChild(tmpImg);
+		tmpOb.style.width = this.mg.gridSize + "px";
+		tmpOb.style.height = this.mg.gridSize + "px";
+		this.ob = tmpOb;
+		this.mg.ob.appendChild(this.ob);
+
+		$.hotkeys.add("up", function () {
+			_this.move(0);
+		});
+		$.hotkeys.add("right", function () {
+			_this.move(1);
+		});
+		$.hotkeys.add("down", function () {
+			_this.move(2);
+		});
+		$.hotkeys.add("left", function () {
+			_this.move(3);
+		});
+		setTimeout(function () {
+			if (_this.mg.isMoved) return;
+			_this.inform("提示：您可以使用键盘上的上丶下丶左丶右方向键控制我的移动。");
+		}, 3000);
+
+		this.itvl = setInterval(function () {
+			if (!_this.mg.isMoved) return;
+			var now = new Date();
+			if (now - _this.lastMove > 10000) {
 				_this.inform("Hello?");
 				_this.setEmotion("surprised");
 			}
@@ -179,7 +309,7 @@ MG.prototype = {
 				_this.isMoving = false;
 				var v = _this.mg.grids[p];
 				if (p == _this.mg.grids.length - 1) {
-					_this.inform("YEAH~!<br> 到终点啦~！");
+					_this.inform("YEAH~!<br /> 到终点啦~！");
 					_this.finished = true;
 					_this.setEmotion("happy");
 					clearInterval(_this.itvl);
@@ -221,4 +351,3 @@ MG.prototype = {
 		}
 	}
 };
-</=>
