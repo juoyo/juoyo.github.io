@@ -6,7 +6,7 @@
   <link href="https://juoyo.github.io/atom.xml" rel="self"/>
   
   <link href="https://juoyo.github.io/"/>
-  <updated>2021-06-03T07:39:51.836Z</updated>
+  <updated>2021-06-26T15:40:21.646Z</updated>
   <id>https://juoyo.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitBook使用指导</title>
+    <link href="https://juoyo.github.io/posts/f81dea0b.html"/>
+    <id>https://juoyo.github.io/posts/f81dea0b.html</id>
+    <published>2021-06-26T15:19:41.000Z</published>
+    <updated>2021-06-26T15:40:21.646Z</updated>
+    
+    <content type="html"><![CDATA[<p>GitBook使用指导</p><a id="more"></a><p>1.创建文件夹，如dirname</p><p>2.命令行运行gitbook init</p><p>3.修改书籍内容</p><p>4.gitbook serve 预览书籍</p><p>5.gitbook build 生成静态文件</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;GitBook使用指导&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="gitbook" scheme="https://juoyo.github.io/tags/gitbook/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux内核演进</title>
@@ -2228,29 +2247,6 @@
     <category term="hexo" scheme="https://juoyo.github.io/tags/hexo/"/>
     
     <category term="博客" scheme="https://juoyo.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编译原理ch0 Intro</title>
-    <link href="https://juoyo.github.io/posts/a9e6ee16.html"/>
-    <id>https://juoyo.github.io/posts/a9e6ee16.html</id>
-    <published>2019-05-27T16:48:06.000Z</published>
-    <updated>2019-07-21T03:50:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>编译器的工作主要就是帮人们减轻负担，随着更高级语言的出现，编译器可以帮助人们做出更好的判断。除了保证实现从高级语言到机器语言的翻译之外，编译器可以进行各种优化。</p><a id="more"></a><p>看一下这段代码的结果：<br>#include &lt;stdio.h&gt;</p><p>int main(){</p><pre><code>    int i = 3;    int sum;    sum = i++ + ++i ;    printf(&quot;sum is %d.\n&quot;,sum);</code></pre><p>}<br>结合汇编来看看前自增和后自增的区别到底是怎么造成的。<br>0000000000400526 <main>:<br>  400526:    55                       push   %rbp<br>  400527:    48 89 e5                 mov    %rsp,%rbp<br>  40052a:    48 83 ec 10              sub    $0x10,%rsp<br>  40052e:    c7 45 f8 03 00 00 00     movl   $0x3,-0x8(%rbp)    // i = 3<br>  400535:    8b 45 f8                 mov    -0x8(%rbp),%eax    //  %eax = 3<br>  400538:    8d 50 01                 lea    0x1(%rax),%edx     //  %edx = 4<br>  40053b:    89 55 f8                 mov    %edx,-0x8(%rbp)    // i = 4<br>  40053e:    83 45 f8 01              addl   $0x1,-0x8(%rbp)    // i = 5<br>  400542:    8b 55 f8                 mov    -0x8(%rbp),%edx    // %edx = 5<br>  400545:    01 d0                    add    %edx,%eax          // %eax += %edx<br>  400547:    89 45 fc                 mov    %eax,-0x4(%rbp)</main></p><p>可以看到后自增对应的汇编是lea，使用寄存器保存自增前的值；而前自增对应的则是直接对内存进行加。</p><p>编译器就是要将人们比较容易理解和学习的语言翻译成机器语言：</p><ol><li>扫描 (词法分析)</li><li>Parsing (语法分析)</li><li>类型检查 (语义分析)</li><li>优化</li><li>代码生成</li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;编译器的工作主要就是帮人们减轻负担，随着更高级语言的出现，编译器可以帮助人们做出更好的判断。除了保证实现从高级语言到机器语言的翻译之外，编译器可以进行各种优化。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编译原理" scheme="https://juoyo.github.io/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="编译" scheme="https://juoyo.github.io/tags/%E7%BC%96%E8%AF%91/"/>
-    
-    <category term="C语言" scheme="https://juoyo.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
