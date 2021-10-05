@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://juoyo.github.io">
-  <title>Java语言ch20 Web开发 | Yao - Home</title>
+  <title>Archives: 2021/10 | Yao - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaSE，即Java Platform Standard Edition。JavaEE是Java Platform Enterprise Edition的缩写。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java语言ch20 Web开发">
-<meta property="og:url" content="https://juoyo.github.io/posts/4b7be044.html">
+  <meta name="description" content="只有少数人看得见未来，交个朋友，技术博客，分享计算机基础、人工智能、知识图谱、区块链等知识">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yao - Home">
+<meta property="og:url" content="https://juoyo.github.io/archives/2021/10/index.html">
 <meta property="og:site_name" content="Yao - Home">
-<meta property="og:description" content="JavaSE，即Java Platform Standard Edition。JavaEE是Java Platform Enterprise Edition的缩写。">
+<meta property="og:description" content="只有少数人看得见未来，交个朋友，技术博客，分享计算机基础、人工智能、知识图谱、区块链等知识">
 <meta property="og:locale">
-<meta property="og:image" content="https://juoyo.github.io/posts/4b7be044.htm/1.png">
-<meta property="article:published_time" content="2020-03-13T02:08:19.000Z">
-<meta property="article:modified_time" content="2020-05-01T14:19:30.815Z">
 <meta property="article:author" content="Yao Zhu">
-<meta property="article:tag" content="Web">
+<meta property="article:tag" content="GitHub blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://juoyo.github.io/posts/4b7be044.htm/1.png">
   
   
     <link rel="icon" href="/pictures/website_favicon.ico">
@@ -213,460 +209,52 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Java语言ch20-Web开发" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+  
     
-      <header class="article-header">
+    
       
-        
-		
-		
-		<center><p>
-  
-    <h1 class="article-title_code_ant" itemprop="name">
-      Java语言ch20 Web开发
-    </h1>
-  
-</p></center>
-		
-		
-			<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3.5k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">15分</span>
-      </span>
-    </span>
-</div>
-		
-		
-		
-        <a href="/posts/4b7be044.html" class="archive-article-date">
-  	<time datetime="2020-03-13T02:08:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/posts/5a8a6c8d.html" class="archive-article-date">
+  	<time datetime="2021-10-05T02:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-05</time>
 </a>
 
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读<span id="busuanzi_value_page_pv"></span>次
-        </span>
 
 
 
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-          <!-- <引入 tags 页面的代码> -->				
-				
-				<!-- <结束引入 tags 页面的代码> -->
-
-        <p>JavaSE，即Java Platform Standard Edition。JavaEE是Java Platform Enterprise Edition的缩写。</p>
-<a id="more"></a>
-
-<p>JavaEE最核心的组件就是基于Servlet标准的Web服务器，开发者编写的应用程序是基于Servlet API并运行在Web服务器内部的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────┐</span><br><span class="line">│┌───────────┐│</span><br><span class="line">││ User App  ││</span><br><span class="line">│├───────────┤│</span><br><span class="line">││Servlet API││</span><br><span class="line">│└───────────┘│</span><br><span class="line">│ Web Server  │</span><br><span class="line">├─────────────┤</span><br><span class="line">│   JavaSE    │</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h2><h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><p>对于Browser来说，请求页面的流程如下：</p>
-<ol>
-<li>与服务器建立TCP连接；</li>
-<li>发送HTTP请求；</li>
-<li>收取HTTP响应，然后把网页在浏览器中显示出来。</li>
-</ol>
-<p>浏览器发送的HTTP请求如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F; HTTP&#x2F;1.1</span><br><span class="line">Host: www.sina.com.cn</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 xxx</span><br><span class="line">Accept: *&#x2F;*</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9,en-US;q&#x3D;0.8</span><br></pre></td></tr></table></figure>
-<p>其中，第一行表示使用<code>GET</code>请求获取路径为<code>/</code>的资源，并使用<code>HTTP/1.1</code>协议，从第二行开始，每行都是以<code>Header: Value</code>形式表示的HTTP头，比较常用的HTTP Header包括：</p>
-<ul>
-<li>Host: 表示请求的主机名，因为一个服务器上可能运行着多个网站，因此，Host表示浏览器正在请求的域名；</li>
-<li>User-Agent: 标识客户端本身，例如Chrome浏览器的标识类似<code>Mozilla/5.0 ... Chrome/79</code>，IE浏览器的标识类似<code>Mozilla/5.0 (Windows NT ...) like Gecko</code>；</li>
-<li>Accept：表示浏览器能接收的资源类型，如<code>text/*</code>，<code>image/*</code>或者<code>*/*</code>表示所有；</li>
-<li>Accept-Language：表示浏览器偏好的语言，服务器可以据此返回不同语言的网页；</li>
-<li>Accept-Encoding：表示浏览器可以支持的压缩类型，例如<code>gzip, deflate, br</code>。</li>
-</ul>
-<p>服务器的响应如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Content-Type: text&#x2F;html</span><br><span class="line">Content-Length: 21932</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Cache-Control: max-age&#x3D;300</span><br><span class="line"></span><br><span class="line">&lt;html&gt;...网页数据...</span><br></pre></td></tr></table></figure>
-<p>服务器响应的第一行总是版本号+空格+数字+空格+文本，数字表示响应代码，其中<code>2xx</code>表示成功，<code>3xx</code>表示重定向，<code>4xx</code>表示客户端引发的错误，<code>5xx</code>表示服务器端引发的错误。数字是给程序识别，文本则是给开发者调试使用的。常见的响应代码有：</p>
-<ul>
-<li>200 OK：表示成功；</li>
-<li>301 Moved Permanently：表示该URL已经永久重定向；</li>
-<li>302 Found：表示该URL需要临时重定向；</li>
-<li>304 Not Modified：表示该资源没有修改，客户端可以使用本地缓存的版本；</li>
-<li>400 Bad Request：表示客户端发送了一个错误的请求，例如参数无效；</li>
-<li>401 Unauthorized：表示客户端因为身份未验证而不允许访问该URL；</li>
-<li>403 Forbidden：表示服务器因为权限问题拒绝了客户端的请求；</li>
-<li>404 Not Found：表示客户端请求了一个不存在的资源；</li>
-<li>500 Internal Server Error：表示服务器处理时内部出错，例如因为无法连接数据库；</li>
-<li>503 Service Unavailable：表示服务器此刻暂时无法处理请求。</li>
-</ul>
-<p>从第二行开始，服务器每一行均返回一个HTTP头。服务器经常返回的HTTP Header包括：</p>
-<ul>
-<li>Content-Type：表示该响应内容的类型，例如<code>text/html</code>，<code>image/jpeg</code>；</li>
-<li>Content-Length：表示该响应内容的长度（字节数）；</li>
-<li>Content-Encoding：表示该响应压缩算法，例如<code>gzip</code>；</li>
-<li>Cache-Control：指示客户端应如何缓存，例如<code>max-age=300</code>表示可以最多缓存300秒。</li>
-</ul>
-<p>HTTP请求和响应都由HTTP Header和HTTP Body构成，其中HTTP Header每行都以<code>\r\n</code>结束。如果遇到两个连续的<code>\r\n</code>，那么后面就是HTTP Body。浏览器读取HTTP Body，并根据Header信息中指示的<code>Content-Type</code>、<code>Content-Encoding</code>等解压后显示网页、图像或其他内容。</p>
-<p>通常浏览器获取的第一个资源是HTML网页，在网页中，如果嵌入了JavaScript、CSS、图片、视频等其他资源，浏览器会根据资源的URL再次向服务器请求对应的资源。</p>
-<p><font color="green">HTTP编程</font>是以客户端的身份去请求服务器资源。</p>
-<p>以服务器的身份响应客户端请求，编写服务器程序来处理客户端请求通常就称之为<font color="green">Web开发</font>。</p>
-<h3 id="HTTP-Server"><a href="#HTTP-Server" class="headerlink" title="HTTP Server"></a>HTTP Server</h3><p>一个HTTP Server本质上是一个TCP服务器，我们先用TCP编程的多线程实现的服务器端框架：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Server</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        ServerSocket ss = <span class="keyword">new</span> ServerSocket(<span class="number">8080</span>); <span class="comment">// 监听指定端口</span></span><br><span class="line">        System.out.println(<span class="string">&quot;server is running...&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">            Socket sock = ss.accept();</span><br><span class="line">            System.out.println(<span class="string">&quot;connected from &quot;</span> + sock.getRemoteSocketAddress());</span><br><span class="line">            Thread t = <span class="keyword">new</span> Handler(sock);</span><br><span class="line">            t.start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    Socket sock;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(Socket sock)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.sock = sock;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (InputStream input = <span class="keyword">this</span>.sock.getInputStream()) &#123;</span><br><span class="line">            <span class="keyword">try</span> (OutputStream output = <span class="keyword">this</span>.sock.getOutputStream()) &#123;</span><br><span class="line">                handle(input, output);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.sock.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException ioe) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;client disconnected.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handle</span><span class="params">(InputStream input, OutputStream output)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(input, StandardCharsets.UTF_8));</span><br><span class="line">        <span class="keyword">var</span> writer = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(output, StandardCharsets.UTF_8));</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span> 处理HTTP请求</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>只需要在<code>handle()</code>方法中，用Reader读取HTTP请求，用Writer发送HTTP响应，即可实现一个最简单的HTTP服务器。编写代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">private void handle(InputStream input, OutputStream output) throws IOException &#123;</span><br><span class="line">    System.out.println(&quot;Process new http request...&quot;);</span><br><span class="line">    var reader &#x3D; new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));</span><br><span class="line">    var writer &#x3D; new BufferedWriter(new OutputStreamWriter(output, StandardCharsets.UTF_8));</span><br><span class="line">    &#x2F;&#x2F; 读取HTTP请求:</span><br><span class="line">    boolean requestOk &#x3D; false;</span><br><span class="line">    String first &#x3D; reader.readLine();</span><br><span class="line">    if (first.startsWith(&quot;GET &#x2F; HTTP&#x2F;1.&quot;)) &#123;</span><br><span class="line">        requestOk &#x3D; true;</span><br><span class="line">    &#125;</span><br><span class="line">    for (;;) &#123;</span><br><span class="line">        String header &#x3D; reader.readLine();</span><br><span class="line">        if (header.isEmpty()) &#123; &#x2F;&#x2F; 读取到空行时, HTTP Header读取完毕</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(header);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(requestOk ? &quot;Response OK&quot; : &quot;Response Error&quot;);</span><br><span class="line">    if (!requestOk) &#123;</span><br><span class="line">        &#x2F;&#x2F; 发送错误响应:</span><br><span class="line">        writer.write(&quot;404 Not Found\r\n&quot;);</span><br><span class="line">        writer.write(&quot;Content-Length: 0\r\n&quot;);</span><br><span class="line">        writer.write(&quot;\r\n&quot;);</span><br><span class="line">        writer.flush();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        &#x2F;&#x2F; 发送成功响应:</span><br><span class="line">        String data &#x3D; &quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;&#x2F;h1&gt;&lt;&#x2F;body&gt;&lt;&#x2F;html&gt;&quot;;</span><br><span class="line">        int length &#x3D; data.getBytes(StandardCharsets.UTF_8).length;</span><br><span class="line">        writer.write(&quot;HTTP&#x2F;1.0 200 OK\r\n&quot;);</span><br><span class="line">        writer.write(&quot;Connection: close\r\n&quot;);</span><br><span class="line">        writer.write(&quot;Content-Type: text&#x2F;html\r\n&quot;);</span><br><span class="line">        writer.write(&quot;Content-Length: &quot; + length + &quot;\r\n&quot;);</span><br><span class="line">        writer.write(&quot;\r\n&quot;); &#x2F;&#x2F; 空行标识Header和Body的分隔</span><br><span class="line">        writer.write(data);</span><br><span class="line">        writer.flush();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>核心代码是，先读取HTTP请求，上述代码只处理<code>GET /</code>的请求。当读取到空行时，表示已读到连续两个<code>\r\n</code>，说明请求结束，可以发送响应。</p>
-<p>发送响应的时候，首先发送响应代码<code>HTTP/1.0 200 OK</code>表示一个成功的200响应，使用<code>HTTP/1.0</code>协议，然后，依次发送Header，发送完Header后，再发送一个空行标识Header结束，紧接着发送HTTP Body，在浏览器输入网址就可以看到响应页面。</p>
-<hr>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><hr>
-<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><hr>
-<h2 id="MVC开发"><a href="#MVC开发" class="headerlink" title="MVC开发"></a>MVC开发</h2><ul>
-<li>Servlet适合编写Java代码，实现各种复杂的业务逻辑，但不适合输出复杂的HTML；</li>
-<li>JSP适合编写HTML，并在其中插入动态内容，但不适合编写复杂的Java代码。</li>
-</ul>
-<p>假设我们已经编写了几个JavaBean：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">long</span> id;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> School school;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">School</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String address;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>在<code>UserServlet</code>中，我们可以从数据库读取<code>User</code>、<code>School</code>等信息，然后，把读取到的JavaBean先放到HttpServletRequest中，再通过<code>forward()</code>传给<code>user.jsp</code>处理：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(urlPatterns = &quot;/user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 假装从数据库读取:</span></span><br><span class="line">        School school = <span class="keyword">new</span> School(<span class="string">&quot;No.1 Middle School&quot;</span>, <span class="string">&quot;101 South Street&quot;</span>);</span><br><span class="line">        User user = <span class="keyword">new</span> User(<span class="number">123</span>, <span class="string">&quot;Bob&quot;</span>, school);</span><br><span class="line">        <span class="comment">// 放入Request中:</span></span><br><span class="line">        req.setAttribute(<span class="string">&quot;user&quot;</span>, user);</span><br><span class="line">        <span class="comment">// forward给user.jsp:</span></span><br><span class="line">        req.getRequestDispatcher(<span class="string">&quot;/WEB-INF/user.jsp&quot;</span>).forward(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>在<code>user.jsp</code>中，我们只负责展示相关JavaBean的信息，不需要编写访问数据库等复杂逻辑：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;com.itranswarp.learnjava.bean.*&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    User user = (User) request.getAttribute(<span class="string">&quot;user&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Hello World - JSP&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;Hello &lt;%= user.name %&gt;!&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;School Name:</span><br><span class="line">    &lt;span style=<span class="string">&quot;color:red&quot;</span>&gt;</span><br><span class="line">        &lt;%= user.school.name %&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;School Address:</span><br><span class="line">    &lt;span style=<span class="string">&quot;color:red&quot;</span>&gt;</span><br><span class="line">        &lt;%= user.school.address %&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-
-<p>注意几点：</p>
-<ul>
-<li>需要展示的<code>User</code>被放入<code>HttpServletRequest</code>中以便传递给JSP，因为一个请求对应一个<code>HttpServletRequest</code>，我们也无需清理它，处理完该请求后<code>HttpServletRequest</code>实例将被丢弃；</li>
-<li>把<code>user.jsp</code>放到<code>/WEB-INF/</code>目录下，是因为<code>WEB-INF</code>是一个特殊目录，Web Server会阻止浏览器对<code>WEB-INF</code>目录下任何资源的访问，这样就防止用户通过<code>/user.jsp</code>路径直接访问到JSP页面；</li>
-<li>JSP页面首先从<code>request</code>变量获取<code>User</code>实例，然后在页面中直接输出，此处未考虑HTML的转义问题，有潜在安全风险。</li>
-</ul>
-<p>在浏览器访问<code>http://localhost:8080/user</code>，请求首先由<code>UserServlet</code>处理，然后交给<code>user.jsp</code>渲染：</p>
-<p><img src="/posts/4b7be044.htm/1.png"></p>
-<p>把<code>UserServlet</code>看作业务逻辑处理，把<code>User</code>看作模型，把<code>user.jsp</code>看作渲染，这种设计模式通常被称为MVC：Model-View-Controller，即<code>UserServlet</code>作为控制器（Controller），<code>User</code>作为模型（Model），<code>user.jsp</code>作为视图（View），整个MVC架构如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">                   ┌───────────────────────┐</span><br><span class="line">             ┌────&gt;│Controller: UserServlet│</span><br><span class="line">             │     └───────────────────────┘</span><br><span class="line">             │                 │</span><br><span class="line">┌───────┐    │           ┌─────┴─────┐</span><br><span class="line">│Browser│────┘           │Model: User│</span><br><span class="line">│       │&lt;───┐           └─────┬─────┘</span><br><span class="line">└───────┘    │                 │</span><br><span class="line">             │                 ▼</span><br><span class="line">             │     ┌───────────────────────┐</span><br><span class="line">             └─────│    View: user.jsp     │</span><br><span class="line">                   └───────────────────────┘</span><br></pre></td></tr></table></figure>
-<p>使用MVC模式的好处是，Controller专注于业务处理，它的处理结果就是Model。Model可以是一个JavaBean，也可以是一个包含多个对象的Map，Controller只负责把Model传递给View，View只负责把Model给“渲染”出来，这样，三者职责明确，且开发更简单，因为开发Controller时无需关注页面，开发View时无需关心如何创建Model。</p>
-<hr>
-<h2 id="MVC高级开发"><a href="#MVC高级开发" class="headerlink" title="MVC高级开发"></a>MVC高级开发</h2><p>通过普通的Java类实现MVC的Controller？类似下面的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@GetMapping(&quot;/signin&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">signin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/signin&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSignin</span><span class="params">(SignInBean bean)</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/signout&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">signout</span><span class="params">(HttpSession session)</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的这个Java类每个方法都对应一个GET或POST请求，方法返回值是<code>ModelAndView</code>，它包含一个View的路径以及一个Model，这样，再由MVC框架处理后返回给浏览器。</p>
-<p>如果是GET请求，我们希望MVC框架能直接把URL参数按方法参数对应起来然后传入：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">hello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果是POST请求，我们希望MVC框架能直接把Post参数变成一个JavaBean后通过方法参数传入：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/signin&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doSignin</span><span class="params">(SignInBean bean)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Filter过滤器"><a href="#Filter过滤器" class="headerlink" title="Filter过滤器"></a>Filter过滤器</h2><p>把一些公用逻辑从各个Servlet中抽离出来，在HTTP请求到达Servlet之前，可以被一个或多个Filter预处理，类似打印日志、登录检查等，可以放到Filter中。</p>
-<p>最简单的EncodingFilter，强制把输入和输出的编码设置为UTF-8：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(urlPatterns = &#x27;/*&#x27;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EncodingFilter</span> <span class="title">implement</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;EncodingFilter:doFilter&quot;</span>);</span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        chain.doFilter(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编写Filter时，必须实现<code>Filter</code>接口，在<code>doFilter()</code>方法内部，要继续处理请求，必须调用<code>chain.doFilter()</code>。最后，用<code>@WebFilter</code>注解标注该Filter需要过滤的URL。</p>
-<p>添加了Filter之后，整个请求的处理架构如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">            ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐</span><br><span class="line">                                   /             ┌──────────────┐</span><br><span class="line">            │                     ┌─────────────&gt;│ IndexServlet │ │</span><br><span class="line">                                  │              └──────────────┘</span><br><span class="line">            │                     │/signin       ┌──────────────┐ │</span><br><span class="line">                                  ├─────────────&gt;│SignInServlet │</span><br><span class="line">            │                     │              └──────────────┘ │</span><br><span class="line">                                  │/signout      ┌──────────────┐</span><br><span class="line">┌───────┐   │   ┌──────────────┐  ├─────────────&gt;│SignOutServlet│ │</span><br><span class="line">│Browser│──────&gt;│EncodingFilter├──┤              └──────────────┘</span><br><span class="line">└───────┘   │   └──────────────┘  │/user/profile ┌──────────────┐ │</span><br><span class="line">                                  ├─────────────&gt;│ProfileServlet│</span><br><span class="line">            │                     │              └──────────────┘ │</span><br><span class="line">                                  │/user/post    ┌──────────────┐</span><br><span class="line">            │                     ├─────────────&gt;│ PostServlet  │ │</span><br><span class="line">                                  │              └──────────────┘</span><br><span class="line">            │                     │/user/reply   ┌──────────────┐ │</span><br><span class="line">                                  └─────────────&gt;│ ReplyServlet │</span><br><span class="line">            │                                    └──────────────┘ │</span><br><span class="line">             ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</span><br></pre></td></tr></table></figure>
-
-
-<p>LogFilter：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(&quot;/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;LogFilter: process &quot;</span> + ((HttpServletRequest) request).getRequestURI());</span><br><span class="line">        chain.doFilter(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>多个Filter会组成一个链，每个请求都被链上的Filter依次处理：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">                                        ┌────────┐</span><br><span class="line">                                     ┌─&gt;│ServletA│</span><br><span class="line">                                     │  └────────┘</span><br><span class="line">    ┌──────────────┐    ┌─────────┐  │  ┌────────┐</span><br><span class="line">───&gt;│EncodingFilter│───&gt;│LogFilter│──┼─&gt;│ServletB│</span><br><span class="line">    └──────────────┘    └─────────┘  │  └────────┘</span><br><span class="line">                                     │  ┌────────┐</span><br><span class="line">                                     └─&gt;│ServletC│</span><br><span class="line">                                        └────────┘</span><br></pre></td></tr></table></figure>
-
-
-<p><font color="green">Filter的顺序确实对处理的结果有影响</font></p>
-<p>只对特定路径进行过滤的Filter，例如<code>AuthFilter</code>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(&quot;/user/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;AuthFilter: check authentication&quot;</span>);</span><br><span class="line">        HttpServletRequest req = (HttpServletRequest) request;</span><br><span class="line">        HttpServletResponse resp = (HttpServletResponse) response;</span><br><span class="line">        <span class="keyword">if</span> (req.getSession().getAttribute(<span class="string">&quot;user&quot;</span>) == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 未登录，自动跳转到登录页:</span></span><br><span class="line">            System.out.println(<span class="string">&quot;AuthFilter: not signin!&quot;</span>);</span><br><span class="line">            resp.sendRedirect(<span class="string">&quot;/signin&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 已登录，继续处理:</span></span><br><span class="line">            chain.doFilter(request, response);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>当用户没有登录时，在<code>AuthFilter</code>内部，直接调用<code>resp.sendRedirect()</code>发送重定向，且没有调用<code>chain.doFilter()</code>，因此，当用户没有登录时，请求到达<code>AuthFilter</code>后，不再继续处理，即后续的Filter和任何Servlet都没有机会处理该请求了。</p>
-<p><font color="green">如果Filter要使请求继续被处理，就一定要调用chain.doFilter()！</font></p>
-<hr>
-<h2 id="Listener监听器"><a href="#Listener监听器" class="headerlink" title="Listener监听器"></a>Listener监听器</h2><hr>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>一个具体的Web应用程序为例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">webapp</span><br><span class="line">├── pom.xml</span><br><span class="line">└── src</span><br><span class="line">    └── main</span><br><span class="line">        ├── java</span><br><span class="line">        │   └── com</span><br><span class="line">        │       └── itranswarp</span><br><span class="line">        │           └── learnjava</span><br><span class="line">        │               ├── Main.java</span><br><span class="line">        │               ├── filter</span><br><span class="line">        │               │   └── EncodingFilter.java</span><br><span class="line">        │               └── servlet</span><br><span class="line">        │                   ├── FileServlet.java</span><br><span class="line">        │                   └── HelloServlet.java</span><br><span class="line">        ├── resources</span><br><span class="line">        └── webapp</span><br><span class="line">            ├── WEB-INF</span><br><span class="line">            │   └── web.xml</span><br><span class="line">            ├── favicon.ico</span><br><span class="line">            └── static</span><br><span class="line">                └── bootstrap.css</span><br></pre></td></tr></table></figure>
-
-
-<p>一个处理静态文件的<code>FileServlet</code>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(urlPatterns = &quot;/static/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        ServletContext ctx = req.getServletContext();</span><br><span class="line">        <span class="comment">// RequestURI包含ContextPath,需要去掉:</span></span><br><span class="line">        String urlPath = req.getRequestURI().substring(ctx.getContextPath().length());</span><br><span class="line">        <span class="comment">// 获取真实文件路径:</span></span><br><span class="line">        String filepath = ctx.getRealPath(urlPath);</span><br><span class="line">        <span class="keyword">if</span> (filepath == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 无法获取到路径:</span></span><br><span class="line">            resp.sendError(HttpServletResponse.SC_NOT_FOUND);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Path path = Paths.get(filepath);</span><br><span class="line">        <span class="keyword">if</span> (!path.toFile().isFile()) &#123;</span><br><span class="line">            <span class="comment">// 文件不存在:</span></span><br><span class="line">            resp.sendError(HttpServletResponse.SC_NOT_FOUND);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 根据文件名猜测Content-Type:</span></span><br><span class="line">        String mime = Files.probeContentType(path);</span><br><span class="line">        <span class="keyword">if</span> (mime == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mime = <span class="string">&quot;application/octet-stream&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        resp.setContentType(mime);</span><br><span class="line">        <span class="comment">// 读取文件并写入Response:</span></span><br><span class="line">        OutputStream output = resp.getOutputStream();</span><br><span class="line">        <span class="keyword">try</span> (InputStream input = <span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(filepath))) &#123;</span><br><span class="line">            input.transferTo(output);</span><br><span class="line">        &#125;</span><br><span class="line">        output.flush();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>使用类似Nginx这样的服务器充当反向代理和静态服务器，只有动态请求才会放行给应用服务器，所以，部署架构如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">             ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐</span><br><span class="line"></span><br><span class="line">             │  /static/*            │</span><br><span class="line">┌───────┐      ┌──────────&gt; file</span><br><span class="line">│Browser├────┼─┤                     │    ┌ ─ ─ ─ ─ ─ ─ ┐</span><br><span class="line">└───────┘      │/          proxy_pass</span><br><span class="line">             │ └─────────────────────┼───&gt;│  Web Server │</span><br><span class="line">                       Nginx</span><br><span class="line">             └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘    └ ─ ─ ─ ─ ─ ─ ┘</span><br></pre></td></tr></table></figure>
-<p>实现上述功能的Nginx配置文件如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name www.local.liaoxuefeng.com</span><br><span class="line"></span><br><span class="line">    # 静态文件根目录:</span><br><span class="line">    root /path/to/src/main/webapp;</span><br><span class="line"></span><br><span class="line">    access_log /var/log/nginx/webapp_access_log;</span><br><span class="line">    error_log  /var/log/nginx/webapp_error_log;</span><br><span class="line"></span><br><span class="line">    # 处理静态文件请求:</span><br><span class="line">    location /static &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 处理静态文件请求:</span><br><span class="line">    location /favicon.ico &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 不允许请求/WEB-INF:</span><br><span class="line">    location /WEB-INF &#123;</span><br><span class="line">        return 404;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 其他请求转发给Tomcat:</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass       http://127.0.0.1:8080;</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用Nginx配合Tomcat服务器，可以充分发挥Nginx作为网关的优势，既可以高效处理静态文件，也可以把https、防火墙、限速、反爬虫等功能放到Nginx中，使得WebApp能专注于业务逻辑。</p>
-
-      
-	
-	<!- 百度自动推送方式提交 -->
-	
-	  <script>
-	  (function(){
-		  var bp = document.createElement('script');
-		  var curProtocol = window.location.protocol.split(':')[0];
-		  if (curProtocol === 'https') {
-			  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-		  }
-		  else {
-			  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-		  }
-		  var s = document.getElementsByTagName("script")[0];
-		  s.parentNode.insertBefore(bp, s);
-	  })();
-	  </script>
-	
-	<!- 百度自动推送方式提交结束 -->
-	
-	  
-	
-	
-	  <div class="declare">
-		<strong>本文作者：</strong>
-		
-		  Yao Zhu
-		
-		
-		<br>
-		<strong class="create-time">发布时间：</strong>
-		2020-03-13
-		<br>
-		<strong class="update-time">最后更新：</strong>
-		2020-05-01
-		<br>
-		
-		<strong>本文链接：</strong>
-		https://juoyo.github.io/posts/4b7be044.html
-		<br>
-		<strong>版权声明：</strong>
-		本作品采用
-		<a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-		进行许可。转载请注明出处！
-		
-		  <br>
-		  <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="/pictures/licensee_img-88x31.png"/></a>
-		
-	  </div>
-	
-
-	  
-	  
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/pictures/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/pictures/wechat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		
-		</ul>
-	</div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/posts/5a8a6c8d.html">post</a>
+    </h1>
+  
 
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java简明//" class="article-tag-list-link color2">Java简明</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        <div class="article-info info-on-right">
+          
+          
 
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://juoyo.github.io/posts/4b7be044.html" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/posts/ca4a0ef4.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          机器学习系列三  线性回归
-        
-      </div>
-    </a>
   
   
-    <a href="/posts/fe6c277a.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java语言ch19 JDBC</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">Web基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text">HTTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-Server"><span class="toc-number">1.2.</span> <span class="toc-text">HTTP Server</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet"><span class="toc-number">2.</span> <span class="toc-text">Servlet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP"><span class="toc-number">3.</span> <span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC%E5%BC%80%E5%8F%91"><span class="toc-number">4.</span> <span class="toc-text">MVC开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91"><span class="toc-number">5.</span> <span class="toc-text">MVC高级开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">Filter过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listener%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">Listener监听器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">8.</span> <span class="toc-text">部署</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-  
-   <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80NDY3NS8yMTIwMQ==">
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
+    </div></section>
   
 
-  
-  
-  
-		
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -744,8 +332,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
