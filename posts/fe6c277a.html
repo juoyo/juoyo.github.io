@@ -83,7 +83,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -278,7 +278,7 @@
         <p>Java为关系数据库定义了一套标准的访问接口：JDBC（Java Database Connectivity）。</p>
 <a id="more"></a>
 
-<h2 id="JDBC简介"><a href="#JDBC简介" class="headerlink" title="JDBC简介"></a>JDBC简介</h2><p>把某个数据库实现了JDBC接口的jar包称为JDBC驱动。</p>
+<h2><span id="jdbc简介">JDBC简介</span></h2><p>把某个数据库实现了JDBC接口的jar包称为JDBC驱动。</p>
 <p>添加一个Maven依赖：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;5.1.47&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <p>注意：添加依赖的<code>scope</code>是<code>runtime</code>，因为编译Java程序并不需要MySQL的这个jar包，只有在运行期才需要使用。</p>
@@ -286,12 +286,12 @@
 
 
 <hr>
-<h2 id="JDBC连接"><a href="#JDBC连接" class="headerlink" title="JDBC连接"></a>JDBC连接</h2><p>要获取数据库连接，使用如下代码：</p>
+<h2><span id="jdbc连接">JDBC连接</span></h2><p>要获取数据库连接，使用如下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; JDBC连接的URL, 不同数据库有不同的格式:</span><br><span class="line">String JDBC_URL &#x3D; &quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test&quot;;</span><br><span class="line">String JDBC_USER &#x3D; &quot;root&quot;;</span><br><span class="line">String JDBC_PASSWORD &#x3D; &quot;password&quot;;</span><br><span class="line">&#x2F;&#x2F; 获取连接:</span><br><span class="line">Connection conn &#x3D; DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);</span><br><span class="line">&#x2F;&#x2F; TODO: 访问数据库...</span><br><span class="line">&#x2F;&#x2F; 关闭连接:</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure>
 <p>核心代码是<code>DriverManager</code>提供的静态方法<code>getConnection()</code>。<code>DriverManager</code>会自动扫描classpath，找到所有的JDBC驱动，然后根据我们传入的URL自动挑选一个合适的驱动。</p>
 <p>因为JDBC连接是一种昂贵的资源，所以使用后要及时释放。使用<code>try (resource)</code>来自动释放JDBC连接是一个好方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">try (Connection conn &#x3D; DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="JDBC查询"><a href="#JDBC查询" class="headerlink" title="JDBC查询"></a>JDBC查询</h2><p>获取到JDBC连接后，下一步我们就可以查询数据库了。查询数据库分以下几步：</p>
+<h2><span id="jdbc查询">JDBC查询</span></h2><p>获取到JDBC连接后，下一步我们就可以查询数据库了。查询数据库分以下几步：</p>
 <p>第一步，通过<code>Connection</code>提供的<code>createStatement()</code>方法创建一个<code>Statement</code>对象，用于执行一个查询；</p>
 <p>第二步，执行<code>Statement</code>对象提供的<code>executeQuery(&quot;SELECT * FROM students&quot;)</code>并传入SQL语句，执行查询并获得返回的结果集，使用<code>ResultSet</code>来引用这个结果集；</p>
 <p>第三步，反复调用<code>ResultSet</code>的<code>next()</code>方法并读取每一行结果。</p>
@@ -299,17 +299,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">try (Connection conn &#x3D; DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    try (Statement stmt &#x3D; conn.createStatement()) &#123;</span><br><span class="line">        try (ResultSet rs &#x3D; stmt.executeQuery(&quot;SELECT id, grade, name, gender FROM students WHERE gender&#x3D;\&#39;M\&#39;&quot;)) &#123;</span><br><span class="line">            while (rs.next()) &#123;</span><br><span class="line">                long id &#x3D; rs.getLong(1); &#x2F;&#x2F; 注意：索引从1开始</span><br><span class="line">                long grade &#x3D; rs.getLong(2);</span><br><span class="line">                String name &#x3D; rs.getString(3);</span><br><span class="line">                String gender &#x3D; rs.getString(4);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="插入INSERT"><a href="#插入INSERT" class="headerlink" title="插入INSERT"></a>插入INSERT</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(</span><br><span class="line">            <span class="string">&quot;INSERT INTO students (id, grade, name, gender) VALUES (?,?,?,?)&quot;</span>)) &#123;</span><br><span class="line">        ps.setObject(<span class="number">1</span>, <span class="number">999</span>); <span class="comment">// 注意：索引从1开始</span></span><br><span class="line">        ps.setObject(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// grade</span></span><br><span class="line">        ps.setObject(<span class="number">3</span>, <span class="string">&quot;Bob&quot;</span>); <span class="comment">// name</span></span><br><span class="line">        ps.setObject(<span class="number">4</span>, <span class="string">&quot;M&quot;</span>); <span class="comment">// gender</span></span><br><span class="line">        <span class="keyword">int</span> n = ps.executeUpdate(); <span class="comment">// 1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="插入insert">插入INSERT</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(</span><br><span class="line">            <span class="string">&quot;INSERT INTO students (id, grade, name, gender) VALUES (?,?,?,?)&quot;</span>)) &#123;</span><br><span class="line">        ps.setObject(<span class="number">1</span>, <span class="number">999</span>); <span class="comment">// 注意：索引从1开始</span></span><br><span class="line">        ps.setObject(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// grade</span></span><br><span class="line">        ps.setObject(<span class="number">3</span>, <span class="string">&quot;Bob&quot;</span>); <span class="comment">// name</span></span><br><span class="line">        ps.setObject(<span class="number">4</span>, <span class="string">&quot;M&quot;</span>); <span class="comment">// gender</span></span><br><span class="line">        <span class="keyword">int</span> n = ps.executeUpdate(); <span class="comment">// 1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="更新UPDATE"><a href="#更新UPDATE" class="headerlink" title="更新UPDATE"></a>更新UPDATE</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;UPDATE students SET name=? WHERE id=?&quot;</span>)) &#123;</span><br><span class="line">        ps.setObject(<span class="number">1</span>, <span class="string">&quot;Bob&quot;</span>); <span class="comment">// 注意：索引从1开始</span></span><br><span class="line">        ps.setObject(<span class="number">2</span>, <span class="number">999</span>);</span><br><span class="line">        <span class="keyword">int</span> n = ps.executeUpdate(); <span class="comment">// 返回更新的行数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="更新update">更新UPDATE</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;UPDATE students SET name=? WHERE id=?&quot;</span>)) &#123;</span><br><span class="line">        ps.setObject(<span class="number">1</span>, <span class="string">&quot;Bob&quot;</span>); <span class="comment">// 注意：索引从1开始</span></span><br><span class="line">        ps.setObject(<span class="number">2</span>, <span class="number">999</span>);</span><br><span class="line">        <span class="keyword">int</span> n = ps.executeUpdate(); <span class="comment">// 返回更新的行数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="删除DELETE"><a href="#删除DELETE" class="headerlink" title="删除DELETE"></a>删除DELETE</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;DELETE FROM students WHERE id=?&quot;</span>)) &#123;</span><br><span class="line">        ps.setObject(<span class="number">1</span>, <span class="number">999</span>); <span class="comment">// 注意：索引从1开始</span></span><br><span class="line">        <span class="keyword">int</span> n = ps.executeUpdate(); <span class="comment">// 删除的行数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="删除delete">删除DELETE</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD) &#123;</span><br><span class="line">    <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;DELETE FROM students WHERE id=?&quot;</span>)) &#123;</span><br><span class="line">        ps.setObject(<span class="number">1</span>, <span class="number">999</span>); <span class="comment">// 注意：索引从1开始</span></span><br><span class="line">        <span class="keyword">int</span> n = ps.executeUpdate(); <span class="comment">// 删除的行数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="JDBC事务"><a href="#JDBC事务" class="headerlink" title="JDBC事务"></a>JDBC事务</h2><p>数据库事务（Transaction）是由若干个SQL语句构成的一个操作序列，有点类似于Java的<code>synchronized</code>同步。数据库系统保证在一个事务中的所有SQL要么全部执行成功，要么全部不执行，即数据库事务具有ACID特性：</p>
+<h2><span id="jdbc事务">JDBC事务</span></h2><p>数据库事务（Transaction）是由若干个SQL语句构成的一个操作序列，有点类似于Java的<code>synchronized</code>同步。数据库系统保证在一个事务中的所有SQL要么全部执行成功，要么全部不执行，即数据库事务具有ACID特性：</p>
 <ul>
 <li>Atomicity：原子性</li>
 <li>Consistency：一致性</li>
@@ -317,8 +317,8 @@
 <li>Durability：持久性</li>
 </ul>
 <hr>
-<h2 id="JDBC-Batch"><a href="#JDBC-Batch" class="headerlink" title="JDBC Batch"></a>JDBC Batch</h2><hr>
-<h2 id="JDBC连接池"><a href="#JDBC连接池" class="headerlink" title="JDBC连接池"></a>JDBC连接池</h2>
+<h2><span id="jdbc-batch">JDBC Batch</span></h2><hr>
+<h2><span id="jdbc连接池">JDBC连接池</span></h2>
       
 	
 	<!- 百度自动推送方式提交 -->
@@ -533,7 +533,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">JDBC简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">JDBC连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">JDBC查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5INSERT"><span class="toc-number">3.1.</span> <span class="toc-text">插入INSERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0UPDATE"><span class="toc-number">3.2.</span> <span class="toc-text">更新UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4DELETE"><span class="toc-number">3.3.</span> <span class="toc-text">删除DELETE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC%E4%BA%8B%E5%8A%A1"><span class="toc-number">4.</span> <span class="toc-text">JDBC事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC-Batch"><span class="toc-number">5.</span> <span class="toc-text">JDBC Batch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-number">6.</span> <span class="toc-text">JDBC连接池</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">JDBC简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">JDBC连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">JDBC查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">插入INSERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">更新UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">删除DELETE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">JDBC事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">JDBC Batch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">JDBC连接池</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -755,10 +755,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -771,15 +767,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -839,10 +839,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -851,19 +847,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,6 +872,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -911,11 +911,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,15 +923,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,11 +947,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -964,6 +956,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,6 +979,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -999,11 +999,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1011,15 +1015,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1043,6 +1047,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1056,22 +1064,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1091,6 +1083,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1103,11 +1111,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1327,19 +1335,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

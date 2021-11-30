@@ -86,7 +86,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -281,12 +281,12 @@
         <p>多模态数据主要指声音、图像、文字，以及传感器数据，本文所指多模态数据不涉及传感器数据。如何分析多模态数据，是当前情感分析领域面临的机遇和挑战。</p>
 <a id="more"></a>
 
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>一方面，以往情感分析聚焦于单个模态。如文本情感分析着眼于分析，挖掘和推理文本中蕴含的情感。另一方面，多模态数据与单模态数据相比，包含了更多的信息，多个模态之间可以互相补充。</p>
+<h2><span id="介绍">介绍</span></h2><p>一方面，以往情感分析聚焦于单个模态。如文本情感分析着眼于分析，挖掘和推理文本中蕴含的情感。另一方面，多模态数据与单模态数据相比，包含了更多的信息，多个模态之间可以互相补充。</p>
 <p>不同模态信息相互补充，可以帮助机器更好地理解情感。从人机交互角度出发，多模态情感分析可以使得机器在更加自然的情况下与人进行交互。机器可以基于图像中人的表情和手势，声音中的音调，和识别出的自然语言来理解用户情感，进而进行反馈。</p>
 <p>虽然多模态数据包含了更多的信息，但如何进行多模态数据的融合，使得利用多模态数据能够提升效果，而不是起了反作用。如何利用不同模态数据之间的对齐信息，建模不同模态数据之间关联。</p>
 <p>为了能够更好的介绍多模态情感分析领域的相关研究，本文梳理了目前多模态情感分析领域相关任务并总结了常用的数据集及对应的方法。</p>
 <hr>
-<h2 id="相关任务概览"><a href="#相关任务概览" class="headerlink" title="相关任务概览"></a>相关任务概览</h2><p>本文通过不同模态组合（图文：文本+图片，视频：文本+图片+音频）来梳理相关的研究任务。</p>
+<h2><span id="相关任务概览">相关任务概览</span></h2><p>本文通过不同模态组合（图文：文本+图片，视频：文本+图片+音频）来梳理相关的研究任务。</p>
 <ul>
 <li><p>面向图文的情感分析任务有面向图文的情感分类任务，面向图文的方面级情感分类任务和面向图文的反讽识别任务</p>
 </li>
@@ -295,11 +295,11 @@
 </ul>
 <p><img src="/posts/156aeb2d.htm/A_JS\hexo\source_posts\多模态情感分析简述\1.jpg"> </p>
 <hr>
-<h2 id="数据集和方法"><a href="#数据集和方法" class="headerlink" title="数据集和方法"></a>数据集和方法</h2><p>本文总结了13个公开数据集，其中包括8个视频数据集和5个图文数据集。本文还总结了与面向图文的情感分类任务，面向图文的方面级情感分类任务，面向图文的反讽识别任务，面向评论视频的情感分类任务和面向对话视频的情感分类任务五个任务对应的相关研究方法。</p>
-<h3 id="面向图文的情感分类任务"><a href="#面向图文的情感分类任务" class="headerlink" title="面向图文的情感分类任务"></a>面向图文的情感分类任务</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><p>Yelp数据集来自Yelp.com评论网站，收集的是波士顿，芝加哥，洛杉矶，纽约，旧金山五个城市关于餐厅和食品的Yelp上的评论。一共有44305条评论，244569张图片（每条评论的图片有多张），平均每条评论有13个句子，230个单词。数据集的情感标注是对每条评论的情感倾向打1,2,3,4,5五个分值。</p>
+<h2><span id="数据集和方法">数据集和方法</span></h2><p>本文总结了13个公开数据集，其中包括8个视频数据集和5个图文数据集。本文还总结了与面向图文的情感分类任务，面向图文的方面级情感分类任务，面向图文的反讽识别任务，面向评论视频的情感分类任务和面向对话视频的情感分类任务五个任务对应的相关研究方法。</p>
+<h3><span id="面向图文的情感分类任务">面向图文的情感分类任务</span></h3><h4><span id="数据集">数据集</span></h4><p>Yelp数据集来自Yelp.com评论网站，收集的是波士顿，芝加哥，洛杉矶，纽约，旧金山五个城市关于餐厅和食品的Yelp上的评论。一共有44305条评论，244569张图片（每条评论的图片有多张），平均每条评论有13个句子，230个单词。数据集的情感标注是对每条评论的情感倾向打1,2,3,4,5五个分值。</p>
 <p>Tumblr数据集是从Tumblr收集来的多模态情绪数据集。Tumblr是一种微博客服务，用户在上面发布的多媒体内容通常包含：图片、文本和标签。数据集是根据选定的十五种情绪搜索对应的情绪标签的推文，并且只选择其中既有文本又有图片的部分，然后进行了数据处理，删除了那些文本中原本就包含对应情绪词的内容，以及那些主要不是英文为主的推文。整个数据集共有256897个多模态推文，其中情绪标注为包含高兴，悲伤，厌恶在内的十五种情绪。</p>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><hr>
-<h3 id="面向图文的方面级情感分类任务"><a href="#面向图文的方面级情感分类任务" class="headerlink" title="面向图文的方面级情感分类任务"></a>面向图文的方面级情感分类任务</h3><h4 id="数据集-1"><a href="#数据集-1" class="headerlink" title="数据集"></a>数据集</h4>
+<h4><span id="方法">方法</span></h4><hr>
+<h3><span id="面向图文的方面级情感分类任务">面向图文的方面级情感分类任务</span></h3><h4><span id="数据集">数据集</span></h4>
       
 	
 	<!- 百度自动推送方式提交 -->
@@ -507,7 +507,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E4%BB%BB%E5%8A%A1%E6%A6%82%E8%A7%88"><span class="toc-number">2.</span> <span class="toc-text">相关任务概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">数据集和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%9B%BE%E6%96%87%E7%9A%84%E6%83%85%E6%84%9F%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.1.</span> <span class="toc-text">面向图文的情感分类任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">3.1.1.</span> <span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%9B%BE%E6%96%87%E7%9A%84%E6%96%B9%E9%9D%A2%E7%BA%A7%E6%83%85%E6%84%9F%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.2.</span> <span class="toc-text">面向图文的方面级情感分类任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">数据集</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">相关任务概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">数据集和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">面向图文的情感分类任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.1.1.</span> <span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.1.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">面向图文的方面级情感分类任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.2.1.</span> <span class="toc-text">数据集</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -729,10 +729,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -745,15 +741,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,10 +813,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -825,19 +821,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -854,6 +846,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,11 +885,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,15 +897,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -925,11 +921,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,6 +930,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -957,6 +953,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -973,11 +973,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -985,15 +989,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1017,6 +1021,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1030,22 +1038,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1065,6 +1057,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1077,11 +1085,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1301,19 +1309,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

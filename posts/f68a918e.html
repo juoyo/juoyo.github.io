@@ -100,7 +100,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -295,14 +295,14 @@
         <p>本文主要内容有SLR分析、LR（1）分析、LALR分析、二义性文法的LR分析、LR分析中的错误处理。</p>
 <a id="more"></a>
 
-<h2 id="SLR分析"><a href="#SLR分析" class="headerlink" title="SLR分析"></a>SLR分析</h2><h3 id="LR-0-分析过程中的冲突"><a href="#LR-0-分析过程中的冲突" class="headerlink" title="LR(0) 分析过程中的冲突"></a>LR(0) 分析过程中的冲突</h3><p><img src="/posts/f68a918e.htm/1.gif" alt="LR(0)分析冲突"></p>
-<h3 id="SLR-分析"><a href="#SLR-分析" class="headerlink" title="SLR 分析"></a>SLR 分析</h3><h4 id="SLR分析法的基本思想"><a href="#SLR分析法的基本思想" class="headerlink" title="SLR分析法的基本思想"></a>SLR分析法的基本思想</h4><p><img src="/posts/f68a918e.htm/2.gif" alt="LR(0)分析冲突"></p>
-<h3 id="SLR分析表"><a href="#SLR分析表" class="headerlink" title="SLR分析表"></a>SLR分析表</h3><p><img src="/posts/f68a918e.htm/3.gif" alt="LR(0)分析冲突"></p>
+<h2><span id="slr分析">SLR分析</span></h2><h3><span id="lr0-分析过程中的冲突">LR(0) 分析过程中的冲突</span></h3><p><img src="/posts/f68a918e.htm/1.gif" alt="LR(0)分析冲突"></p>
+<h3><span id="slr-分析">SLR 分析</span></h3><h4><span id="slr分析法的基本思想">SLR分析法的基本思想</span></h4><p><img src="/posts/f68a918e.htm/2.gif" alt="LR(0)分析冲突"></p>
+<h3><span id="slr分析表">SLR分析表</span></h3><p><img src="/posts/f68a918e.htm/3.gif" alt="LR(0)分析冲突"></p>
 <p><img src="/posts/f68a918e.htm/4.gif" alt="LR(0)分析冲突"></p>
 <p>如果给定文法的SLR分析表中不存在有冲突的动作，那么该文法称为<font color="red">SLR文法</font>&gt;。 </p>
-<h3 id="SLR-分析中的冲突"><a href="#SLR-分析中的冲突" class="headerlink" title="SLR 分析中的冲突"></a>SLR 分析中的冲突</h3><p><img src="/posts/f68a918e.htm/5.gif" alt="LR(0)分析冲突"></p>
-<h2 id="LR-1-分析"><a href="#LR-1-分析" class="headerlink" title="LR(1)分析"></a>LR(1)分析</h2><h3 id="SLR分析存在的问题"><a href="#SLR分析存在的问题" class="headerlink" title="SLR分析存在的问题"></a><strong>SLR分析存在的问题</strong></h3><p>SLR只是简单地考察<font color="red">下一个输入符号</font>b是否属于与归约项目A→α相关联的<font color="red">FOLLOW(A)</font>， 但b∈FOLLOW(A)只是归约α的一个必要条件，而非充分条件。</p>
-<h3 id="LR-1-分析法的提出"><a href="#LR-1-分析法的提出" class="headerlink" title="LR(1)分析法的提出"></a>LR(1)分析法的提出</h3><p>对于产生式 A→α的归约，在不同的使用位置，A会要求不同的后继符号 </p>
+<h3><span id="slr-分析中的冲突">SLR 分析中的冲突</span></h3><p><img src="/posts/f68a918e.htm/5.gif" alt="LR(0)分析冲突"></p>
+<h2><span id="lr1分析">LR(1)分析</span></h2><h3><span id="slr分析存在的问题"><strong>SLR分析存在的问题</strong></span></h3><p>SLR只是简单地考察<font color="red">下一个输入符号</font>b是否属于与归约项目A→α相关联的<font color="red">FOLLOW(A)</font>， 但b∈FOLLOW(A)只是归约α的一个必要条件，而非充分条件。</p>
+<h3><span id="lr1分析法的提出">LR(1)分析法的提出</span></h3><p>对于产生式 A→α的归约，在不同的使用位置，A会要求不同的后继符号 </p>
 <p><img src="/posts/f68a918e.htm/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86ch6-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%904%5C6.gif"></p>
 <p>在特定位置， A的后继符集合是FOLLOW(A)的子集 </p>
 <p><img src="/posts/f68a918e.htm/7.gif"></p>
@@ -311,7 +311,7 @@
 <p><img src="/posts/f68a918e.htm/10.gif"></p>
 <p>如果除展望符外，两个LR(1)项目集是相同的，则称这两个LR(1)项目集是<font color="red">同心</font>&gt;的 </p>
 <p>如果LR(1)分析表中没有语法分析动作冲突，那么给定的文法就称为LR(1)文法 </p>
-<h2 id="LALR分析法"><a href="#LALR分析法" class="headerlink" title="LALR分析法"></a>LALR分析法</h2><h3 id="LALR-lookahead-LR-分析的基本思想"><a href="#LALR-lookahead-LR-分析的基本思想" class="headerlink" title="LALR ( lookahead-LR )分析的基本思想"></a>LALR ( lookahead-LR )分析的基本思想</h3><ol>
+<h2><span id="lalr分析法">LALR分析法</span></h2><h3><span id="lalr-lookahead-lr-分析的基本思想">LALR ( lookahead-LR )分析的基本思想</span></h3><ol>
 <li><p>寻找具有相同核心的LR (1) 项集，并将这些项集合并为一个项集。 所谓项集的核心就是其第一分<br>量的集合 </p>
 </li>
 <li><p>然后根据合并后得到的项集族构造语法分析表 </p>
@@ -322,7 +322,7 @@
 <p><img src="/posts/f68a918e.htm/11.gif"></p>
 <p><img src="/posts/f68a918e.htm/12.gif"></p>
 <p><img src="/posts/f68a918e.htm/13.gif"></p>
-<h3 id="LALR-1-的特点"><a href="#LALR-1-的特点" class="headerlink" title="LALR(1)的特点"></a>LALR(1)的特点</h3><ol>
+<h3><span id="lalr1的特点">LALR(1)的特点</span></h3><ol>
 <li><p>形式上与LR(1)相同 </p>
 </li>
 <li><p>大小上与LR(0)/SLR相当</p>
@@ -332,7 +332,7 @@
 <li><p>合并后的展望符集合仍为FOLLOW集的子集</p>
 </li>
 </ol>
-<h2 id="二义性文法的LR分析"><a href="#二义性文法的LR分析" class="headerlink" title="二义性文法的LR分析"></a>二义性文法的LR分析</h2><h2 id="LR分析中的错误处理"><a href="#LR分析中的错误处理" class="headerlink" title="LR分析中的错误处理"></a>LR分析中的错误处理</h2>
+<h2><span id="二义性文法的lr分析">二义性文法的LR分析</span></h2><h2><span id="lr分析中的错误处理">LR分析中的错误处理</span></h2>
       
 	
 	<!- 百度自动推送方式提交 -->
@@ -534,7 +534,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SLR%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">SLR分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%86%B2%E7%AA%81"><span class="toc-number">1.1.</span> <span class="toc-text">LR(0) 分析过程中的冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">SLR 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SLR%E5%88%86%E6%9E%90%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-number">1.2.1.</span> <span class="toc-text">SLR分析法的基本思想</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR%E5%88%86%E6%9E%90%E8%A1%A8"><span class="toc-number">1.3.</span> <span class="toc-text">SLR分析表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR-%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E5%86%B2%E7%AA%81"><span class="toc-number">1.4.</span> <span class="toc-text">SLR 分析中的冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LR-1-%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">LR(1)分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR%E5%88%86%E6%9E%90%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">SLR分析存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-%E5%88%86%E6%9E%90%E6%B3%95%E7%9A%84%E6%8F%90%E5%87%BA"><span class="toc-number">2.2.</span> <span class="toc-text">LR(1)分析法的提出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LALR%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">LALR分析法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LALR-lookahead-LR-%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-number">3.1.</span> <span class="toc-text">LALR ( lookahead-LR )分析的基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LALR-1-%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.2.</span> <span class="toc-text">LALR(1)的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B9%89%E6%80%A7%E6%96%87%E6%B3%95%E7%9A%84LR%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">二义性文法的LR分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LR%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">LR分析中的错误处理</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">SLR分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">LR(0) 分析过程中的冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">SLR 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.1.</span> <span class="toc-text">SLR分析法的基本思想</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">SLR分析表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">SLR 分析中的冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">LR(1)分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">SLR分析存在的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">LR(1)分析法的提出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">LALR分析法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">LALR ( lookahead-LR )分析的基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">LALR(1)的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">二义性文法的LR分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">LR分析中的错误处理</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -756,10 +756,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -772,15 +768,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,10 +840,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -852,19 +848,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,6 +873,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -912,11 +912,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -924,15 +924,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,11 +948,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,6 +957,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -984,6 +980,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1000,11 +1000,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,15 +1016,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1044,6 +1048,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1057,22 +1065,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,6 +1084,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1104,11 +1112,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,19 +1336,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

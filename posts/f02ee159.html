@@ -84,7 +84,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -281,27 +281,27 @@
 
 
 
-<h2 id="1-介绍SVM"><a href="#1-介绍SVM" class="headerlink" title="1.介绍SVM"></a>1.介绍SVM</h2><hr>
-<h2 id="2-介绍Tensorflow的计算图"><a href="#2-介绍Tensorflow的计算图" class="headerlink" title="2. 介绍Tensorflow的计算图"></a>2. 介绍Tensorflow的计算图</h2><hr>
-<h2 id="3-GBDT、XGBoost的区别"><a href="#3-GBDT、XGBoost的区别" class="headerlink" title="3. GBDT、XGBoost的区别"></a>3. GBDT、XGBoost的区别</h2><p>XGBoost的优点：</p>
+<h2><span id="1介绍svm">1.介绍SVM</span></h2><hr>
+<h2><span id="2-介绍tensorflow的计算图">2. 介绍Tensorflow的计算图</span></h2><hr>
+<h2><span id="3-gbdt-xgboost的区别">3. GBDT、XGBoost的区别</span></h2><p>XGBoost的优点：</p>
 <ol>
 <li>损失函数用泰勒二项逼近，而GBDT用一阶导数</li>
 <li>对树结构进行正则化约束，防止模型过度复杂，降低过拟合</li>
 <li>节点分裂方式不同，GBDT用的基尼系数</li>
 </ol>
 <hr>
-<h2 id="4-k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？"><a href="#4-k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？" class="headerlink" title="4.k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？"></a>4.k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？</h2><p>曼哈顿距离只计算水平或垂直距离，有维数限制。欧氏距离可计算任何空间的距离计算问题。</p>
+<h2><span id="4k-means或knn计算与最近邻居的距离用欧氏距离为什么不用曼哈顿距离">4.k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？</span></h2><p>曼哈顿距离只计算水平或垂直距离，有维数限制。欧氏距离可计算任何空间的距离计算问题。</p>
 <hr>
-<h2 id="5-特征工程"><a href="#5-特征工程" class="headerlink" title="5. 特征工程"></a>5. 特征工程</h2><hr>
-<h2 id="6-LR"><a href="#6-LR" class="headerlink" title="6. LR"></a>6. LR</h2><p>建模、数据推导</p>
+<h2><span id="5-特征工程">5. 特征工程</span></h2><hr>
+<h2><span id="6-lr">6. LR</span></h2><p>建模、数据推导</p>
 <p>正则化</p>
 <p>LR和maxent模型关系</p>
 <p>LR为什么比线性回归好</p>
 <p>并行化怎么做，几种并行化方式</p>
 <hr>
-<h2 id="7-overfitting怎么解决"><a href="#7-overfitting怎么解决" class="headerlink" title="7. overfitting怎么解决"></a>7. overfitting怎么解决</h2><p>dropout、regularization、batch normalization</p>
+<h2><span id="7-overfitting怎么解决">7. overfitting怎么解决</span></h2><p>dropout、regularization、batch normalization</p>
 <hr>
-<h2 id="8-LR和SVM的联系与区别？"><a href="#8-LR和SVM的联系与区别？" class="headerlink" title="8.LR和SVM的联系与区别？"></a>8.LR和SVM的联系与区别？</h2><p>联系：</p>
+<h2><span id="8lr和svm的联系与区别">8.LR和SVM的联系与区别？</span></h2><p>联系：</p>
 <ol>
 <li>LR和SVM都可处理分类问题，且一般都处理线性二分类 。</li>
 <li>都增加不同的正则化项，如L1、L2，实验中二者效果接近。</li>
@@ -314,46 +314,46 @@
 <li>LR适用于大规模线性分类，SVM转为对偶问题后，分类只需计算与少数几个支持向量的距离，进行复杂核函数计算时优势明显。</li>
 </ol>
 <hr>
-<h2 id="9-LR与线性回归的区别与联系？"><a href="#9-LR与线性回归的区别与联系？" class="headerlink" title="9. LR与线性回归的区别与联系？"></a>9. LR与线性回归的区别与联系？</h2><ol>
+<h2><span id="9-lr与线性回归的区别与联系">9. LR与线性回归的区别与联系？</span></h2><ol>
 <li>逻辑回归、线性回归均是广义线性回归</li>
 <li>经典线性模型优化目标函数是最小二乘，而逻辑回归是似然函数</li>
 <li>线性回归预测值在R内，分类范围[0, 1]。逻辑回归是减少预测范围，将预测值限定为[0, 1]之间的回归模型。LR鲁棒性更好。</li>
 </ol>
 <hr>
-<h2 id="10-XGBoost用泰勒展开原因"><a href="#10-XGBoost用泰勒展开原因" class="headerlink" title="10.XGBoost用泰勒展开原因"></a>10.XGBoost用泰勒展开原因</h2><p>XGBoost使用一阶和二阶偏导，二阶导数有利于梯度下降更快更准。泰勒展开到二阶导数形式，可以在不选定损失函数具体形式的情况下用于算法优化分析。本质上把损失函数的选取和模型算法优化/参数选取分开，去耦合增加XGBoost的适用性。</p>
+<h2><span id="10xgboost用泰勒展开原因">10.XGBoost用泰勒展开原因</span></h2><p>XGBoost使用一阶和二阶偏导，二阶导数有利于梯度下降更快更准。泰勒展开到二阶导数形式，可以在不选定损失函数具体形式的情况下用于算法优化分析。本质上把损失函数的选取和模型算法优化/参数选取分开，去耦合增加XGBoost的适用性。</p>
 <hr>
-<h2 id="11-XGBoost如何寻找最优特征？"><a href="#11-XGBoost如何寻找最优特征？" class="headerlink" title="11.XGBoost如何寻找最优特征？"></a>11.XGBoost如何寻找最优特征？</h2><p>XGBoost训练过程中给出每个特征的评分，表示每个特征对模型训练的重要性。</p>
+<h2><span id="11xgboost如何寻找最优特征">11.XGBoost如何寻找最优特征？</span></h2><p>XGBoost训练过程中给出每个特征的评分，表示每个特征对模型训练的重要性。</p>
 <p>利用梯度优化模型，样本不放回，但XGBoost支持子采样，即每轮计算可以不使用全部样本。</p>
 <hr>
-<h2 id="12-判别模型、生成模型"><a href="#12-判别模型、生成模型" class="headerlink" title="12. 判别模型、生成模型"></a>12. 判别模型、生成模型</h2><p>判别方法：直接学习决策函数 Y = f(X)， 或者由条件分布概率P(Y|X)作为预测模型，即判别模型。</p>
+<h2><span id="12-判别模型-生成模型">12. 判别模型、生成模型</span></h2><p>判别方法：直接学习决策函数 Y = f(X)， 或者由条件分布概率P(Y|X)作为预测模型，即判别模型。</p>
 <p>生成方法：学习联合概率密度分布函数P(X, Y)，然后求出P(Y|X)作为预测模型，即生成模型。</p>
 <p>生成可得判别，判别不可得生成。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">常见判别模型：</span><br><span class="line">K近邻、SVM、决策树、感知机、线性判别分析（LDA）、线性回归、传统的神经网络、逻辑回归、boosting、条件随机场</span><br><span class="line"></span><br><span class="line">常见生成模型：</span><br><span class="line">朴素贝叶斯、隐马尔科夫模型、高斯混合模型、文档主题生成模型（LDA）、限制波尔兹曼机</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="13-L1和L2-的区别"><a href="#13-L1和L2-的区别" class="headerlink" title="13. L1和L2 的区别"></a>13. L1和L2 的区别</h2><p>L1范数(L1 norm)是指向量中各个元素绝对值之和,即”稀疏规则算子”</p>
+<h2><span id="13-l1和l2-的区别">13. L1和L2 的区别</span></h2><p>L1范数(L1 norm)是指向量中各个元素绝对值之和,即”稀疏规则算子”</p>
 <p>L1范数:  |x1| + |x2| + … + |xn|<br>L2范数:   (x1<sup>2</sup> + x2<sup>2</sup> + … + xn<sup>2</sup>)<sup>1/2</sup></p>
 <p>Lp范数:  (x1<sup>p</sup> + x2<sup>p</sup> + …. + xn<sup>p</sup> )<sup>1/p</sup> </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在SVM学习过程中,L1范数是一种对成本函数求解最优的过程,L1范数正则化通过向成本函数中添加L1范数,使得学习的结果满足稀疏化,从而方便提取特征.</span><br><span class="line">L1范数使得权值稀疏,方便特征提取.</span><br><span class="line">L2范数可以防止过拟合,提高模型的泛化能力.</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="14-L1和L2正则先验分别服从什么分布"><a href="#14-L1和L2正则先验分别服从什么分布" class="headerlink" title="14. L1和L2正则先验分别服从什么分布?"></a>14. L1和L2正则先验分别服从什么分布?</h2><p>L1是拉普拉斯分布,L2是高斯分布.</p>
+<h2><span id="14-l1和l2正则先验分别服从什么分布">14. L1和L2正则先验分别服从什么分布?</span></h2><p>L1是拉普拉斯分布,L2是高斯分布.</p>
 <hr>
-<h2 id="15-CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决"><a href="#15-CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决" class="headerlink" title="15.CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决?"></a>15.CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决?</h2><p>存在局部与整体的关系,由低层次的特征经过组合,组成高层次的特征，并且得到不同特征之间的空间相关性。</p>
+<h2><span id="15cnn最成功应用在cv为什么nlp和speech的很多问题也可以用cnn解决">15.CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决?</span></h2><p>存在局部与整体的关系,由低层次的特征经过组合,组成高层次的特征，并且得到不同特征之间的空间相关性。</p>
 <p>CNN获取此共性的四方法：</p>
 <p>局部连接：使网络可以提取数据的局部特征</p>
 <p>权值共享：降低网络的训练难度，一个Filter只提取一个特征，在整个图片/文本中进行卷积。</p>
 <p>池化操作和多层次结构：实现了数据降维，将低维特征组合成高维特征，从而对整个图片/文本进行表示。</p>
 <p>如果每个点的处理使用相同的Filter，则为全卷积，否则为Local-Conv。</p>
 <hr>
-<h2 id="16-LSTM结构为什么比RNN好？"><a href="#16-LSTM结构为什么比RNN好？" class="headerlink" title="16. LSTM结构为什么比RNN好？"></a>16. LSTM结构为什么比RNN好？</h2><p>推导 forget gate， input gate， cell state， hidden information 等的变化；  </p>
+<h2><span id="16-lstm结构为什么比rnn好">16. LSTM结构为什么比RNN好？</span></h2><p>推导 forget gate， input gate， cell state， hidden information 等的变化；  </p>
 <p>当前的 cell informaton 是通过 input gate 控制之后叠加的， RNN 是叠乘，因此 LSTM 可以防止梯度消失或者爆炸。  </p>
 <hr>
-<h2 id="17-朴素贝叶斯为什么“朴素”"><a href="#17-朴素贝叶斯为什么“朴素”" class="headerlink" title="17.朴素贝叶斯为什么“朴素”"></a>17.朴素贝叶斯为什么“朴素”</h2><p>假定所有特征作用相同，且独立。</p>
+<h2><span id="17朴素贝叶斯为什么朴素">17.朴素贝叶斯为什么“朴素”</span></h2><p>假定所有特征作用相同，且独立。</p>
 <hr>
-<h2 id="18-机器学习为何对数据进行归一化？"><a href="#18-机器学习为何对数据进行归一化？" class="headerlink" title="18. 机器学习为何对数据进行归一化？"></a>18. 机器学习为何对数据进行归一化？</h2><ol>
+<h2><span id="18-机器学习为何对数据进行归一化">18. 机器学习为何对数据进行归一化？</span></h2><ol>
 <li><p>归一化加快了梯度下降求最优解的速度</p>
 </li>
 <li><p>归一化可能提高精度</p>
@@ -374,7 +374,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="19-完整机器学习项目流程"><a href="#19-完整机器学习项目流程" class="headerlink" title="19. 完整机器学习项目流程"></a>19. 完整机器学习项目流程</h2><ol>
+<h2><span id="19-完整机器学习项目流程">19. 完整机器学习项目流程</span></h2><ol>
 <li><p>抽象为数学问题</p>
 </li>
 <li><p>获取数据</p>
@@ -399,8 +399,8 @@
 </li>
 </ol>
 <hr>
-<h2 id="20-hash冲突及解决"><a href="#20-hash冲突及解决" class="headerlink" title="20.hash冲突及解决"></a>20.hash冲突及解决</h2><hr>
-<h2 id="21-解决梯度消失和梯度膨胀？"><a href="#21-解决梯度消失和梯度膨胀？" class="headerlink" title="21.解决梯度消失和梯度膨胀？"></a>21.解决梯度消失和梯度膨胀？</h2><ol>
+<h2><span id="20hash冲突及解决">20.hash冲突及解决</span></h2><hr>
+<h2><span id="21解决梯度消失和梯度膨胀">21.解决梯度消失和梯度膨胀？</span></h2><ol>
 <li><p>梯度消失</p>
 <p>根据链式法则，如果每一层神经元对上一层的输出的偏导乘上权重结果都小于1 的话，那么即使这个结果是 0.99，在经过足够多层传播之后，误差对输入层的偏导会趋于 0。<br>可以采用 ReLU 激活函数有效的解决梯度消失的情况。  </p>
 </li>
@@ -409,51 +409,51 @@
 </li>
 </ol>
 <hr>
-<h2 id="22-CRF相比HMM和MEMM模型的优势"><a href="#22-CRF相比HMM和MEMM模型的优势" class="headerlink" title="22.CRF相比HMM和MEMM模型的优势"></a>22.CRF相比HMM和MEMM模型的优势</h2><p>CRF， HMM(隐马模型)， MEMM(最大熵隐马模型)都常用来做序列标注的建模  。</p>
+<h2><span id="22crf相比hmm和memm模型的优势">22.CRF相比HMM和MEMM模型的优势</span></h2><p>CRF， HMM(隐马模型)， MEMM(最大熵隐马模型)都常用来做序列标注的建模  。</p>
 <p>HMM最大缺点在于输出独立性假设，导致不考虑上下文特征，限制了特征选择。</p>
 <p>MEMM解决HMM问题，可任意选择特征。但每个节点都要归一化，所以只能找到局部最优值，同时也带来了标记偏见的问题，即凡是训练语料中未出现的情况全都忽略掉。  </p>
 <p>CRF对所有特征进行全局归一化，可求得全局最优值。</p>
 <hr>
-<h2 id="23-有监督-无监督"><a href="#23-有监督-无监督" class="headerlink" title="23.有监督/无监督"></a>23.有监督/无监督</h2><p>有监督：LR、SVM、BP、RF、GBDT</p>
+<h2><span id="23有监督无监督">23.有监督/无监督</span></h2><p>有监督：LR、SVM、BP、RF、GBDT</p>
 <p>无监督：KMeans、DL</p>
 <hr>
-<h2 id="24-正则化"><a href="#24-正则化" class="headerlink" title="24.正则化"></a>24.正则化</h2><p>针对过拟合提出，求解模型最优的一般是优化最小的经验风险，现在在该经验风险上加入模型复杂度这一项（正则化项是模型参数向量的范数），并使用一个 rate 比率来权衡模型复杂度与以往经验风险的权重。  </p>
+<h2><span id="24正则化">24.正则化</span></h2><p>针对过拟合提出，求解模型最优的一般是优化最小的经验风险，现在在该经验风险上加入模型复杂度这一项（正则化项是模型参数向量的范数），并使用一个 rate 比率来权衡模型复杂度与以往经验风险的权重。  </p>
 <hr>
-<h2 id="25-协方差和相关性的区别"><a href="#25-协方差和相关性的区别" class="headerlink" title="25.协方差和相关性的区别"></a>25.协方差和相关性的区别</h2><p>相关性是协方差的标准化格式。</p>
+<h2><span id="25协方差和相关性的区别">25.协方差和相关性的区别</span></h2><p>相关性是协方差的标准化格式。</p>
 <hr>
-<h2 id="26-线性分类器与非线性分类器的区别以及优劣"><a href="#26-线性分类器与非线性分类器的区别以及优劣" class="headerlink" title="26.线性分类器与非线性分类器的区别以及优劣"></a>26.线性分类器与非线性分类器的区别以及优劣</h2><p>如果模型是参数的线性函数，并且存在线性分类面，那么就是线性分类器，否则不是。</p>
+<h2><span id="26线性分类器与非线性分类器的区别以及优劣">26.线性分类器与非线性分类器的区别以及优劣</span></h2><p>如果模型是参数的线性函数，并且存在线性分类面，那么就是线性分类器，否则不是。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">常见的线性分类器有： LR,贝叶斯分类，单层感知机、线性回归。</span><br><span class="line"></span><br><span class="line">常见的非线性分类器：决策树、 RF、 GBDT、多层感知机。 </span><br><span class="line"></span><br><span class="line">SVM 两种都有(取决于线性核还是高斯核)。 </span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="27-各种存储结构从运行速度、存储效率和适用场合"><a href="#27-各种存储结构从运行速度、存储效率和适用场合" class="headerlink" title="27.各种存储结构从运行速度、存储效率和适用场合"></a>27.各种存储结构从运行速度、存储效率和适用场合</h2><p>等方面进行简要地分析。  </p>
+<h2><span id="27各种存储结构从运行速度-存储效率和适用场合">27.各种存储结构从运行速度、存储效率和适用场合</span></h2><p>等方面进行简要地分析。  </p>
 <hr>
-<h2 id="28-分布式数据库"><a href="#28-分布式数据库" class="headerlink" title="28.分布式数据库"></a>28.分布式数据库</h2><hr>
-<h2 id="29-贝叶斯定理"><a href="#29-贝叶斯定理" class="headerlink" title="29.贝叶斯定理"></a>29.贝叶斯定理</h2><hr>
-<h2 id="30-关联规则发现"><a href="#30-关联规则发现" class="headerlink" title="30.关联规则发现"></a>30.关联规则发现</h2><hr>
-<h2 id="31-将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？-数据预处理"><a href="#31-将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？-数据预处理" class="headerlink" title="31. 将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？ (数据预处理)"></a>31. 将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？ (数据预处理)</h2><hr>
-<h2 id="32-数据预处理方法包括A-变量代换-B-离散化-C-聚集"><a href="#32-数据预处理方法包括A-变量代换-B-离散化-C-聚集" class="headerlink" title="32.数据预处理方法包括A 变量代换 B 离散化 C 聚集"></a>32.数据预处理方法包括A 变量代换 B 离散化 C 聚集</h2><hr>
-<h2 id="33-KDD"><a href="#33-KDD" class="headerlink" title="33.KDD"></a>33.KDD</h2><p>数据挖掘与知识发现  </p>
+<h2><span id="28分布式数据库">28.分布式数据库</span></h2><hr>
+<h2><span id="29贝叶斯定理">29.贝叶斯定理</span></h2><hr>
+<h2><span id="30关联规则发现">30.关联规则发现</span></h2><hr>
+<h2><span id="31-将原始数据进行集成-变换-维度规约-数值规约是在以下哪个步骤的任务-数据预处理">31. 将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？ (数据预处理)</span></h2><hr>
+<h2><span id="32数据预处理方法包括a-变量代换-b-离散化-c-聚集">32.数据预处理方法包括A 变量代换 B 离散化 C 聚集</span></h2><hr>
+<h2><span id="33kdd">33.KDD</span></h2><p>数据挖掘与知识发现  </p>
 <hr>
-<h2 id="34-当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？-聚类"><a href="#34-当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？-聚类" class="headerlink" title="34.当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？ (聚类)"></a>34.当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？ (聚类)</h2><hr>
-<h2 id="35-预测建模"><a href="#35-预测建模" class="headerlink" title="35.预测建模"></a>35.预测建模</h2><hr>
-<h2 id="36-特征选择的标准方法A-嵌入-B-过滤-C-包装-D-抽样"><a href="#36-特征选择的标准方法A-嵌入-B-过滤-C-包装-D-抽样" class="headerlink" title="36. 特征选择的标准方法A 嵌入 B 过滤 C 包装 D 抽样"></a>36. 特征选择的标准方法A 嵌入 B 过滤 C 包装 D 抽样</h2><hr>
-<h2 id="37-sigmoid-激活函数"><a href="#37-sigmoid-激活函数" class="headerlink" title="37.sigmoid 激活函数"></a>37.sigmoid 激活函数</h2><p>常用的非线性激活函数有 sigmoid、 tanh、 relu 等等，前两者 sigmoid/tanh比较常见于全连接层，后者 relu 常见于卷积层。  </p>
+<h2><span id="34当不知道数据所带标签时可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离-聚类">34.当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？ (聚类)</span></h2><hr>
+<h2><span id="35预测建模">35.预测建模</span></h2><hr>
+<h2><span id="36-特征选择的标准方法a-嵌入-b-过滤-c-包装-d-抽样">36. 特征选择的标准方法A 嵌入 B 过滤 C 包装 D 抽样</span></h2><hr>
+<h2><span id="37sigmoid-激活函数">37.sigmoid 激活函数</span></h2><p>常用的非线性激活函数有 sigmoid、 tanh、 relu 等等，前两者 sigmoid/tanh比较常见于全连接层，后者 relu 常见于卷积层。  </p>
 <hr>
-<h2 id="38-卷积"><a href="#38-卷积" class="headerlink" title="38.卷积"></a>38.卷积</h2><hr>
-<h2 id="39-CNN的池化pool层"><a href="#39-CNN的池化pool层" class="headerlink" title="39.CNN的池化pool层"></a>39.CNN的池化pool层</h2><p>池化，即取区域平均或最大。</p>
+<h2><span id="38卷积">38.卷积</span></h2><hr>
+<h2><span id="39cnn的池化pool层">39.CNN的池化pool层</span></h2><p>池化，即取区域平均或最大。</p>
 <hr>
-<h2 id="40-生成对抗网络GAN"><a href="#40-生成对抗网络GAN" class="headerlink" title="40. 生成对抗网络GAN"></a>40. 生成对抗网络GAN</h2><p>GAN 之所以是对抗的，是因为 GAN 的内部是竞争关系，</p>
+<h2><span id="40-生成对抗网络gan">40. 生成对抗网络GAN</span></h2><p>GAN 之所以是对抗的，是因为 GAN 的内部是竞争关系，</p>
 <p>一方叫 generator，它的主要工作是生成图片，并且尽量使得其看上去是来自于训练样本的。另一<br>方是 discriminator，其目标是判断输入图片是否属于真实训练样本。<br>更直白的讲，将 generator 想象成假币制造商，而 discriminator 是警察。generator 目的是尽可能把假币造的跟真的一样，从而能够骗过discriminator，即生成样本并使它看上去好像来自于真实训练样本一样。  </p>
 <hr>
-<h2 id="41-哪些机器学习算法不需要归一化"><a href="#41-哪些机器学习算法不需要归一化" class="headerlink" title="41.哪些机器学习算法不需要归一化"></a>41.哪些机器学习算法不需要归一化</h2><p>概率模型不需要归一化， 因为它们不关心变量的值，而是关心变量的分布和变量之间的条件概率，如决策树、 RF。</p>
+<h2><span id="41哪些机器学习算法不需要归一化">41.哪些机器学习算法不需要归一化</span></h2><p>概率模型不需要归一化， 因为它们不关心变量的值，而是关心变量的分布和变量之间的条件概率，如决策树、 RF。</p>
 <p>而像 Adaboost、 GBDT、 XGBoost、SVM、 LR、 KNN、 KMeans 之类的最优化问题就需要归一化。  </p>
 <hr>
-<h2 id="42-梯度下降"><a href="#42-梯度下降" class="headerlink" title="42.梯度下降"></a>42.梯度下降</h2><p>回归在数学上来说是给定一个点集，能够用一条曲线去拟合之，如果这个曲线是一条直线，那就被称为线性回归，如果曲线是一条二次曲线，就被称为二次回归，回归还有很多的变种，如 locally weighted 回归， logistic 回归。</p>
+<h2><span id="42梯度下降">42.梯度下降</span></h2><p>回归在数学上来说是给定一个点集，能够用一条曲线去拟合之，如果这个曲线是一条直线，那就被称为线性回归，如果曲线是一条二次曲线，就被称为二次回归，回归还有很多的变种，如 locally weighted 回归， logistic 回归。</p>
 <hr>
-<h2 id="43-梯度下降法并不是下降最快的方向"><a href="#43-梯度下降法并不是下降最快的方向" class="headerlink" title="43.梯度下降法并不是下降最快的方向"></a>43.梯度下降法并不是下降最快的方向</h2><p>只是目标函数在当前的点的切平面（当然高维问题不能叫平面）上下降最快的方向。  </p>
+<h2><span id="43梯度下降法并不是下降最快的方向">43.梯度下降法并不是下降最快的方向</span></h2><p>只是目标函数在当前的点的切平面（当然高维问题不能叫平面）上下降最快的方向。  </p>
 <hr>
-<h2 id="44-随机梯度下降法的问题和挑战？"><a href="#44-随机梯度下降法的问题和挑战？" class="headerlink" title="44.随机梯度下降法的问题和挑战？"></a>44.随机梯度下降法的问题和挑战？</h2><p>困难：</p>
+<h2><span id="44随机梯度下降法的问题和挑战">44.随机梯度下降法的问题和挑战？</span></h2><p>困难：</p>
 <ol>
 <li><p>梯度计算</p>
 <p>目标函数经常是求和形式，样本量极大时，计算耗时。</p>
@@ -462,54 +462,54 @@
 </li>
 </ol>
 <hr>
-<h2 id="45-最小二乘法"><a href="#45-最小二乘法" class="headerlink" title="45.最小二乘法"></a>45.最小二乘法</h2><p>最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。  </p>
+<h2><span id="45最小二乘法">45.最小二乘法</span></h2><p>最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配。利用最小二乘法可以简便地求得未知的数据，并使得这些求得的数据与实际数据之间误差的平方和为最小。  </p>
 <hr>
-<h2 id="46-Python生成随机数"><a href="#46-Python生成随机数" class="headerlink" title="46.Python生成随机数"></a>46.Python生成随机数</h2><p>random</p>
+<h2><span id="46python生成随机数">46.Python生成随机数</span></h2><p>random</p>
 <hr>
-<h2 id="47-常见的损失函数"><a href="#47-常见的损失函数" class="headerlink" title="47.常见的损失函数"></a>47.常见的损失函数</h2><p>L(Y, f(x))</p>
+<h2><span id="47常见的损失函数">47.常见的损失函数</span></h2><p>L(Y, f(x))</p>
 <p>(1)0-1损失函数</p>
 <p>(2)平方损失函数</p>
 <p>(3)绝对损失函数</p>
 <p>(4)对数损失函数</p>
 <hr>
-<h2 id="48-Logistics回归"><a href="#48-Logistics回归" class="headerlink" title="48.Logistics回归"></a>48.Logistics回归</h2><p>逻辑回归目的是从特征学习出一个 0/1 分类模型，而这个模型是将特性的线性组合作为自变量，由于自变量的取值范围是负无穷到正无穷。因此，使用logistic 函数（或称作 sigmoid 函数）将自变量映射到(0,1)上，映射后的值被认为是属于 y=1 的概率。  </p>
+<h2><span id="48logistics回归">48.Logistics回归</span></h2><p>逻辑回归目的是从特征学习出一个 0/1 分类模型，而这个模型是将特性的线性组合作为自变量，由于自变量的取值范围是负无穷到正无穷。因此，使用logistic 函数（或称作 sigmoid 函数）将自变量映射到(0,1)上，映射后的值被认为是属于 y=1 的概率。  </p>
 <hr>
-<h2 id="49-HashMap与HashTable区别"><a href="#49-HashMap与HashTable区别" class="headerlink" title="49. HashMap与HashTable区别"></a>49. HashMap与HashTable区别</h2><p>HashTable 的应用非常广泛， HashMap 是新框架中用来代替 HashTable 的类，也就是说建议使用 HashMap，不要使用 HashTable。  </p>
+<h2><span id="49-hashmap与hashtable区别">49. HashMap与HashTable区别</span></h2><p>HashTable 的应用非常广泛， HashMap 是新框架中用来代替 HashTable 的类，也就是说建议使用 HashMap，不要使用 HashTable。  </p>
 <hr>
-<h2 id="50-正负样本数据量不等"><a href="#50-正负样本数据量不等" class="headerlink" title="50.正负样本数据量不等"></a>50.正负样本数据量不等</h2><hr>
-<h2 id="51-稠密矩阵乘法效率"><a href="#51-稠密矩阵乘法效率" class="headerlink" title="51.稠密矩阵乘法效率"></a>51.稠密矩阵乘法效率</h2><hr>
-<h2 id="52-Nave-Bayes-是一种特殊的-Bayes-分类器-特征变量是-X-类别标签是-C-它的一个假定是-特征变量-X-的各个维度是类别条件独立随机变量"><a href="#52-Nave-Bayes-是一种特殊的-Bayes-分类器-特征变量是-X-类别标签是-C-它的一个假定是-特征变量-X-的各个维度是类别条件独立随机变量" class="headerlink" title="52.Nave Bayes 是一种特殊的 Bayes 分类器,特征变量是 X,类别标签是 C,它的一个假定是:( 特征变量 X 的各个维度是类别条件独立随机变量 )"></a>52.Nave Bayes 是一种特殊的 Bayes 分类器,特征变量是 X,类别标签是 C,它的一个假定是:( 特征变量 X 的各个维度是类别条件独立随机变量 )</h2><hr>
-<h2 id="53-SVM分类间隔"><a href="#53-SVM分类间隔" class="headerlink" title="53. SVM分类间隔"></a>53. SVM分类间隔</h2><hr>
-<h2 id="54-在HMM中，如果已知观察序列和产生观察序列的状态序列-那么可用以下哪种方法直接进行参数估计-D极大似然估计"><a href="#54-在HMM中，如果已知观察序列和产生观察序列的状态序列-那么可用以下哪种方法直接进行参数估计-D极大似然估计" class="headerlink" title="54.在HMM中，如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计( D极大似然估计   )"></a>54.在HMM中，如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计( D极大似然估计   )</h2><p>EM 算法： 只有观测序列，无状态序列时来学习模型参数，即 Baum-Welch算法<br>维特比算法： 用动态规划解决 HMM 的预测问题，不是参数估计<br>前向后向算法：用来算概率<br>极大似然估计：即观测序列和相应的状态序列都存在时的监督学习算法，用来估计参数  </p>
+<h2><span id="50正负样本数据量不等">50.正负样本数据量不等</span></h2><hr>
+<h2><span id="51稠密矩阵乘法效率">51.稠密矩阵乘法效率</span></h2><hr>
+<h2><span id="52nave-bayes-是一种特殊的-bayes-分类器特征变量是-x类别标签是-c它的一个假定是-特征变量-x-的各个维度是类别条件独立随机变量">52.Nave Bayes 是一种特殊的 Bayes 分类器,特征变量是 X,类别标签是 C,它的一个假定是:( 特征变量 X 的各个维度是类别条件独立随机变量 )</span></h2><hr>
+<h2><span id="53-svm分类间隔">53. SVM分类间隔</span></h2><hr>
+<h2><span id="54在hmm中如果已知观察序列和产生观察序列的状态序列那么可用以下哪种方法直接进行参数估计-d极大似然估计">54.在HMM中，如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计( D极大似然估计   )</span></h2><p>EM 算法： 只有观测序列，无状态序列时来学习模型参数，即 Baum-Welch算法<br>维特比算法： 用动态规划解决 HMM 的预测问题，不是参数估计<br>前向后向算法：用来算概率<br>极大似然估计：即观测序列和相应的状态序列都存在时的监督学习算法，用来估计参数  </p>
 <p>注意的是在给定观测序列和对应的状态序列估计模型参数，可以利用极大似然估计。如果给定观测序列，没有对应的状态序列，才用 EM，将状态序列看作不可测的隐数据。  </p>
 <hr>
-<h2 id="55-Naive-Bayesian（-NB）分类模型时，将训练数据"><a href="#55-Naive-Bayesian（-NB）分类模型时，将训练数据" class="headerlink" title="55.Naive Bayesian（ NB）分类模型时，将训练数据"></a>55.Naive Bayesian（ NB）分类模型时，将训练数据</h2><p>的两个维度重复</p>
+<h2><span id="55naive-bayesian-nb分类模型时将训练数据">55.Naive Bayesian（ NB）分类模型时，将训练数据</span></h2><p>的两个维度重复</p>
 <p>模型效果相比无重复特征的情况下精确度会降低。</p>
 <p>当两列特征高度相关时，无法用两列特征相同时所得到的结论来分析问题。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NB 的核心在于它假设向量的所有分量之间是独立的。</span><br><span class="line">在贝叶斯理论系统中，都有一个重要的条件独立性假设：假设所有特征之间相互独立，这样才能将联合概率拆分。</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="56-文本分类"><a href="#56-文本分类" class="headerlink" title="56.文本分类"></a>56.文本分类</h2><p>分类：决策树、SVM、KNN</p>
+<h2><span id="56文本分类">56.文本分类</span></h2><p>分类：决策树、SVM、KNN</p>
 <p>聚类：Kmeans</p>
 <hr>
-<h2 id="57-一组数据的协方差矩阵P"><a href="#57-一组数据的协方差矩阵P" class="headerlink" title="57.一组数据的协方差矩阵P"></a>57.一组数据的协方差矩阵P</h2><hr>
-<h2 id="58-Kmeans的复杂度"><a href="#58-Kmeans的复杂度" class="headerlink" title="58. Kmeans的复杂度"></a>58. Kmeans的复杂度</h2><p>时间复杂度： O(tKmn)，其中， t 为迭代次数， K 为簇的数目， m 为记录数， n为维数</p>
+<h2><span id="57一组数据的协方差矩阵p">57.一组数据的协方差矩阵P</span></h2><hr>
+<h2><span id="58-kmeans的复杂度">58. Kmeans的复杂度</span></h2><p>时间复杂度： O(tKmn)，其中， t 为迭代次数， K 为簇的数目， m 为记录数， n为维数</p>
 <p>空间复杂度： O((m+K)n)，其中， K 为簇的数目， m 为记录数， n 为维数。  </p>
 <hr>
-<h2 id="59-逻辑回归、SVM"><a href="#59-逻辑回归、SVM" class="headerlink" title="59.逻辑回归、SVM"></a>59.逻辑回归、SVM</h2><p>Logit 回归目标函数是最小化后验概率， Logit 回归可以用于预测事件发生概率的大小</p>
+<h2><span id="59逻辑回归-svm">59.逻辑回归、SVM</span></h2><p>Logit 回归目标函数是最小化后验概率， Logit 回归可以用于预测事件发生概率的大小</p>
 <p>SVM 目标是结构风险最小化， SVM 可以有效避免模型过拟合。  </p>
-<h2 id="60-输出特征大小"><a href="#60-输出特征大小" class="headerlink" title="60.输出特征大小"></a>60.输出特征大小</h2><p>输入图片大小为 200×200，依次经过一层卷积（ kernel size 5×5，padding 1， stride 2）， pooling（ kernel size 3×3， padding 0，stride 1），又一层卷积（ kernel size 3×3， padding 1， stride 1）之后，输出特征图大小为：（）  </p>
+<h2><span id="60输出特征大小">60.输出特征大小</span></h2><p>输入图片大小为 200×200，依次经过一层卷积（ kernel size 5×5，padding 1， stride 2）， pooling（ kernel size 3×3， padding 0，stride 1），又一层卷积（ kernel size 3×3， padding 1， stride 1）之后，输出特征图大小为：（）  </p>
 <p>计算尺寸不被整除只在 GoogLeNet 中遇到过。卷积向下取整，池化向上取整。<br>本题 （ 200-5+2<em>1） /2+1 为 99.5，取 99<br>（ 99-3） /1+1 为 97<br>（ 97-3+2</em>1） /1+1 为 97  </p>
 <hr>
 <hr>
-<h2 id="67-标准化与归一化的区别"><a href="#67-标准化与归一化的区别" class="headerlink" title="67.标准化与归一化的区别"></a>67.标准化与归一化的区别</h2><p>标准化是依照特征矩阵的列处理数据，其通过求 z-score 的方法，将样本的特征值转换到同一量纲下。</p>
+<h2><span id="67标准化与归一化的区别">67.标准化与归一化的区别</span></h2><p>标准化是依照特征矩阵的列处理数据，其通过求 z-score 的方法，将样本的特征值转换到同一量纲下。</p>
 <p>归一化是依照特征矩阵的行处理数据，其目的在于样本向量在点乘运算或其他核函数计算相似性时，拥有统一的标准，也就是说都转化为“单位向量”。  </p>
 <p>特征向量的缺失值处理：<br>1.缺失值较多.直接将该特征舍弃掉，否则可能反倒会带入较大的 noise，对结果造成不良影响。<br>2.缺失值较少,其余的特征缺失值都在 10%以内，我们可以采取很多的方式来处理:</p>
 <ol>
 <li>把 NaN 直接作为一个特征，假设用 0 表示；</li>
 <li>用均值填充；</li>
-<li>用随机森林等算法预测填充  </li>
+<li>用随机森林等算法预测填充</li>
 </ol>
 
       
@@ -734,7 +734,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8DSVM"><span class="toc-number">1.</span> <span class="toc-text">1.介绍SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BB%8B%E7%BB%8DTensorflow%E7%9A%84%E8%AE%A1%E7%AE%97%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">2. 介绍Tensorflow的计算图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GBDT%E3%80%81XGBoost%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">3. GBDT、XGBoost的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-k-means%E6%88%96KNN%E8%AE%A1%E7%AE%97%E4%B8%8E%E6%9C%80%E8%BF%91%E9%82%BB%E5%B1%85%E7%9A%84%E8%B7%9D%E7%A6%BB%E7%94%A8%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">4.k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B"><span class="toc-number">5.</span> <span class="toc-text">5. 特征工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-LR"><span class="toc-number">6.</span> <span class="toc-text">6. LR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-overfitting%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3"><span class="toc-number">7.</span> <span class="toc-text">7. overfitting怎么解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-LR%E5%92%8CSVM%E7%9A%84%E8%81%94%E7%B3%BB%E4%B8%8E%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">8.LR和SVM的联系与区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-LR%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">9. LR与线性回归的区别与联系？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-XGBoost%E7%94%A8%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80%E5%8E%9F%E5%9B%A0"><span class="toc-number">10.</span> <span class="toc-text">10.XGBoost用泰勒展开原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-XGBoost%E5%A6%82%E4%BD%95%E5%AF%BB%E6%89%BE%E6%9C%80%E4%BC%98%E7%89%B9%E5%BE%81%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">11.XGBoost如何寻找最优特征？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E3%80%81%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">12.</span> <span class="toc-text">12. 判别模型、生成模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-L1%E5%92%8CL2-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">13.</span> <span class="toc-text">13. L1和L2 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%85%88%E9%AA%8C%E5%88%86%E5%88%AB%E6%9C%8D%E4%BB%8E%E4%BB%80%E4%B9%88%E5%88%86%E5%B8%83"><span class="toc-number">14.</span> <span class="toc-text">14. L1和L2正则先验分别服从什么分布?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-CNN%E6%9C%80%E6%88%90%E5%8A%9F%E5%BA%94%E7%94%A8%E5%9C%A8CV%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88NLP%E5%92%8CSpeech%E7%9A%84%E5%BE%88%E5%A4%9A%E9%97%AE%E9%A2%98%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%94%A8CNN%E8%A7%A3%E5%86%B3"><span class="toc-number">15.</span> <span class="toc-text">15.CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-LSTM%E7%BB%93%E6%9E%84%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%94RNN%E5%A5%BD%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">16. LSTM结构为什么比RNN好？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E2%80%9C%E6%9C%B4%E7%B4%A0%E2%80%9D"><span class="toc-number">17.</span> <span class="toc-text">17.朴素贝叶斯为什么“朴素”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%BA%E4%BD%95%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%BD%92%E4%B8%80%E5%8C%96%EF%BC%9F"><span class="toc-number">18.</span> <span class="toc-text">18. 机器学习为何对数据进行归一化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-%E5%AE%8C%E6%95%B4%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B"><span class="toc-number">19.</span> <span class="toc-text">19. 完整机器学习项目流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-hash%E5%86%B2%E7%AA%81%E5%8F%8A%E8%A7%A3%E5%86%B3"><span class="toc-number">20.</span> <span class="toc-text">20.hash冲突及解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%A7%A3%E5%86%B3%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E5%92%8C%E6%A2%AF%E5%BA%A6%E8%86%A8%E8%83%80%EF%BC%9F"><span class="toc-number">21.</span> <span class="toc-text">21.解决梯度消失和梯度膨胀？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-CRF%E7%9B%B8%E6%AF%94HMM%E5%92%8CMEMM%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">22.</span> <span class="toc-text">22.CRF相比HMM和MEMM模型的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E6%9C%89%E7%9B%91%E7%9D%A3-%E6%97%A0%E7%9B%91%E7%9D%A3"><span class="toc-number">23.</span> <span class="toc-text">23.有监督&#x2F;无监督</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">24.</span> <span class="toc-text">24.正则化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E6%80%A7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">25.</span> <span class="toc-text">25.协方差和相关性的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8%E4%B8%8E%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8A%A3"><span class="toc-number">26.</span> <span class="toc-text">26.线性分类器与非线性分类器的区别以及优劣</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-%E5%90%84%E7%A7%8D%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E4%BB%8E%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E3%80%81%E5%AD%98%E5%82%A8%E6%95%88%E7%8E%87%E5%92%8C%E9%80%82%E7%94%A8%E5%9C%BA%E5%90%88"><span class="toc-number">27.</span> <span class="toc-text">27.各种存储结构从运行速度、存储效率和适用场合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">28.</span> <span class="toc-text">28.分布式数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">29.</span> <span class="toc-text">29.贝叶斯定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99%E5%8F%91%E7%8E%B0"><span class="toc-number">30.</span> <span class="toc-text">30.关联规则发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E5%B0%86%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E9%9B%86%E6%88%90%E3%80%81%E5%8F%98%E6%8D%A2%E3%80%81%E7%BB%B4%E5%BA%A6%E8%A7%84%E7%BA%A6%E3%80%81%E6%95%B0%E5%80%BC%E8%A7%84%E7%BA%A6%E6%98%AF%E5%9C%A8%E4%BB%A5%E4%B8%8B%E5%93%AA%E4%B8%AA%E6%AD%A5%E9%AA%A4%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%9F-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">31.</span> <span class="toc-text">31. 将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？ (数据预处理)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%ACA-%E5%8F%98%E9%87%8F%E4%BB%A3%E6%8D%A2-B-%E7%A6%BB%E6%95%A3%E5%8C%96-C-%E8%81%9A%E9%9B%86"><span class="toc-number">32.</span> <span class="toc-text">32.数据预处理方法包括A 变量代换 B 离散化 C 聚集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-KDD"><span class="toc-number">33.</span> <span class="toc-text">33.KDD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-%E5%BD%93%E4%B8%8D%E7%9F%A5%E9%81%93%E6%95%B0%E6%8D%AE%E6%89%80%E5%B8%A6%E6%A0%87%E7%AD%BE%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E5%93%AA%E7%A7%8D%E6%8A%80%E6%9C%AF%E4%BF%83%E4%BD%BF%E5%B8%A6%E5%90%8C%E7%B1%BB%E6%A0%87%E7%AD%BE%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%B8%A6%E5%85%B6%E4%BB%96%E6%A0%87%E7%AD%BE%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%88%86%E7%A6%BB%EF%BC%9F-%E8%81%9A%E7%B1%BB"><span class="toc-number">34.</span> <span class="toc-text">34.当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？ (聚类)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-%E9%A2%84%E6%B5%8B%E5%BB%BA%E6%A8%A1"><span class="toc-number">35.</span> <span class="toc-text">35.预测建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E6%A0%87%E5%87%86%E6%96%B9%E6%B3%95A-%E5%B5%8C%E5%85%A5-B-%E8%BF%87%E6%BB%A4-C-%E5%8C%85%E8%A3%85-D-%E6%8A%BD%E6%A0%B7"><span class="toc-number">36.</span> <span class="toc-text">36. 特征选择的标准方法A 嵌入 B 过滤 C 包装 D 抽样</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-sigmoid-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">37.</span> <span class="toc-text">37.sigmoid 激活函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-%E5%8D%B7%E7%A7%AF"><span class="toc-number">38.</span> <span class="toc-text">38.卷积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#39-CNN%E7%9A%84%E6%B1%A0%E5%8C%96pool%E5%B1%82"><span class="toc-number">39.</span> <span class="toc-text">39.CNN的池化pool层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#40-%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9CGAN"><span class="toc-number">40.</span> <span class="toc-text">40. 生成对抗网络GAN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#41-%E5%93%AA%E4%BA%9B%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E4%B8%8D%E9%9C%80%E8%A6%81%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">41.</span> <span class="toc-text">41.哪些机器学习算法不需要归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-number">42.</span> <span class="toc-text">42.梯度下降</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E5%B9%B6%E4%B8%8D%E6%98%AF%E4%B8%8B%E9%99%8D%E6%9C%80%E5%BF%AB%E7%9A%84%E6%96%B9%E5%90%91"><span class="toc-number">43.</span> <span class="toc-text">43.梯度下降法并不是下降最快的方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#44-%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E6%8C%91%E6%88%98%EF%BC%9F"><span class="toc-number">44.</span> <span class="toc-text">44.随机梯度下降法的问题和挑战？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#45-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="toc-number">45.</span> <span class="toc-text">45.最小二乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#46-Python%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">46.</span> <span class="toc-text">46.Python生成随机数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#47-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">47.</span> <span class="toc-text">47.常见的损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#48-Logistics%E5%9B%9E%E5%BD%92"><span class="toc-number">48.</span> <span class="toc-text">48.Logistics回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#49-HashMap%E4%B8%8EHashTable%E5%8C%BA%E5%88%AB"><span class="toc-number">49.</span> <span class="toc-text">49. HashMap与HashTable区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#50-%E6%AD%A3%E8%B4%9F%E6%A0%B7%E6%9C%AC%E6%95%B0%E6%8D%AE%E9%87%8F%E4%B8%8D%E7%AD%89"><span class="toc-number">50.</span> <span class="toc-text">50.正负样本数据量不等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#51-%E7%A8%A0%E5%AF%86%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E6%95%88%E7%8E%87"><span class="toc-number">51.</span> <span class="toc-text">51.稠密矩阵乘法效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#52-Nave-Bayes-%E6%98%AF%E4%B8%80%E7%A7%8D%E7%89%B9%E6%AE%8A%E7%9A%84-Bayes-%E5%88%86%E7%B1%BB%E5%99%A8-%E7%89%B9%E5%BE%81%E5%8F%98%E9%87%8F%E6%98%AF-X-%E7%B1%BB%E5%88%AB%E6%A0%87%E7%AD%BE%E6%98%AF-C-%E5%AE%83%E7%9A%84%E4%B8%80%E4%B8%AA%E5%81%87%E5%AE%9A%E6%98%AF-%E7%89%B9%E5%BE%81%E5%8F%98%E9%87%8F-X-%E7%9A%84%E5%90%84%E4%B8%AA%E7%BB%B4%E5%BA%A6%E6%98%AF%E7%B1%BB%E5%88%AB%E6%9D%A1%E4%BB%B6%E7%8B%AC%E7%AB%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-number">52.</span> <span class="toc-text">52.Nave Bayes 是一种特殊的 Bayes 分类器,特征变量是 X,类别标签是 C,它的一个假定是:( 特征变量 X 的各个维度是类别条件独立随机变量 )</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53-SVM%E5%88%86%E7%B1%BB%E9%97%B4%E9%9A%94"><span class="toc-number">53.</span> <span class="toc-text">53. SVM分类间隔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#54-%E5%9C%A8HMM%E4%B8%AD%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%9F%A5%E8%A7%82%E5%AF%9F%E5%BA%8F%E5%88%97%E5%92%8C%E4%BA%A7%E7%94%9F%E8%A7%82%E5%AF%9F%E5%BA%8F%E5%88%97%E7%9A%84%E7%8A%B6%E6%80%81%E5%BA%8F%E5%88%97-%E9%82%A3%E4%B9%88%E5%8F%AF%E7%94%A8%E4%BB%A5%E4%B8%8B%E5%93%AA%E7%A7%8D%E6%96%B9%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%BF%9B%E8%A1%8C%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1-D%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-number">54.</span> <span class="toc-text">54.在HMM中，如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计( D极大似然估计   )</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#55-Naive-Bayesian%EF%BC%88-NB%EF%BC%89%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%97%B6%EF%BC%8C%E5%B0%86%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE"><span class="toc-number">55.</span> <span class="toc-text">55.Naive Bayesian（ NB）分类模型时，将训练数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#56-%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-number">56.</span> <span class="toc-text">56.文本分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#57-%E4%B8%80%E7%BB%84%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5P"><span class="toc-number">57.</span> <span class="toc-text">57.一组数据的协方差矩阵P</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#58-Kmeans%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">58.</span> <span class="toc-text">58. Kmeans的复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#59-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E3%80%81SVM"><span class="toc-number">59.</span> <span class="toc-text">59.逻辑回归、SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#60-%E8%BE%93%E5%87%BA%E7%89%B9%E5%BE%81%E5%A4%A7%E5%B0%8F"><span class="toc-number">60.</span> <span class="toc-text">60.输出特征大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#67-%E6%A0%87%E5%87%86%E5%8C%96%E4%B8%8E%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">61.</span> <span class="toc-text">67.标准化与归一化的区别</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1.介绍SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">2. 介绍Tensorflow的计算图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">3. GBDT、XGBoost的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">4.k-means或KNN计算与最近邻居的距离用欧氏距离，为什么不用曼哈顿距离？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">5. 特征工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">6. LR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">7. overfitting怎么解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">8.LR和SVM的联系与区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">9. LR与线性回归的区别与联系？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">10.XGBoost用泰勒展开原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">11.XGBoost如何寻找最优特征？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">12. 判别模型、生成模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">13. L1和L2 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">14. L1和L2正则先验分别服从什么分布?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">15.</span> <span class="toc-text">15.CNN最成功应用在CV，为什么NLP和Speech的很多问题也可以用CNN解决?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">16.</span> <span class="toc-text">16. LSTM结构为什么比RNN好？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">17.</span> <span class="toc-text">17.朴素贝叶斯为什么“朴素”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">18.</span> <span class="toc-text">18. 机器学习为何对数据进行归一化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">19.</span> <span class="toc-text">19. 完整机器学习项目流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">20.</span> <span class="toc-text">20.hash冲突及解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">21.</span> <span class="toc-text">21.解决梯度消失和梯度膨胀？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">22.</span> <span class="toc-text">22.CRF相比HMM和MEMM模型的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">23.</span> <span class="toc-text">23.有监督&#x2F;无监督</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">24.</span> <span class="toc-text">24.正则化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">25.</span> <span class="toc-text">25.协方差和相关性的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">26.</span> <span class="toc-text">26.线性分类器与非线性分类器的区别以及优劣</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">27.</span> <span class="toc-text">27.各种存储结构从运行速度、存储效率和适用场合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">28.</span> <span class="toc-text">28.分布式数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">29.</span> <span class="toc-text">29.贝叶斯定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">30.</span> <span class="toc-text">30.关联规则发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">31.</span> <span class="toc-text">31. 将原始数据进行集成、变换、维度规约、数值规约是在以下哪个步骤的任务？ (数据预处理)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">32.</span> <span class="toc-text">32.数据预处理方法包括A 变量代换 B 离散化 C 聚集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">33.</span> <span class="toc-text">33.KDD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">34.</span> <span class="toc-text">34.当不知道数据所带标签时，可以使用哪种技术促使带同类标签的数据与带其他标签的数据相分离？ (聚类)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">35.</span> <span class="toc-text">35.预测建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">36.</span> <span class="toc-text">36. 特征选择的标准方法A 嵌入 B 过滤 C 包装 D 抽样</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">37.</span> <span class="toc-text">37.sigmoid 激活函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">38.</span> <span class="toc-text">38.卷积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">39.</span> <span class="toc-text">39.CNN的池化pool层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">40.</span> <span class="toc-text">40. 生成对抗网络GAN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">41.</span> <span class="toc-text">41.哪些机器学习算法不需要归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">42.</span> <span class="toc-text">42.梯度下降</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">43.</span> <span class="toc-text">43.梯度下降法并不是下降最快的方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">44.</span> <span class="toc-text">44.随机梯度下降法的问题和挑战？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">45.</span> <span class="toc-text">45.最小二乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">46.</span> <span class="toc-text">46.Python生成随机数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">47.</span> <span class="toc-text">47.常见的损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">48.</span> <span class="toc-text">48.Logistics回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">49.</span> <span class="toc-text">49. HashMap与HashTable区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">50.</span> <span class="toc-text">50.正负样本数据量不等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">51.</span> <span class="toc-text">51.稠密矩阵乘法效率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">52.</span> <span class="toc-text">52.Nave Bayes 是一种特殊的 Bayes 分类器,特征变量是 X,类别标签是 C,它的一个假定是:( 特征变量 X 的各个维度是类别条件独立随机变量 )</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">53.</span> <span class="toc-text">53. SVM分类间隔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">54.</span> <span class="toc-text">54.在HMM中，如果已知观察序列和产生观察序列的状态序列,那么可用以下哪种方法直接进行参数估计( D极大似然估计   )</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">55.</span> <span class="toc-text">55.Naive Bayesian（ NB）分类模型时，将训练数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">56.</span> <span class="toc-text">56.文本分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">57.</span> <span class="toc-text">57.一组数据的协方差矩阵P</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">58.</span> <span class="toc-text">58. Kmeans的复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">59.</span> <span class="toc-text">59.逻辑回归、SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">60.</span> <span class="toc-text">60.输出特征大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">61.</span> <span class="toc-text">67.标准化与归一化的区别</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -956,10 +956,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -972,15 +968,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1040,10 +1040,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -1052,19 +1048,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,6 +1073,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,11 +1112,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1124,15 +1124,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,11 +1148,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1165,6 +1157,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1184,6 +1180,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1200,11 +1200,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1212,15 +1216,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1244,6 +1248,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1257,22 +1265,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,6 +1284,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1304,11 +1312,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1528,19 +1536,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

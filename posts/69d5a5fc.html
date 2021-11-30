@@ -83,7 +83,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -278,21 +278,21 @@
         <p>基于文本语义相似度的计算机辅助定密系统</p>
 <a id="more"></a>
 
-<h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><ol>
+<h1><span id="主要内容">主要内容</span></h1><ol>
 <li><p>构建基于树型结构的定密规则，形成定密规则库。根据待定密文档所属行业领域，对文档内容进行分词和聚类，检索并匹配定密规则库来判定文档密级。</p>
 </li>
 <li><p>针对不能有效匹配定密规则库的目标文档，提出了一种基于加权语义相似度分析的文档定密方法。对文档进行分词和去停用词之后，对新得到的文档中的词语进行语义概念降维与排歧，使词与词之间达到正交，Ｗ便将文本的特征词用更小的特征空间向量进行表示。在此基础之上，提出一种加权的语义相似度Ｋ－最近邻算法，实现对中文文本最后的密级分类。该算法首先ＷＨｏｗｎｅｔ为基础，计算文本的语义相似度，并在该相似度的基础上加入了文本特征词的频率和逆文档频率（ＴＦＩＤＦ值）及特征词在文档中的位置权重作为其权重，最后结合机器学习中的ＫＮＮ分类算法来对文档的密级进行分类。通过实验发现，加权的语义文本相似度的ＫＮＮ算法的分类效果比加权之前的基于语义相似度的ＫＮＮ算法的分类效果好，运算所消耗的时间也较短。</p>
 </li>
 </ol>
-<h1 id="基于定密规则的文档密级确定方法"><a href="#基于定密规则的文档密级确定方法" class="headerlink" title="基于定密规则的文档密级确定方法"></a>基于定密规则的文档密级确定方法</h1><p>根据保密法和国家秘密及其密级具体范围的规定及秘密事项细目建立树型结构的定密规则，并根据这些树型结构定密规则构建起各个行业领域的定密规则库，然后匹配待定密文档与定密规则库的定密规则，最终根据匹配结果确定文档的密级。</p>
-<h2 id="定密规则库的构建"><a href="#定密规则库的构建" class="headerlink" title="定密规则库的构建"></a>定密规则库的构建</h2><p>利用Ｍａｐ这个数据结构的键值对对定密规则进行存储，将定密规则存储为Ｍａｐ的值（ｖａｌｕｅ），将规则所对应的密级存储为Ｍａｐ的键（ｋｅｙ）。</p>
-<h2 id="解析待定密文档"><a href="#解析待定密文档" class="headerlink" title="解析待定密文档"></a>解析待定密文档</h2><p>处理中文文本信息的基础性工作和关键性工作是对中文文本进行词法分析，而分词作为对中文文本语法分析和语义分析的起点。</p>
+<h1><span id="基于定密规则的文档密级确定方法">基于定密规则的文档密级确定方法</span></h1><p>根据保密法和国家秘密及其密级具体范围的规定及秘密事项细目建立树型结构的定密规则，并根据这些树型结构定密规则构建起各个行业领域的定密规则库，然后匹配待定密文档与定密规则库的定密规则，最终根据匹配结果确定文档的密级。</p>
+<h2><span id="定密规则库的构建">定密规则库的构建</span></h2><p>利用Ｍａｐ这个数据结构的键值对对定密规则进行存储，将定密规则存储为Ｍａｐ的值（ｖａｌｕｅ），将规则所对应的密级存储为Ｍａｐ的键（ｋｅｙ）。</p>
+<h2><span id="解析待定密文档">解析待定密文档</span></h2><p>处理中文文本信息的基础性工作和关键性工作是对中文文本进行词法分析，而分词作为对中文文本语法分析和语义分析的起点。</p>
 <p>由中国科学院计算技术研究所的张华平先生设计开发出来的ＮＬＰＩＲ分词系统，其分词的正确率高达９７．５８％，未登录词的识别率和召回率均高于９０％，其中，对于中国人名的识别召回率可接近９８％，其处理文本的速度为３１．５Ｋｂｙｔｅｓ／ｓ，不难看出，ＮＬＰＨＩ分词系统具有很高的实践性和正确性。</p>
 <p>ＮＬＰ化分词系统采用ＨＭＭ模型，建立切分词图。在对文本词语的粗分阶段，首先通过计算得出Ｎ个概率最大的切分词语的结果，然后，利用角色标注的方法识别未登录词，并计算未登录词的概率，在切分词图中加入这些未登录词，在之后的操作中就将这些已经加入切分词图中的未登录词视为普通的词语进行处理，最终对切分标注结果进行动态规划选出Ｎ个最大概率切分结果。</p>
-<h2 id="密级确定"><a href="#密级确定" class="headerlink" title="密级确定"></a>密级确定</h2><p>对定密规则库中的每一条定密规则逐条进行匹配，如果文档中出现了与定密规则中相同的词，我们就把定密规则中的这个词ｒｅｍｏｖｅ掉，最后判断定密规则的值的大小，如果值的大小为１，即ｖａｌｕｅ＝ＮＵ化，我们就判定这个文档的密级为这个ｖａｌｕｅ为空的规则所对应的ｋｅｙ的值；如果值的大小大于１，则说明这篇文档不符合这条定密规则。</p>
-<h1 id="基于加权文本语义相似度的文档密级确定方法"><a href="#基于加权文本语义相似度的文档密级确定方法" class="headerlink" title="基于加权文本语义相似度的文档密级确定方法"></a>基于加权文本语义相似度的文档密级确定方法</h1><h2 id="文本分类的定义和过程"><a href="#文本分类的定义和过程" class="headerlink" title="文本分类的定义和过程"></a>文本分类的定义和过程</h2><p>文本分类属于有指导的学习，一般可将文本分类分为训练阶段和分类阶段。</p>
+<h2><span id="密级确定">密级确定</span></h2><p>对定密规则库中的每一条定密规则逐条进行匹配，如果文档中出现了与定密规则中相同的词，我们就把定密规则中的这个词ｒｅｍｏｖｅ掉，最后判断定密规则的值的大小，如果值的大小为１，即ｖａｌｕｅ＝ＮＵ化，我们就判定这个文档的密级为这个ｖａｌｕｅ为空的规则所对应的ｋｅｙ的值；如果值的大小大于１，则说明这篇文档不符合这条定密规则。</p>
+<h1><span id="基于加权文本语义相似度的文档密级确定方法">基于加权文本语义相似度的文档密级确定方法</span></h1><h2><span id="文本分类的定义和过程">文本分类的定义和过程</span></h2><p>文本分类属于有指导的学习，一般可将文本分类分为训练阶段和分类阶段。</p>
 <p>文本分类的分类过程一般包括五个步骤：文本预处理、文本表示、特征选择、权重计算、分类算法。文本预处理，主要是指对文本分词、去停用词、文本词频统计等处理过程；文本表示，主要把使用自然语言构成的文本转换成为使计算机能够识别和理解的形式，使计算机在处理文档的时候更加方便，更加容易；特征选择，主要是指从一个文本中提取出一些特别的词语，可Ｗ用这些词语来表示这<br>个文本，通常这些词语在文本中最具代表性，并且对这个文档的分类有重要的贡献；权重计算，主要是指按某种方法计算并赋予特征词相应的权值；分类算法，主要指如何对训练样本集进行训练和学习，并且根据训练和学习的结果，对测试样本中的文本进行准确而有效的分类。</p>
-<h2 id="文本分类关键技术简介"><a href="#文本分类关键技术简介" class="headerlink" title="文本分类关键技术简介"></a>文本分类关键技术简介</h2><p>（１）文本预处理<br>为了方便文本分类后续的操作，首先就是要对文本进行预处理，将语料库中原始的文本转化为统一的格式。</p>
+<h2><span id="文本分类关键技术简介">文本分类关键技术简介</span></h2><p>（１）文本预处理<br>为了方便文本分类后续的操作，首先就是要对文本进行预处理，将语料库中原始的文本转化为统一的格式。</p>
 <p>１）分词</p>
 <p>目前，汉语分词算法一般可Ｗ分为Ｗ下Ｈ个大类：基于字典和词库匹配的机械分词方法、基于知识理解的分词方法以及基于统计的分词方法。</p>
 <p>２）去停用词</p>
@@ -516,7 +516,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">主要内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AE%9A%E5%AF%86%E8%A7%84%E5%88%99%E7%9A%84%E6%96%87%E6%A1%A3%E5%AF%86%E7%BA%A7%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">基于定密规则的文档密级确定方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E5%AF%86%E8%A7%84%E5%88%99%E5%BA%93%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">2.1.</span> <span class="toc-text">定密规则库的构建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%BE%85%E5%AE%9A%E5%AF%86%E6%96%87%E6%A1%A3"><span class="toc-number">2.2.</span> <span class="toc-text">解析待定密文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%BA%A7%E7%A1%AE%E5%AE%9A"><span class="toc-number">2.3.</span> <span class="toc-text">密级确定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8A%A0%E6%9D%83%E6%96%87%E6%9C%AC%E8%AF%AD%E4%B9%89%E7%9B%B8%E4%BC%BC%E5%BA%A6%E7%9A%84%E6%96%87%E6%A1%A3%E5%AF%86%E7%BA%A7%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">基于加权文本语义相似度的文档密级确定方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">文本分类的定义和过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B"><span class="toc-number">3.2.</span> <span class="toc-text">文本分类关键技术简介</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">主要内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">基于定密规则的文档密级确定方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">定密规则库的构建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">解析待定密文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">密级确定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">基于加权文本语义相似度的文档密级确定方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">文本分类的定义和过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">文本分类关键技术简介</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -738,10 +738,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -754,15 +750,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,10 +822,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -834,19 +830,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,6 +855,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,11 +894,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -906,15 +906,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,11 +930,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -947,6 +939,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -966,6 +962,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -982,11 +982,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -994,15 +998,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1026,6 +1030,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1039,22 +1047,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1074,6 +1066,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1086,11 +1094,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1310,19 +1318,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

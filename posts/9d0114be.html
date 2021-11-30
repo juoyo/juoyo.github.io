@@ -83,7 +83,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -278,17 +278,17 @@
         <p>IO流顺序读写数据，单向流动，称IO流。IO流以<code>byte</code>（字节）为最小单位，因此也称为<em>字节流</em>。</p>
 <a id="more"></a>
 
-<h2 id="快速引入"><a href="#快速引入" class="headerlink" title="快速引入"></a>快速引入</h2><h3 id="InputStream-OutputStream"><a href="#InputStream-OutputStream" class="headerlink" title="InputStream / OutputStream"></a>InputStream / OutputStream</h3><p>在Java中，<code>InputStream</code>代表输入字节流，<code>OuputStream</code>代表输出字节流，这是最基本的两种IO流。</p>
+<h2><span id="快速引入">快速引入</span></h2><h3><span id="inputstream-outputstream">InputStream / OutputStream</span></h3><p>在Java中，<code>InputStream</code>代表输入字节流，<code>OuputStream</code>代表输出字节流，这是最基本的两种IO流。</p>
 <p>IO流以<font color="red"><code>byte</code></font>（字节）为最小单位，因此也称为<em>字节流</em>。</p>
-<h3 id="Reader-Writer"><a href="#Reader-Writer" class="headerlink" title="Reader / Writer"></a>Reader / Writer</h3><p>Java提供了<code>Reader</code>和<code>Writer</code>表示字符流，字符流传输的最小数据单位是<font color="red"><code>char</code></font>。</p>
+<h3><span id="reader-writer">Reader / Writer</span></h3><p>Java提供了<code>Reader</code>和<code>Writer</code>表示字符流，字符流传输的最小数据单位是<font color="red"><code>char</code></font>。</p>
 <p><code>Reader</code>和<code>Writer</code>本质上是一个能自动编解码的<code>InputStream</code>和<code>OutputStream</code>。</p>
 <p><font color="red"><strong>究竟使用<code>Reader</code>还是<code>InputStream</code>，要取决于具体的使用场景。如果数据源不是文本，就只能使用<code>InputStream</code>，如果数据源是文本，使用Reader更方便一些。<code>Writer</code>和<code>OutputStream</code>是类似的。</strong></font></p>
-<h3 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h3><p>同步IO是，读写IO时代码必须等待数据返回后才继续执行后续代码，优点是代码编写简单，缺点是CPU执行效率低。</p>
+<h3><span id="同步和异步">同步和异步</span></h3><p>同步IO是，读写IO时代码必须等待数据返回后才继续执行后续代码，优点是代码编写简单，缺点是CPU执行效率低。</p>
 <p>异步IO是，读写IO时仅发出请求，然后立刻执行后续代码，优点是CPU执行效率高，缺点是代码编写复杂。</p>
 <p>Java标准库的包<code>java.io</code>提供了同步IO，而<code>java.nio</code>则是异步IO。</p>
 <p><code>InputStream</code>、<code>OutputStream</code>、<code>Reader</code>和<code>Writer</code>都是同步IO的抽象类，对应的具体实现类，以文件为例，有<code>FileInputStream</code>、<code>FileOutputStream</code>、<code>FileReader</code>和<code>FileWriter</code>。</p>
 <hr>
-<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><p>Java的标准库<code>java.io</code>提供了<code>File</code>对象来操作文件和目录。</p>
+<h2><span id="file">File</span></h2><p>Java的标准库<code>java.io</code>提供了<code>File</code>对象来操作文件和目录。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">&quot;C:\\windows&quot;</span>);</span><br><span class="line">        System.out.println(f);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>构造File对象时，既可以传入绝对路径，也可以传入相对路径。</p>
 <p>Windows平台使用<code>\</code>作为路径分隔符，在Java字符串中需要用<code>\\</code>表示一个<code>\</code>，前一个\表示转义。</p>
@@ -298,7 +298,7 @@
 <p>规范路径就是把<code>.</code>和<code>..</code>转换成标准路径</p>
 <p>因为Windows和Linux的路径分隔符不同，File对象有一个静态变量用于表示当前平台的系统分隔符：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(File.separator); <span class="comment">// 根据当前平台打印&quot;\&quot;或&quot;/&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h3><p>调用<code>isFile()</code>，判断该<code>File</code>对象是否是一个已存在的文件，调用<code>isDirectory()</code>，判断该<code>File</code>对象是否是一个已存在的目录。</p>
+<h3><span id="文件和目录">文件和目录</span></h3><p>调用<code>isFile()</code>，判断该<code>File</code>对象是否是一个已存在的文件，调用<code>isDirectory()</code>，判断该<code>File</code>对象是否是一个已存在的目录。</p>
 <p>用<code>File</code>对象获取到一个文件时，还可以进一步判断文件的权限和大小：</p>
 <ul>
 <li><code>boolean canRead()</code>：是否可读；</li>
@@ -307,11 +307,11 @@
 <li><code>long length()</code>：文件字节大小。</li>
 </ul>
 <p>对目录而言，是否可执行表示能否列出它包含的文件和子目录。</p>
-<h3 id="创建和删除文件"><a href="#创建和删除文件" class="headerlink" title="创建和删除文件"></a>创建和删除文件</h3><p>createNewFile()创建新文件，delete()删除文件</p>
+<h3><span id="创建和删除文件">创建和删除文件</span></h3><p>createNewFile()创建新文件，delete()删除文件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(<span class="string">&quot;/path/file&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (file.createNewFile()) &#123;</span><br><span class="line">    <span class="comment">// 创建文件已成功</span></span><br><span class="line">    <span class="keyword">if</span> (file.delete()) &#123;</span><br><span class="line">        <span class="comment">// 删除文件已成功</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>File对象提供了<code>createTempFile()</code>来创建一个临时文件，以及<code>deleteOnExit()</code>在JVM退出时自动删除该文件。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File f = File.createTempFile(<span class="string">&quot;tmp-&quot;</span>, <span class="string">&quot;.txt&quot;</span>);</span><br><span class="line">        f.deleteOnExit();  <span class="comment">// JVM退出时自动删除</span></span><br><span class="line">        System.out.println(f.isFile());</span><br><span class="line">        System.out.println(f.getAbsolutePath());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="遍历文件和目录"><a href="#遍历文件和目录" class="headerlink" title="遍历文件和目录"></a>遍历文件和目录</h3><p>File对象表示一个目录时，可以使用<code>list()</code>和<code>listFiles()</code>列出目录下的文件和子目录名。</p>
+<h3><span id="遍历文件和目录">遍历文件和目录</span></h3><p>File对象表示一个目录时，可以使用<code>list()</code>和<code>listFiles()</code>列出目录下的文件和子目录名。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">&quot;C:\\Windows&quot;</span>);</span><br><span class="line">        File[] fs1 = f.listFiles();  <span class="comment">// 列出所有文件和子目录</span></span><br><span class="line">        printFiles(fs1);</span><br><span class="line">        File[] fs2 = f.listFiles(<span class="keyword">new</span> FilenameFilter() &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">// 列出.exe文件</span></span><br><span class="line">                <span class="keyword">return</span> name.endsWith(<span class="string">&quot;.exe&quot;</span>);  <span class="comment">// 返回true表示接受该文件</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        printFiles(fs2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFiles</span><span class="params">(File[] files)</span> </span>&#123;</span><br><span class="line">        System.out.pringln(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (files != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (File f : files) &#123;</span><br><span class="line">                System.out.println(f);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>File对象如果表示一个目录，可以通过以下方法创建和删除目录：</p>
 <ul>
@@ -320,11 +320,11 @@
 <li><code>boolean delete()</code>：删除当前File对象表示的目录，当前目录必须为空才能删除成功。</li>
 </ul>
 <hr>
-<h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><p>位于<code>java.nio.file</code>包</p>
+<h3><span id="path">Path</span></h3><p>位于<code>java.nio.file</code>包</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        Path p1 = Paths.get(<span class="string">&quot;.&quot;</span>, <span class="string">&quot;project&quot;</span>, <span class="string">&quot;study&quot;</span>); <span class="comment">// 构造一个Path对象</span></span><br><span class="line">        System.out.println(p1);</span><br><span class="line">        Path p2 = p1.toAbsolutePath(); <span class="comment">// 转换为绝对路径</span></span><br><span class="line">        System.out.println(p2);</span><br><span class="line">        Path p3 = p2.normalize(); <span class="comment">// 转换为规范路径</span></span><br><span class="line">        System.out.println(p3);</span><br><span class="line">        File f = p3.toFile(); <span class="comment">// 转换为File对象</span></span><br><span class="line">        System.out.println(f);</span><br><span class="line">        <span class="keyword">for</span> (Path p : Paths.get(<span class="string">&quot;..&quot;</span>).toAbsolutePath()) &#123; <span class="comment">// 可以直接遍历Path</span></span><br><span class="line">            System.out.println(<span class="string">&quot;  &quot;</span> + p);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>使用path适用于目录复杂的拼接、遍历等。</p>
 <hr>
-<h2 id="inputStream"><a href="#inputStream" class="headerlink" title="inputStream"></a>inputStream</h2><p><code>java.io</code>包提供了所有同步IO的功能。<code>InputStream</code>就是Java标准库提供的最基本的输入流。</p>
+<h2><span id="inputstream">inputStream</span></h2><p><code>java.io</code>包提供了所有同步IO的功能。<code>InputStream</code>就是Java标准库提供的最基本的输入流。</p>
 <p><code>FileInputStream</code>就是从文件流中读取数据。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    InputStream input = <span class="keyword">new</span> FileInputStream(<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = input.read();  <span class="comment">// 反复调用read()方法，直到返回-1</span></span><br><span class="line">        <span class="keyword">if</span> (n == -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br><span class="line">    input.close();  <span class="comment">//关闭流</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>InputStream</code>和<code>OutputStream</code>都是通过<code>close()</code>方法来关闭流。</p>
@@ -334,29 +334,29 @@
 <p>利用Java 7引入的新的<code>try(resource)</code>的语法，只需要编写<code>try</code>语句，让编译器自动为我们关闭资源。推荐的写法如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> (InputStream input = <span class="keyword">new</span> FileInputStream(<span class="string">&quot;src/readme.txt&quot;</span>)) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="keyword">while</span> ((n = input.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">// 编译器在此自动为我们写入finally并调用close()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>try(resource = ...)</code>中的对象是否实现了<code>java.lang.AutoCloseable</code>接口，如果实现了，就自动加上<code>finally</code>语句并调用<code>close()</code>方法。<code>InputStream</code>和<code>OutputStream</code>都实现了这个接口。</p>
-<h3 id="InputStream实现类"><a href="#InputStream实现类" class="headerlink" title="InputStream实现类"></a>InputStream实现类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] data = &#123; <span class="number">72</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>, <span class="number">33</span> &#125;;</span><br><span class="line">        <span class="keyword">try</span> (InputStream input = <span class="keyword">new</span> ByteArrayInputStream(data)) &#123;</span><br><span class="line">            <span class="keyword">int</span> n;</span><br><span class="line">            <span class="keyword">while</span> ((n = input.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">                System.out.println((<span class="keyword">char</span>)n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3><span id="inputstream实现类">InputStream实现类</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] data = &#123; <span class="number">72</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>, <span class="number">33</span> &#125;;</span><br><span class="line">        <span class="keyword">try</span> (InputStream input = <span class="keyword">new</span> ByteArrayInputStream(data)) &#123;</span><br><span class="line">            <span class="keyword">int</span> n;</span><br><span class="line">            <span class="keyword">while</span> ((n = input.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">                System.out.println((<span class="keyword">char</span>)n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h2><p><code>OutputStream</code>还提供了一个<code>flush()</code>方法，它的目的是将缓冲区的内容真正输出到目的地，能强制把缓冲区内容输出。</p>
-<h3 id="OutputStream实现类"><a href="#OutputStream实现类" class="headerlink" title="OutputStream实现类"></a>OutputStream实现类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] data;</span><br><span class="line">        <span class="keyword">try</span> (ByteArrayOutputStream output = <span class="keyword">new</span> ByteArrayOutputStream()) &#123;</span><br><span class="line">            output.write(<span class="string">&quot;Hello &quot;</span>.getBytes(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">            output.write(<span class="string">&quot;world!&quot;</span>.getBytes(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">            data = output.toByteArray();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> String(data, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2><span id="outputstream">OutputStream</span></h2><p><code>OutputStream</code>还提供了一个<code>flush()</code>方法，它的目的是将缓冲区的内容真正输出到目的地，能强制把缓冲区内容输出。</p>
+<h3><span id="outputstream实现类">OutputStream实现类</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] data;</span><br><span class="line">        <span class="keyword">try</span> (ByteArrayOutputStream output = <span class="keyword">new</span> ByteArrayOutputStream()) &#123;</span><br><span class="line">            output.write(<span class="string">&quot;Hello &quot;</span>.getBytes(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">            output.write(<span class="string">&quot;world!&quot;</span>.getBytes(<span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">            data = output.toByteArray();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> String(data, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="操作zip文件"><a href="#操作zip文件" class="headerlink" title="操作zip文件"></a>操作zip文件</h2><p><code>ZipInputStream</code>是一种<code>FilterInputStream</code>，它可以直接读取zip包的内容，<code>JarInputStream</code>是从<code>ZipInputStream</code>派生，它增加的主要功能是直接读取jar文件里面的<code>MANIFEST.MF</code>文件。</p>
-<h3 id="读取zip包"><a href="#读取zip包" class="headerlink" title="读取zip包"></a>读取zip包</h3><p>我们要创建一个<code>ZipInputStream</code>，通常是传入一个<code>FileInputStream</code>作为数据源，然后，循环调用<code>getNextEntry()</code>，直到返回<code>null</code>，表示zip流结束。</p>
+<h2><span id="操作zip文件">操作zip文件</span></h2><p><code>ZipInputStream</code>是一种<code>FilterInputStream</code>，它可以直接读取zip包的内容，<code>JarInputStream</code>是从<code>ZipInputStream</code>派生，它增加的主要功能是直接读取jar文件里面的<code>MANIFEST.MF</code>文件。</p>
+<h3><span id="读取zip包">读取zip包</span></h3><p>我们要创建一个<code>ZipInputStream</code>，通常是传入一个<code>FileInputStream</code>作为数据源，然后，循环调用<code>getNextEntry()</code>，直到返回<code>null</code>，表示zip流结束。</p>
 <p>一个<code>ZipEntry</code>表示一个压缩文件或目录，如果是压缩文件，我们就用<code>read()</code>方法不断读取，直到返回<code>-1</code>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (ZipInputStream zip = <span class="keyword">new</span> ZipInputStream(<span class="keyword">new</span> FileInputStream(...))) &#123;</span><br><span class="line">    ZipEntry entry = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">while</span> ((entry = zip.getNextEntry()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">        String name = entry.getName();</span><br><span class="line">        <span class="keyword">if</span> (!entry.isDirectory()) &#123;</span><br><span class="line">            <span class="keyword">int</span> n;</span><br><span class="line">            <span class="keyword">while</span> ((n = zip.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">                ...</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="写入zip包"><a href="#写入zip包" class="headerlink" title="写入zip包"></a>写入zip包</h3><p><code>ZipOutputStream</code>是一种<code>FilterOutputStream</code>，它可以直接写入内容到zip包。我们要先创建一个<code>ZipOutputStream</code>，通常是包装一个<code>FileOutputStream</code>，然后，每写入一个文件前，先调用<code>putNextEntry()</code>，然后用<code>write()</code>写入<code>byte[]</code>数据，写入完毕后调用<code>closeEntry()</code>结束这个文件的打包。</p>
+<h3><span id="写入zip包">写入zip包</span></h3><p><code>ZipOutputStream</code>是一种<code>FilterOutputStream</code>，它可以直接写入内容到zip包。我们要先创建一个<code>ZipOutputStream</code>，通常是包装一个<code>FileOutputStream</code>，然后，每写入一个文件前，先调用<code>putNextEntry()</code>，然后用<code>write()</code>写入<code>byte[]</code>数据，写入完毕后调用<code>closeEntry()</code>结束这个文件的打包。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (ZipOutputStream zip = <span class="keyword">new</span> ZipOutputStream(<span class="keyword">new</span> FileOutputStream(...))) &#123;</span><br><span class="line">    File[] files = ...</span><br><span class="line">    <span class="keyword">for</span> (File file : files) &#123;</span><br><span class="line">        zip.putNextEntry(<span class="keyword">new</span> ZipEntry(file.getName()));</span><br><span class="line">        zip.write(getFileDataAsBytes(file));</span><br><span class="line">        zip.closeEntry();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="读取classpath资源"><a href="#读取classpath资源" class="headerlink" title="读取classpath资源"></a>读取classpath资源</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (InputStream input = getClass().getResourceAsStream(<span class="string">&quot;/default.properties&quot;</span>)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (input != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="读取classpath资源">读取classpath资源</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (InputStream input = getClass().getResourceAsStream(<span class="string">&quot;/default.properties&quot;</span>)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (input != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>调用<code>getResourceAsStream()</code>就可以直接从classpath读取任意的资源文件。</p>
 <hr>
-<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">序列化是指把一个Java对象变成二进制内容，本质上就是一个<span class="keyword">byte</span>[]数组。</span><br></pre></td></tr></table></figure>
+<h2><span id="序列化">序列化</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">序列化是指把一个Java对象变成二进制内容，本质上就是一个<span class="keyword">byte</span>[]数组。</span><br></pre></td></tr></table></figure>
 <p>一个Java对象要能序列化，必须实现一个特殊的<code>java.io.Serializable</code>接口，它的定义如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public interface Serializable &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>Serializable</code>接口没有定义任何方法，它是一个空接口。</p>
-<h3 id="序列化-1"><a href="#序列化-1" class="headerlink" title="序列化"></a>序列化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        ByteArrayOutputStream buffer = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="keyword">try</span> (ObjectOutputStream output = <span class="keyword">new</span> ObjectOutputStream(buffer)) &#123;</span><br><span class="line">            <span class="comment">// 写入int:</span></span><br><span class="line">            output.writeInt(<span class="number">12345</span>);</span><br><span class="line">            <span class="comment">// 写入String:</span></span><br><span class="line">            output.writeUTF(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">            <span class="comment">// 写入Object:</span></span><br><span class="line">            output.writeObject(Double.valueOf(<span class="number">123.456</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(buffer.toByteArray()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (ObjectInputStream input = <span class="keyword">new</span> ObjectInputStream(...)) &#123;</span><br><span class="line">    <span class="keyword">int</span> n = input.readInt();</span><br><span class="line">    String s = input.readUTF();</span><br><span class="line">    Double d = (Double) input.readObject();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="序列化">序列化</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        ByteArrayOutputStream buffer = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="keyword">try</span> (ObjectOutputStream output = <span class="keyword">new</span> ObjectOutputStream(buffer)) &#123;</span><br><span class="line">            <span class="comment">// 写入int:</span></span><br><span class="line">            output.writeInt(<span class="number">12345</span>);</span><br><span class="line">            <span class="comment">// 写入String:</span></span><br><span class="line">            output.writeUTF(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">            <span class="comment">// 写入Object:</span></span><br><span class="line">            output.writeObject(Double.valueOf(<span class="number">123.456</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(buffer.toByteArray()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3><span id="反序列化">反序列化</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (ObjectInputStream input = <span class="keyword">new</span> ObjectInputStream(...)) &#123;</span><br><span class="line">    <span class="keyword">int</span> n = input.readInt();</span><br><span class="line">    String s = input.readUTF();</span><br><span class="line">    Double d = (Double) input.readObject();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Java的序列化允许class定义一个特殊的<code>serialVersionUID</code>静态变量，用于标识Java类的序列化“版本”，通常可以由IDE自动生成。如果增加或修改了字段，可以改变<code>serialVersionUID</code>的值，这样就能自动阻止不匹配的class版本：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">2709425275741743919L</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>要特别注意反序列化的几个重要特点：</p>
@@ -577,7 +577,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">快速引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#InputStream-OutputStream"><span class="toc-number">1.1.</span> <span class="toc-text">InputStream &#x2F; OutputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reader-Writer"><span class="toc-number">1.2.</span> <span class="toc-text">Reader &#x2F; Writer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5"><span class="toc-number">1.3.</span> <span class="toc-text">同步和异步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#File"><span class="toc-number">2.</span> <span class="toc-text">File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">文件和目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">创建和删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-number">2.3.</span> <span class="toc-text">遍历文件和目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Path"><span class="toc-number">2.4.</span> <span class="toc-text">Path</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inputStream"><span class="toc-number">3.</span> <span class="toc-text">inputStream</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#InputStream%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">3.1.</span> <span class="toc-text">InputStream实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OutputStream"><span class="toc-number">4.</span> <span class="toc-text">OutputStream</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OutputStream%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">4.1.</span> <span class="toc-text">OutputStream实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9Czip%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">操作zip文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96zip%E5%8C%85"><span class="toc-number">5.1.</span> <span class="toc-text">读取zip包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5zip%E5%8C%85"><span class="toc-number">5.2.</span> <span class="toc-text">写入zip包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96classpath%E8%B5%84%E6%BA%90"><span class="toc-number">6.</span> <span class="toc-text">读取classpath资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">7.</span> <span class="toc-text">序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96-1"><span class="toc-number">7.1.</span> <span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">7.2.</span> <span class="toc-text">反序列化</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">快速引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">InputStream &#x2F; OutputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">Reader &#x2F; Writer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">同步和异步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">文件和目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">创建和删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">遍历文件和目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.4.</span> <span class="toc-text">Path</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">inputStream</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">InputStream实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">OutputStream</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">OutputStream实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">操作zip文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">5.1.</span> <span class="toc-text">读取zip包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">5.2.</span> <span class="toc-text">写入zip包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">读取classpath资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">7.1.</span> <span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">7.2.</span> <span class="toc-text">反序列化</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -799,10 +799,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -815,15 +811,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,10 +883,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -895,19 +891,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -924,6 +916,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -955,11 +955,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -967,15 +967,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -995,11 +991,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,6 +1000,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1027,6 +1023,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1043,11 +1043,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,15 +1059,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,6 +1091,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1100,22 +1108,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1135,6 +1127,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1147,11 +1155,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1371,19 +1379,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

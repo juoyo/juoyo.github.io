@@ -92,7 +92,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -287,38 +287,38 @@
         <p>本文主要内容是自顶向下分析概述、文法转换、LL（1）文法等。</p>
 <a id="more"></a>
 
-<h2 id="语法分析主要任务"><a href="#语法分析主要任务" class="headerlink" title="语法分析主要任务"></a>语法分析主要任务</h2><p>语法分析器(parser)从词法分析器输出的token序列中识别出各类短语，并构造语法分析树(parse tree)</p>
-<h3 id="赋值语句分析树"><a href="#赋值语句分析树" class="headerlink" title="赋值语句分析树"></a>赋值语句分析树</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position &#x3D; initial + rate * 60 ;</span><br><span class="line">&lt;id, position&gt; &lt;&#x3D;&gt; &lt;id,initial&gt; &lt;+&gt; &lt;id, rate&gt; &lt;*&gt; &lt;num,60&gt; &lt;;&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="语法分析主要任务">语法分析主要任务</span></h2><p>语法分析器(parser)从词法分析器输出的token序列中识别出各类短语，并构造语法分析树(parse tree)</p>
+<h3><span id="赋值语句分析树">赋值语句分析树</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position &#x3D; initial + rate * 60 ;</span><br><span class="line">&lt;id, position&gt; &lt;&#x3D;&gt; &lt;id,initial&gt; &lt;+&gt; &lt;id, rate&gt; &lt;*&gt; &lt;num,60&gt; &lt;;&gt;</span><br></pre></td></tr></table></figure>
 
 <p><img src="/posts/b87ecbaa.htm/1.gif" alt="赋值"></p>
-<h3 id="变量声明语句的分析树"><a href="#变量声明语句的分析树" class="headerlink" title="变量声明语句的分析树"></a>变量声明语句的分析树</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文法：</span><br><span class="line">&lt;D&gt; → &lt;T&gt; &lt;IDS&gt;;</span><br><span class="line">&lt;T&gt; → int | real | char | bool</span><br><span class="line">&lt;IDS&gt; → id | &lt;IDS&gt;, id</span><br><span class="line"></span><br><span class="line">输入：</span><br><span class="line">int a , b , c ;</span><br></pre></td></tr></table></figure>
+<h3><span id="变量声明语句的分析树">变量声明语句的分析树</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文法：</span><br><span class="line">&lt;D&gt; → &lt;T&gt; &lt;IDS&gt;;</span><br><span class="line">&lt;T&gt; → int | real | char | bool</span><br><span class="line">&lt;IDS&gt; → id | &lt;IDS&gt;, id</span><br><span class="line"></span><br><span class="line">输入：</span><br><span class="line">int a , b , c ;</span><br></pre></td></tr></table></figure>
 <p><img src="/posts/b87ecbaa.htm/2.gif" alt="声明"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解释</span><br><span class="line">D -&gt; Declaration</span><br><span class="line">T -&gt; Type</span><br><span class="line">IDS -&gt; Identifier Sequence</span><br></pre></td></tr></table></figure>
-<h2 id="自顶向下的分析"><a href="#自顶向下的分析" class="headerlink" title="自顶向下的分析"></a>自顶向下的分析</h2><p>从分析树的顶部（根节点）向底部（叶节点）方向构造分析树,可以看成是从文法开始符号S推导出词串w的过程。</p>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>文法<br>① E → E + E<br>② E → E * E<br>③ E → ( E )<br>④ E → id<br>输入<br>id + ( id + id )</p>
+<h2><span id="自顶向下的分析">自顶向下的分析</span></h2><p>从分析树的顶部（根节点）向底部（叶节点）方向构造分析树,可以看成是从文法开始符号S推导出词串w的过程。</p>
+<h3><span id="举例">举例</span></h3><p>文法<br>① E → E + E<br>② E → E * E<br>③ E → ( E )<br>④ E → id<br>输入<br>id + ( id + id )</p>
 <p>推导过程： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E -&gt; E + E</span><br><span class="line">-&gt; E + ( E )</span><br><span class="line">-&gt; E + ( E + E )</span><br><span class="line">-&gt; E + ( id + E )</span><br><span class="line">-&gt; id + ( id + E )</span><br><span class="line">-&gt; id + ( id + id )</span><br></pre></td></tr></table></figure>
 <p><img src="/posts/b87ecbaa.htm/3.gif" alt="声明"></p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>每一步推导中，都需要做两个选择：</p>
+<h3><span id="思考">思考</span></h3><p>每一步推导中，都需要做两个选择：</p>
 <ol>
 <li>替换当前句型中的哪个非终结符</li>
 <li>用该非终结符的哪个候选式进行替换</li>
 </ol>
-<h3 id="最左推导"><a href="#最左推导" class="headerlink" title="最左推导"></a>最左推导</h3><p>在最左推导中，总是选择每个句型的最左非终结符进行替换<br><img src="/posts/b87ecbaa.htm/4.gif" alt="声明"></p>
-<h3 id="最右推导"><a href="#最右推导" class="headerlink" title="最右推导"></a>最右推导</h3><p>在最右推导中，总是选择每个句型的最右非终结符进行替换<br><img src="/posts/b87ecbaa.htm/5.gif" alt="声明"><br>在自底向上的分析中，总是采用最左归约的方式，因此把最左归约称为规范归约，而最右推导相应地称为规范推导</p>
-<h3 id="最左推导和最右推导的唯一性"><a href="#最左推导和最右推导的唯一性" class="headerlink" title="最左推导和最右推导的唯一性"></a>最左推导和最右推导的唯一性</h3><p><img src="/posts/b87ecbaa.htm/6.gif" alt="声明"></p>
-<h3 id="自顶向下的语法分析采用最左推导方式"><a href="#自顶向下的语法分析采用最左推导方式" class="headerlink" title="自顶向下的语法分析采用最左推导方式"></a>自顶向下的语法分析采用最左推导方式</h3><p>分析器从左向右扫描，因此自顶向下的语法分析采用最左推导方式</p>
+<h3><span id="最左推导">最左推导</span></h3><p>在最左推导中，总是选择每个句型的最左非终结符进行替换<br><img src="/posts/b87ecbaa.htm/4.gif" alt="声明"></p>
+<h3><span id="最右推导">最右推导</span></h3><p>在最右推导中，总是选择每个句型的最右非终结符进行替换<br><img src="/posts/b87ecbaa.htm/5.gif" alt="声明"><br>在自底向上的分析中，总是采用最左归约的方式，因此把最左归约称为规范归约，而最右推导相应地称为规范推导</p>
+<h3><span id="最左推导和最右推导的唯一性">最左推导和最右推导的唯一性</span></h3><p><img src="/posts/b87ecbaa.htm/6.gif" alt="声明"></p>
+<h3><span id="自顶向下的语法分析采用最左推导方式">自顶向下的语法分析采用最左推导方式</span></h3><p>分析器从左向右扫描，因此自顶向下的语法分析采用最左推导方式</p>
 <ol>
 <li>总是选择每个句型的最左非终结符进行替换</li>
 <li>根据输入流中的下一个终结符，选择最左非终结符的一个候选式<br><img src="/posts/b87ecbaa.htm/7.gif" alt="声明"></li>
 </ol>
-<h3 id="自顶向下语法分析的通用形式"><a href="#自顶向下语法分析的通用形式" class="headerlink" title="自顶向下语法分析的通用形式"></a>自顶向下语法分析的通用形式</h3><h4 id="递归下降分析-Recursive-Descent-Parsing"><a href="#递归下降分析-Recursive-Descent-Parsing" class="headerlink" title="递归下降分析 (Recursive-Descent Parsing)"></a>递归下降分析 (Recursive-Descent Parsing)</h4><ol>
+<h3><span id="自顶向下语法分析的通用形式">自顶向下语法分析的通用形式</span></h3><h4><span id="递归下降分析-recursive-descent-parsing">递归下降分析 (Recursive-Descent Parsing)</span></h4><ol>
 <li>由一组过程组成，每个过程对应一个非终结符 </li>
 <li>从文法开始符号S对应的过程开始，其中递归调用文法中其它非终结符对应的过程。如果S对应过程体恰好扫描了整个输入串，则成功完成语法分析 </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">A</span><span class="params">( )</span> </span>&#123;</span><br><span class="line">    选择一个A产生式， A →X1 X2 … Xk ；</span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> to k ) &#123;</span><br><span class="line">    	<span class="keyword">if</span> ( Xi是一个非终结符号)</span><br><span class="line">    		调用过程 Xi ( ) ;</span><br><span class="line">    	<span class="keyword">else</span> <span class="keyword">if</span> ( Xi 等于当前的输入符号a)</span><br><span class="line">    		读入下一个输入符号;</span><br><span class="line">    	<span class="keyword">else</span> <span class="comment">/* 发生了一个错误 */</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em>可能需要回溯(backtracking)，导致效率较低</em> </p>
-<h4 id="预测分析-Predictive-Parsing"><a href="#预测分析-Predictive-Parsing" class="headerlink" title="预测分析 (Predictive Parsing)"></a>预测分析 (Predictive Parsing)</h4><ul>
+<h4><span id="预测分析-predictive-parsing">预测分析 (Predictive Parsing)</span></h4><ul>
 <li><p>预测分析是递归下降分析技术的一个特例，通过在输入中向前看固定个数（通常是一个） 符号来选择正确的A-产生式。 </p>
 </li>
 <li><p>可以对某些文法构造出向前看k个输入符号的预测分析器，该类文法有时也称为LL(k) 文法类 </p>
@@ -326,10 +326,10 @@
 <li><p>预测分析不需要回溯，是一种确定的自顶向下分析方法 </p>
 </li>
 </ul>
-<h2 id="文法转换"><a href="#文法转换" class="headerlink" title="文法转换"></a>文法转换</h2><p>并非所有文法均适合自顶向下分析</p>
-<h3 id="回溯问题"><a href="#回溯问题" class="headerlink" title="回溯问题"></a>回溯问题</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文法G</span><br><span class="line">S → aAd | aBe</span><br><span class="line">A → c</span><br><span class="line">B → b</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">a b c </span><br></pre></td></tr></table></figure>
+<h2><span id="文法转换">文法转换</span></h2><p>并非所有文法均适合自顶向下分析</p>
+<h3><span id="回溯问题">回溯问题</span></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文法G</span><br><span class="line">S → aAd | aBe</span><br><span class="line">A → c</span><br><span class="line">B → b</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">a b c </span><br></pre></td></tr></table></figure>
 <p>同一非终结符(S)的多个候选式(aAd  aBe)存在<strong>共同前缀</strong>(a)，将导致<font color="red"><strong>回溯</strong></font>现象 </p>
-<h3 id="无限循环问题"><a href="#无限循环问题" class="headerlink" title="无限循环问题"></a>无限循环问题</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文法G</span><br><span class="line">E → E + T | E – T | T</span><br><span class="line">T → T * F | T / F | F</span><br><span class="line">F → ( E ) | id</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">id + id * id</span><br></pre></td></tr></table></figure>
+<h3><span id="无限循环问题">无限循环问题</span></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文法G</span><br><span class="line">E → E + T | E – T | T</span><br><span class="line">T → T * F | T / F | F</span><br><span class="line">F → ( E ) | id</span><br><span class="line"></span><br><span class="line">输入</span><br><span class="line">id + id * id</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">推导过程如下，存在问题。</span><br><span class="line">E → E + T</span><br><span class="line">→ E + T + T + T</span><br><span class="line">→ E + T + T</span><br><span class="line">→ …</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>含有A→Aα形式产生式的文法称为是<strong>直接左递归</strong>的(immediate left recursive) </p>
@@ -340,28 +340,28 @@
 </li>
 </ul>
 <p>左递归文法会使递归下降分析器陷入<font color="red"><strong>无限循环</strong> </font></p>
-<h3 id="消除直接左递归"><a href="#消除直接左递归" class="headerlink" title="消除直接左递归"></a>消除直接左递归</h3><h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A → Aα | β(α≠ ε, β不以A开头)</span><br><span class="line"></span><br><span class="line">推导过程：</span><br><span class="line">A → Aα</span><br><span class="line">→ Aαα</span><br><span class="line">→ Aααα</span><br><span class="line">…</span><br><span class="line">→ Aα…α</span><br><span class="line">→ βα…α</span><br><span class="line"></span><br><span class="line">r&#x3D;βα*</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3><span id="消除直接左递归">消除直接左递归</span></h3><h4><span id="解决方法">解决方法</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A → Aα | β(α≠ ε, β不以A开头)</span><br><span class="line"></span><br><span class="line">推导过程：</span><br><span class="line">A → Aα</span><br><span class="line">→ Aαα</span><br><span class="line">→ Aααα</span><br><span class="line">…</span><br><span class="line">→ Aα…α</span><br><span class="line">→ βα…α</span><br><span class="line"></span><br><span class="line">r&#x3D;βα*</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A → β A′</span><br><span class="line">A′ → α A′｜ε</span><br><span class="line"></span><br><span class="line">A′推导过程：</span><br><span class="line">A′ → αA′</span><br><span class="line">→ ααA′</span><br><span class="line">→ αααA′</span><br><span class="line">…</span><br><span class="line">→ α…αA′</span><br><span class="line">→ α…α</span><br></pre></td></tr></table></figure>
 <p>事实上，这种消除过程就是把<strong>左递归</strong>转换成了<strong>右递归</strong> </p>
-<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">文法：</span><br><span class="line">E → E + T｜T</span><br><span class="line">转换：</span><br><span class="line">E→ T E′</span><br><span class="line">E′ → + T E′ |ε</span><br><span class="line"></span><br><span class="line">文法：</span><br><span class="line">T → T * F｜F</span><br><span class="line">转换：</span><br><span class="line">T→ F T ′</span><br><span class="line">T ′→* F T ′ ｜ε</span><br><span class="line"></span><br><span class="line">文法：</span><br><span class="line">F → ( E )｜id</span><br><span class="line">转换：</span><br><span class="line">F→ ( E )｜id</span><br></pre></td></tr></table></figure>
+<h4><span id="练习">练习</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">文法：</span><br><span class="line">E → E + T｜T</span><br><span class="line">转换：</span><br><span class="line">E→ T E′</span><br><span class="line">E′ → + T E′ |ε</span><br><span class="line"></span><br><span class="line">文法：</span><br><span class="line">T → T * F｜F</span><br><span class="line">转换：</span><br><span class="line">T→ F T ′</span><br><span class="line">T ′→* F T ′ ｜ε</span><br><span class="line"></span><br><span class="line">文法：</span><br><span class="line">F → ( E )｜id</span><br><span class="line">转换：</span><br><span class="line">F→ ( E )｜id</span><br></pre></td></tr></table></figure>
 <!--无左递归，不需转换-->
 
 
 
 
 
-<h4 id="消除直接左递归的一般形式"><a href="#消除直接左递归的一般形式" class="headerlink" title="消除直接左递归的一般形式"></a>消除直接左递归的一般形式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A → Aα1 | Aα2 | … | Aαn | β1 | β2 | … | βm</span><br><span class="line">(αi ≠ ε, βj不以A开头)</span><br><span class="line"></span><br><span class="line">转换后：</span><br><span class="line"></span><br><span class="line">A → β1 A′ | β2 A′ | … | βm A′</span><br><span class="line">A′ → α1 A′ | α2 A′ | … | αn A′ | ε</span><br></pre></td></tr></table></figure>
+<h4><span id="消除直接左递归的一般形式">消除直接左递归的一般形式</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A → Aα1 | Aα2 | … | Aαn | β1 | β2 | … | βm</span><br><span class="line">(αi ≠ ε, βj不以A开头)</span><br><span class="line"></span><br><span class="line">转换后：</span><br><span class="line"></span><br><span class="line">A → β1 A′ | β2 A′ | … | βm A′</span><br><span class="line">A′ → α1 A′ | α2 A′ | … | αn A′ | ε</span><br></pre></td></tr></table></figure>
 <p>消除左递归是要付出代价的——引进了一些<strong>非终结符</strong>（A′）和<strong>ε_产生式</strong> </p>
-<h3 id="消除间接左递归"><a href="#消除间接左递归" class="headerlink" title="消除间接左递归"></a>消除间接左递归</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">S → A a | b</span><br><span class="line">A → A c | S d | ε</span><br><span class="line">存在间接左递归</span><br><span class="line">S → Aa</span><br><span class="line">→ Sda</span><br><span class="line"></span><br><span class="line">消除方法：</span><br><span class="line">将S的定义代入A-产生式，得：</span><br><span class="line">A → A c | A a d | b d | ε</span><br><span class="line"></span><br><span class="line">消除A-产生式的直接左递归，得：</span><br><span class="line">A → b d A’ | A’</span><br><span class="line">A’ → c A’ | a d A’ | ε</span><br></pre></td></tr></table></figure>
-<h3 id="消除左递归算法"><a href="#消除左递归算法" class="headerlink" title="消除左递归算法"></a>消除左递归算法</h3><p>输入：不含循环推导（即形如A → + A的推导）和ε-产生式的文法G<br>输出：等价的无左递归文法 </p>
+<h3><span id="消除间接左递归">消除间接左递归</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">S → A a | b</span><br><span class="line">A → A c | S d | ε</span><br><span class="line">存在间接左递归</span><br><span class="line">S → Aa</span><br><span class="line">→ Sda</span><br><span class="line"></span><br><span class="line">消除方法：</span><br><span class="line">将S的定义代入A-产生式，得：</span><br><span class="line">A → A c | A a d | b d | ε</span><br><span class="line"></span><br><span class="line">消除A-产生式的直接左递归，得：</span><br><span class="line">A → b d A’ | A’</span><br><span class="line">A’ → c A’ | a d A’ | ε</span><br></pre></td></tr></table></figure>
+<h3><span id="消除左递归算法">消除左递归算法</span></h3><p>输入：不含循环推导（即形如A → + A的推导）和ε-产生式的文法G<br>输出：等价的无左递归文法 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1)按照某个顺序将非终结符号排序为A1， A2， … ， An .</span><br><span class="line">2) for ( 从1到n的每个i ) &#123;</span><br><span class="line">3) 		for ( 从1到i -1的每个i ) &#123;</span><br><span class="line">4) 			将每个形如Ai → Aj γ的产生式替换为产生式组 Ai → δ1γ ∣ δ2γ ∣ … ∣ δkγ ，</span><br><span class="line">		其中Aj → δ1 ∣ δ2 ∣ … ∣ δk ，是所有的 Aj 产生式</span><br><span class="line">5) 		&#125;</span><br><span class="line">6) 		消除 Ai 产生式之间的立即左递归</span><br><span class="line">7) &#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="提取左公因子-Left-Factoring"><a href="#提取左公因子-Left-Factoring" class="headerlink" title="提取左公因子(Left Factoring )"></a>提取左公因子(Left Factoring )</h3><h4 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">文法G</span><br><span class="line">S → aAd | aBe</span><br><span class="line">A → c</span><br><span class="line">B → b</span><br><span class="line">替换为：</span><br><span class="line">文法G&#39;</span><br><span class="line">S → a S&#39;</span><br><span class="line">S&#39; → Ad | Be</span><br><span class="line">A → c</span><br><span class="line">B → b</span><br></pre></td></tr></table></figure>
+<h3><span id="提取左公因子left-factoring">提取左公因子(Left Factoring )</span></h3><h4><span id="举例">举例</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">文法G</span><br><span class="line">S → aAd | aBe</span><br><span class="line">A → c</span><br><span class="line">B → b</span><br><span class="line">替换为：</span><br><span class="line">文法G&#39;</span><br><span class="line">S → a S&#39;</span><br><span class="line">S&#39; → Ad | Be</span><br><span class="line">A → c</span><br><span class="line">B → b</span><br></pre></td></tr></table></figure>
 <p><strong>通过改写产生式来推迟决定，等读入了足够多的输入，获得足够信息后再做出正确的选择</strong> </p>
-<h4 id="提取左公因子算法"><a href="#提取左公因子算法" class="headerlink" title="提取左公因子算法"></a>提取左公因子算法</h4><p>输入：文法G<br>输出：等价的提取了左公因子的文法 </p>
+<h4><span id="提取左公因子算法">提取左公因子算法</span></h4><p>输入：文法G<br>输出：等价的提取了左公因子的文法 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">对于每个非终结符A，找出它的两个或多个选项之间的最长公共前缀α。 如果α ≠ ε，即存在一个非平凡的( nontrivial )公共前缀，那么将所有A-产生式</span><br><span class="line">A → α β1 | α β2 | … | α βn | γ1 | γ2 | … | γm</span><br><span class="line">替换为</span><br><span class="line">A → α A&#39; | γ1 | γ2 | … | γm</span><br><span class="line">A&#39; → β1 | β2 | … | βn</span><br><span class="line">其中， γi 表示所有不以α开头的产生式体； A&#39;是一个新的非终结符。不断应用这个转换，直到每个非终结符的任意两个产生式体都没有公共前缀为止</span><br></pre></td></tr></table></figure>
-<h2 id="LL（1）文法"><a href="#LL（1）文法" class="headerlink" title="LL（1）文法"></a>LL（1）文法</h2><h3 id="S文法"><a href="#S文法" class="headerlink" title="S文法"></a>S文法</h3><p>简单的确定性文法</p>
+<h2><span id="ll1文法">LL（1）文法</span></h2><h3><span id="s文法">S文法</span></h3><p>简单的确定性文法</p>
 <ol>
 <li>每个产生式的右部都以终结符开始 </li>
 <li>同一非终结符的各个候选式的首终结符都不同 </li>
@@ -371,15 +371,15 @@
 <p>从文法开始符号出发，在每一步推导过程中根据当前句型的最左非终结符A和当前输入符号a，选择正确的A-产生式。为保证分析的确定性，选出的候选式必须是唯一的。 </p>
 <p>什么时候使用ε产生式？ </p>
 <p>如果当前某<strong>非终结符A</strong>与当前<strong>输入符a</strong>不匹配时，若<strong>存在A→ε</strong>，可以通过检查a是否可以出现在 A的后面，来决定<strong>是否使用产生式 A→ε</strong>（若文法中无 A→ε ，则应报错） </p>
-<h3 id="非终结符的后继符号集"><a href="#非终结符的后继符号集" class="headerlink" title="非终结符的后继符号集"></a>非终结符的后继符号集</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>可能在某个句型中紧跟在<strong>非终结符A</strong>后边的终结符a的集合，记为<strong>FOLLOW(A)</strong><br><strong>FOLLOW(A)={a| S  -》 * αAaβ,  a∈VT， α,β∈(VT∪VN)*}</strong> </p>
-<h4 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span> <span class="variable">S</span> → <span class="variable">aBC</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">)</span> <span class="variable">B</span> → <span class="variable">bC</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">)</span> <span class="variable">B</span> → <span class="variable">dB</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">4</span><span class="punctuation">)</span> <span class="variable">B</span> → ε</span><br><span class="line"><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">)</span> <span class="built_in">C</span> → <span class="variable">c</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">6</span><span class="punctuation">)</span> <span class="built_in">C</span> → <span class="variable">a</span></span><br><span class="line"></span><br><span class="line"><span class="variable">FOLLOW</span><span class="punctuation">(</span><span class="variable">B</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="punctuation">&#123;</span><span class="variable">a</span><span class="operator">,</span><span class="variable">c</span><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3><span id="非终结符的后继符号集">非终结符的后继符号集</span></h3><h4><span id="定义">定义</span></h4><p>可能在某个句型中紧跟在<strong>非终结符A</strong>后边的终结符a的集合，记为<strong>FOLLOW(A)</strong><br><strong>FOLLOW(A)={a| S  -》 * αAaβ,  a∈VT， α,β∈(VT∪VN)*}</strong> </p>
+<h4><span id="举例">举例</span></h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span> <span class="variable">S</span> → <span class="variable">aBC</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">)</span> <span class="variable">B</span> → <span class="variable">bC</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">)</span> <span class="variable">B</span> → <span class="variable">dB</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">4</span><span class="punctuation">)</span> <span class="variable">B</span> → ε</span><br><span class="line"><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">)</span> <span class="built_in">C</span> → <span class="variable">c</span></span><br><span class="line"><span class="punctuation">(</span><span class="number">6</span><span class="punctuation">)</span> <span class="built_in">C</span> → <span class="variable">a</span></span><br><span class="line"></span><br><span class="line"><span class="variable">FOLLOW</span><span class="punctuation">(</span><span class="variable">B</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="punctuation">&#123;</span><span class="variable">a</span><span class="operator">,</span><span class="variable">c</span><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><strong>如果 A是某个句型的的最右符号，则将结束符“$”添加到FOLLOW(A)中。</strong> </p>
-<h3 id="串首终结符"><a href="#串首终结符" class="headerlink" title="串首终结符"></a>串首终结符</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>串首第一个符号，并且是终结符，简称<strong>首终结符</strong>。<br>给定一个文法符号串α， α的<font color="red">串首终结符集FIRST(α)</font>被定义为可以从α推导出的所有<strong>串首终结符</strong>构成的集合。 </p>
+<h3><span id="串首终结符">串首终结符</span></h3><h4><span id="定义">定义</span></h4><p>串首第一个符号，并且是终结符，简称<strong>首终结符</strong>。<br>给定一个文法符号串α， α的<font color="red">串首终结符集FIRST(α)</font>被定义为可以从α推导出的所有<strong>串首终结符</strong>构成的集合。 </p>
 <p>如果α  -》 * ε，那么ε也在FIRST(α)中。 </p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对于任意α∈<span class="punctuation">(</span><span class="variable">VT</span>∪<span class="variable">VN</span><span class="punctuation">)</span><span class="operator">+,</span> <span class="variable">FIRST</span><span class="punctuation">(</span>α<span class="punctuation">)</span><span class="operator">=</span><span class="punctuation">&#123;</span> <span class="variable">a</span> <span class="operator">|</span> α <span class="operator">-</span>》 <span class="operator">*</span><span class="variable">a</span>β， <span class="variable">a</span>∈ <span class="variable">VT</span>， β∈<span class="punctuation">(</span><span class="variable">VT</span> ∪ <span class="variable">VN</span><span class="punctuation">)</span><span class="operator">*</span><span class="punctuation">&#125;</span>；</span><br><span class="line"></span><br><span class="line">如果 α <span class="operator">-</span>》 <span class="operator">*</span> ε， 那么ε ∈ <span class="variable">FIRST</span><span class="punctuation">(</span>α<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 
-<h3 id="LL-1-文法"><a href="#LL-1-文法" class="headerlink" title="LL(1)文法"></a>LL(1)文法</h3><ul>
+<h3><span id="ll1文法">LL(1)文法</span></h3><ul>
 <li>第一个“ L”表示从左向右扫描输入</li>
 <li>第二个“ L”表示产生最左推导</li>
 <li> “ 1”表示在每一步中只需要向前看一个输入符号来决定语法分析动作 </li>
@@ -390,10 +390,7 @@
 </li>
 <li><p>α 和β至多有一个能推导出 ε</p>
 </li>
-<li><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果 β <span class="operator">-</span>》 <span class="operator">*</span>ε，则 <span class="variable">FIRST</span> <span class="punctuation">(</span>α<span class="punctuation">)</span>∩<span class="variable">FOLLOW</span><span class="punctuation">(</span><span class="variable">A</span><span class="punctuation">)</span> <span class="operator">=</span>Φ；</span><br><span class="line">如果 α <span class="operator">-</span>》 <span class="operator">*</span>ε，则 <span class="variable">FIRST</span> <span class="punctuation">(</span>β<span class="punctuation">)</span>∩<span class="variable">FOLLOW</span><span class="punctuation">(</span><span class="variable">A</span><span class="punctuation">)</span> <span class="operator">=</span>Φ； </span><br></pre></td></tr></table></figure>
-
-
-</li>
+<li><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果 β <span class="operator">-</span>》 <span class="operator">*</span>ε，则 <span class="variable">FIRST</span> <span class="punctuation">(</span>α<span class="punctuation">)</span>∩<span class="variable">FOLLOW</span><span class="punctuation">(</span><span class="variable">A</span><span class="punctuation">)</span> <span class="operator">=</span>Φ；</span><br><span class="line">如果 α <span class="operator">-</span>》 <span class="operator">*</span>ε，则 <span class="variable">FIRST</span> <span class="punctuation">(</span>β<span class="punctuation">)</span>∩<span class="variable">FOLLOW</span><span class="punctuation">(</span><span class="variable">A</span><span class="punctuation">)</span> <span class="operator">=</span>Φ； </span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -589,7 +586,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">语法分析主要任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5%E5%88%86%E6%9E%90%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text">赋值语句分析树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%88%86%E6%9E%90%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text">变量声明语句的分析树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">自顶向下的分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">2.2.</span> <span class="toc-text">思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B7%A6%E6%8E%A8%E5%AF%BC"><span class="toc-number">2.3.</span> <span class="toc-text">最左推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%8F%B3%E6%8E%A8%E5%AF%BC"><span class="toc-number">2.4.</span> <span class="toc-text">最右推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B7%A6%E6%8E%A8%E5%AF%BC%E5%92%8C%E6%9C%80%E5%8F%B3%E6%8E%A8%E5%AF%BC%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7"><span class="toc-number">2.5.</span> <span class="toc-text">最左推导和最右推导的唯一性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E9%87%87%E7%94%A8%E6%9C%80%E5%B7%A6%E6%8E%A8%E5%AF%BC%E6%96%B9%E5%BC%8F"><span class="toc-number">2.6.</span> <span class="toc-text">自顶向下的语法分析采用最左推导方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E9%80%9A%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-number">2.7.</span> <span class="toc-text">自顶向下语法分析的通用形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E4%B8%8B%E9%99%8D%E5%88%86%E6%9E%90-Recursive-Descent-Parsing"><span class="toc-number">2.7.1.</span> <span class="toc-text">递归下降分析 (Recursive-Descent Parsing)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90-Predictive-Parsing"><span class="toc-number">2.7.2.</span> <span class="toc-text">预测分析 (Predictive Parsing)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%B3%95%E8%BD%AC%E6%8D%A2"><span class="toc-number">3.</span> <span class="toc-text">文法转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">回溯问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="toc-number">3.2.</span> <span class="toc-text">无限循环问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E7%9B%B4%E6%8E%A5%E5%B7%A6%E9%80%92%E5%BD%92"><span class="toc-number">3.3.</span> <span class="toc-text">消除直接左递归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.1.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">3.3.2.</span> <span class="toc-text">练习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E7%9B%B4%E6%8E%A5%E5%B7%A6%E9%80%92%E5%BD%92%E7%9A%84%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="toc-number">3.3.3.</span> <span class="toc-text">消除直接左递归的一般形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E9%97%B4%E6%8E%A5%E5%B7%A6%E9%80%92%E5%BD%92"><span class="toc-number">3.4.</span> <span class="toc-text">消除间接左递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95"><span class="toc-number">3.5.</span> <span class="toc-text">消除左递归算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E5%B7%A6%E5%85%AC%E5%9B%A0%E5%AD%90-Left-Factoring"><span class="toc-number">3.6.</span> <span class="toc-text">提取左公因子(Left Factoring )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B-1"><span class="toc-number">3.6.1.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E5%B7%A6%E5%85%AC%E5%9B%A0%E5%AD%90%E7%AE%97%E6%B3%95"><span class="toc-number">3.6.2.</span> <span class="toc-text">提取左公因子算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LL%EF%BC%881%EF%BC%89%E6%96%87%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">LL（1）文法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#S%E6%96%87%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">S文法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BB%88%E7%BB%93%E7%AC%A6%E7%9A%84%E5%90%8E%E7%BB%A7%E7%AC%A6%E5%8F%B7%E9%9B%86"><span class="toc-number">4.2.</span> <span class="toc-text">非终结符的后继符号集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">4.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B-2"><span class="toc-number">4.2.2.</span> <span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E9%A6%96%E7%BB%88%E7%BB%93%E7%AC%A6"><span class="toc-number">4.3.</span> <span class="toc-text">串首终结符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">4.3.1.</span> <span class="toc-text">定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E6%96%87%E6%B3%95"><span class="toc-number">4.4.</span> <span class="toc-text">LL(1)文法</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">语法分析主要任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">赋值语句分析树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">变量声明语句的分析树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">自顶向下的分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">最左推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.4.</span> <span class="toc-text">最右推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.5.</span> <span class="toc-text">最左推导和最右推导的唯一性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.6.</span> <span class="toc-text">自顶向下的语法分析采用最左推导方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.7.</span> <span class="toc-text">自顶向下语法分析的通用形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.7.1.</span> <span class="toc-text">递归下降分析 (Recursive-Descent Parsing)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.7.2.</span> <span class="toc-text">预测分析 (Predictive Parsing)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">文法转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">回溯问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">无限循环问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">消除直接左递归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.3.1.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.3.2.</span> <span class="toc-text">练习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.3.3.</span> <span class="toc-text">消除直接左递归的一般形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.4.</span> <span class="toc-text">消除间接左递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.5.</span> <span class="toc-text">消除左递归算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.6.</span> <span class="toc-text">提取左公因子(Left Factoring )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.6.1.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">3.6.2.</span> <span class="toc-text">提取左公因子算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">LL（1）文法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">S文法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">非终结符的后继符号集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">4.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">4.2.2.</span> <span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">串首终结符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">4.3.1.</span> <span class="toc-text">定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.4.</span> <span class="toc-text">LL(1)文法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -811,10 +808,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -827,15 +820,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -895,10 +892,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -907,19 +900,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,6 +925,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -967,11 +964,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -979,15 +976,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,11 +1000,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1020,6 +1009,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,6 +1032,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1055,11 +1052,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1067,15 +1068,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1099,6 +1100,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1112,22 +1117,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1147,6 +1136,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1159,11 +1164,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1383,19 +1388,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

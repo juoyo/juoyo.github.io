@@ -83,7 +83,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -279,7 +279,7 @@
 <p>TensorFlow内部数据保存在张量（Tensor）对象上，所有运算也基于张量对象。复杂神经网络算法本质上就是各种张量相乘、相加等基本运算操作的组合。</p>
 <a id="more"></a>
 
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><ul>
+<h2><span id="数据类型">数据类型</span></h2><h3><span id="数值类型">数值类型</span></h3><ul>
 <li>标量</li>
 <li>向量</li>
 <li>矩阵</li>
@@ -292,25 +292,25 @@
 <p>a = tf.constant([1.2]) </p>
 <p>创建 2 个元素的向量：  </p>
 <p>a = tf.constant([1,2, 3.])  </p>
-<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>a = tf.constant(‘Hello, Deep Learning.’)  </p>
+<h3><span id="字符串类型">字符串类型</span></h3><p>a = tf.constant(‘Hello, Deep Learning.’)  </p>
 <p>在 tf.strings 模块中，提供了常见的字符串型的工具函数，如拼接 join()，长度 length()，切<br>分 split()等等。</p>
 <p>深度学习算法主要还是以数值类型张量运算为主，字符串类型的数据使用频率较低。  </p>
-<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>布尔类型的张量只需要传入 Python 语言的布尔类型数据，转换成 TensorFlow 内部布尔型即可：</p>
+<h3><span id="布尔类型">布尔类型</span></h3><p>布尔类型的张量只需要传入 Python 语言的布尔类型数据，转换成 TensorFlow 内部布尔型即可：</p>
 <p>a = tf.constant(True)  </p>
 <p>TensorFlow 的布尔类型和 Python 语言的布尔类型并不对等，不能通用。</p>
 <hr>
-<h2 id="数值精度"><a href="#数值精度" class="headerlink" title="数值精度"></a>数值精度</h2><p>  常用的精度类型有 tf.int16, tf.int32, tf.int64, tf.float16, tf.float32,tf.float64，其中 tf.float64 即为 tf.double。  </p>
+<h2><span id="数值精度">数值精度</span></h2><p>  常用的精度类型有 tf.int16, tf.int32, tf.int64, tf.float16, tf.float32,tf.float64，其中 tf.float64 即为 tf.double。  </p>
 <p>在创建张量时，可以指定张量的保存精度：  </p>
 <p>tf.constant(123456789, dtype=tf.int32)  </p>
 <p>保存精度过低时，数据 123456789 发生了溢出， 得到了错误的结果，一般使用tf.int32, tf.int64 精度。对于浮点数， 高精度的张量可以表示更精准的数据，例如采用<br>tf.float32 精度保存。 </p>
 <p>对于大部分深度学习算法，一般使用 tf.int32, tf.float32 可满足运算精度要求，部分对精度要求较高的算法，如强化学习，可以选择使用 tf.int64, tf.float64 精度保存张量。  </p>
-<h3 id="读取精度"><a href="#读取精度" class="headerlink" title="读取精度"></a>读取精度</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">15</span>]:</span><br><span class="line">print(<span class="string">&#x27;before:&#x27;</span>,a.dtype)</span><br><span class="line"><span class="keyword">if</span> a.dtype != tf.float32:</span><br><span class="line">    a = tf.cast(a,tf.float32) <span class="comment"># 转换精度</span></span><br><span class="line">print(<span class="string">&#x27;after :&#x27;</span>,a.dtype)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">15</span>]:</span><br><span class="line">before: &lt;dtype: <span class="string">&#x27;float16&#x27;</span>&gt;</span><br><span class="line">after : &lt;dtype: <span class="string">&#x27;float32&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3><span id="读取精度">读取精度</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">15</span>]:</span><br><span class="line">print(<span class="string">&#x27;before:&#x27;</span>,a.dtype)</span><br><span class="line"><span class="keyword">if</span> a.dtype != tf.float32:</span><br><span class="line">    a = tf.cast(a,tf.float32) <span class="comment"># 转换精度</span></span><br><span class="line">print(<span class="string">&#x27;after :&#x27;</span>,a.dtype)</span><br><span class="line"></span><br><span class="line">Out[<span class="number">15</span>]:</span><br><span class="line">before: &lt;dtype: <span class="string">&#x27;float16&#x27;</span>&gt;</span><br><span class="line">after : &lt;dtype: <span class="string">&#x27;float32&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>系统的每个模块使用的数据类型、 数值精度可能各不相同， 对于不符合要求的张量的类型及精度， 需要通过 tf.cast 函数进行转换：  </p>
+<h3><span id="类型转换">类型转换</span></h3><p>系统的每个模块使用的数据类型、 数值精度可能各不相同， 对于不符合要求的张量的类型及精度， 需要通过 tf.cast 函数进行转换：  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">16</span>]:</span><br><span class="line">a = tf.constant(np.pi, dtype=tf.float16)</span><br><span class="line">tf.cast(a, tf.double)</span><br><span class="line">Out[<span class="number">16</span>]:</span><br><span class="line">&lt;tf.Tensor: <span class="built_in">id</span>=<span class="number">44</span>, shape=(), dtype=float64, numpy=<span class="number">3.140625</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>布尔型与整形之间相互转换也是合法的。</p>
-<h2 id="待优化张量"><a href="#待优化张量" class="headerlink" title="待优化张量"></a>待优化张量</h2><p>为了区分需要计算梯度信息的张量与不需要计算梯度信息的张量， TensorFlow 增加了一种专门的数据类型来支持梯度信息的记录： tf.Variable。 </p>
+<h2><span id="待优化张量">待优化张量</span></h2><p>为了区分需要计算梯度信息的张量与不需要计算梯度信息的张量， TensorFlow 增加了一种专门的数据类型来支持梯度信息的记录： tf.Variable。 </p>
 <p>tf.Variable 类型在普通的张量类型基础上添加了 name， trainable 等属性来支持计算图的构建。     </p>
 <p>通过 tf.Variable()函数可以将普通张量转换为待优化张量：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">20</span>]:</span><br><span class="line">a = tf.constant([-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">aa = tf.Variable(a)</span><br><span class="line">aa.name, aa.trainable</span><br><span class="line">Out[<span class="number">20</span>]:</span><br><span class="line">(<span class="string">&#x27;Variable:0&#x27;</span>, <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
@@ -319,18 +319,18 @@
 
 
 <hr>
-<h2 id="创建张量"><a href="#创建张量" class="headerlink" title="创建张量"></a>创建张量</h2><p>在 TensorFlow 中，可以通过多种方式创建张量，如从 Python List 对象创建，从Numpy 数组创建，或者创建采样自某种已知分布的张量等。  </p>
-<h3 id="从-Numpy-List-对象创建"><a href="#从-Numpy-List-对象创建" class="headerlink" title="从 Numpy, List 对象创建"></a>从 Numpy, List 对象创建</h3><p>通过 tf.convert_to_tensor 可以创建新 Tensor，并将保存在 Python List 对象或者 Numpy Array 对象中的数据导入到新 Tensor 中：  </p>
+<h2><span id="创建张量">创建张量</span></h2><p>在 TensorFlow 中，可以通过多种方式创建张量，如从 Python List 对象创建，从Numpy 数组创建，或者创建采样自某种已知分布的张量等。  </p>
+<h3><span id="从-numpy-list-对象创建">从 Numpy, List 对象创建</span></h3><p>通过 tf.convert_to_tensor 可以创建新 Tensor，并将保存在 Python List 对象或者 Numpy Array 对象中的数据导入到新 Tensor 中：  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">22</span>]:</span><br><span class="line">tf.convert_to_tensor([<span class="number">1</span>,<span class="number">2.</span>])</span><br><span class="line">Out[<span class="number">22</span>]:</span><br><span class="line">&lt;tf.Tensor: <span class="built_in">id</span>=<span class="number">86</span>, shape=(<span class="number">2</span>,), dtype=float32, numpy=array([<span class="number">1.</span>, <span class="number">2.</span>],</span><br><span class="line">dtype=float32)&gt;</span><br><span class="line">In [<span class="number">23</span>]:</span><br><span class="line">tf.convert_to_tensor(np.array([[<span class="number">1</span>,<span class="number">2.</span>],[<span class="number">3</span>,<span class="number">4</span>]]))</span><br><span class="line">Out[<span class="number">23</span>]:</span><br><span class="line">&lt;tf.Tensor: <span class="built_in">id</span>=<span class="number">88</span>, shape=(<span class="number">2</span>, <span class="number">2</span>), dtype=float64, numpy=</span><br><span class="line">array([[<span class="number">1.</span>, <span class="number">2.</span>],</span><br><span class="line">[<span class="number">3.</span>, <span class="number">4.</span>]])&gt;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="创建全0、全1张量"><a href="#创建全0、全1张量" class="headerlink" title="创建全0、全1张量"></a>创建全0、全1张量</h3><p>通过 tf.zeros()和 tf.ones()即可创建任意形状全 0 或全 1 的张量。例如，创建为 0 和为 1 的标量张量：  </p>
+<h3><span id="创建全0-全1张量">创建全0、全1张量</span></h3><p>通过 tf.zeros()和 tf.ones()即可创建任意形状全 0 或全 1 的张量。例如，创建为 0 和为 1 的标量张量：  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">24</span>]: tf.zeros([]),tf.ones([])</span><br><span class="line">Out[<span class="number">24</span>]:</span><br><span class="line">(&lt;tf.Tensor: <span class="built_in">id</span>=<span class="number">90</span>, shape=(), dtype=float32, numpy=<span class="number">0.0</span>&gt;,</span><br><span class="line">&lt;tf.Tensor: <span class="built_in">id</span>=<span class="number">91</span>, shape=(), dtype=float32, numpy=<span class="number">1.0</span>&gt;)</span><br></pre></td></tr></table></figure>
 <p>创建全 1 的矩阵：  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">27</span>]: tf.ones([<span class="number">3</span>,<span class="number">2</span>])</span><br><span class="line">Out[<span class="number">27</span>]:</span><br><span class="line">&lt;tf.Tensor: <span class="built_in">id</span>=<span class="number">108</span>, shape=(<span class="number">3</span>, <span class="number">2</span>), dtype=float32, numpy=</span><br><span class="line">array([[<span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">[<span class="number">1.</span>, <span class="number">1.</span>],</span><br><span class="line">[<span class="number">1.</span>, <span class="number">1.</span>]], dtype=float32)&gt;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="创建自定义数值张量"><a href="#创建自定义数值张量" class="headerlink" title="创建自定义数值张量"></a>创建自定义数值张量</h3><p>全部初始化为某个自定义数值的张量，比如将张量的数值全部初始化为-1 等。<br>通过 tf.fill(shape, value)可以创建全为自定义数值 value 的张量。 例如，创建元素为-1的标量：  </p>
+<h3><span id="创建自定义数值张量">创建自定义数值张量</span></h3><p>全部初始化为某个自定义数值的张量，比如将张量的数值全部初始化为-1 等。<br>通过 tf.fill(shape, value)可以创建全为自定义数值 value 的张量。 例如，创建元素为-1的标量：</p>
 
       
 	
@@ -546,7 +546,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">数值类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">字符串类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">布尔类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B2%BE%E5%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">数值精度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E7%B2%BE%E5%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">读取精度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.2.</span> <span class="toc-text">类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%85%E4%BC%98%E5%8C%96%E5%BC%A0%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">待优化张量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BC%A0%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">创建张量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Numpy-List-%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">从 Numpy, List 对象创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%A80%E3%80%81%E5%85%A81%E5%BC%A0%E9%87%8F"><span class="toc-number">4.2.</span> <span class="toc-text">创建全0、全1张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E5%80%BC%E5%BC%A0%E9%87%8F"><span class="toc-number">4.3.</span> <span class="toc-text">创建自定义数值张量</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">数值类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">字符串类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">布尔类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">数值精度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">读取精度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">待优化张量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">创建张量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">从 Numpy, List 对象创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">创建全0、全1张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">创建自定义数值张量</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -768,10 +768,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -784,15 +780,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,10 +852,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -864,19 +860,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -893,6 +885,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -924,11 +924,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,15 +936,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -964,11 +960,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -977,6 +969,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -996,6 +992,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1012,11 +1012,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,15 +1028,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1056,6 +1060,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1069,22 +1077,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1104,6 +1096,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1116,11 +1124,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1340,19 +1348,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

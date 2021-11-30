@@ -84,7 +84,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -279,7 +279,7 @@
         <p>Maven是Java项目不可缺少的工具，用于项目管理和构建工具。</p>
 <a id="more"></a>
 
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Java项目首先需要依赖包的管理，确定引入哪些依赖包，把相关的jar包都放到classpath中。</p>
+<h2><span id="介绍">介绍</span></h2><p>Java项目首先需要依赖包的管理，确定引入哪些依赖包，把相关的jar包都放到classpath中。</p>
 <p>其次，我们要确定项目的目录结构。例如，<code>src</code>目录存放Java源码，<code>resources</code>目录存放配置文件，<code>bin</code>目录存放编译生成的<code>.class</code>文件。</p>
 <p>第三，需要配置环境，例如JDK的版本，编译打包的流程，当前代码的版本号。</p>
 <p>最后，除了使用Eclipse这样的IDE进行编译外，我们还必须能通过命令行工具进行编译，才能够让项目在一个独立的服务器上编译、测试、部署。</p>
@@ -289,7 +289,7 @@
 <li>提供了一套标准化的构建流程（编译，测试，打包，发布……）；</li>
 <li>提供了一套依赖管理机制。</li>
 </ul>
-<h3 id="Maven项目结构"><a href="#Maven项目结构" class="headerlink" title="Maven项目结构"></a>Maven项目结构</h3><p>一个使用Maven管理的普通的Java项目，它的目录结构默认如下：</p>
+<h3><span id="maven项目结构">Maven项目结构</span></h3><p>一个使用Maven管理的普通的Java项目，它的目录结构默认如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a-maven-project</span><br><span class="line">├── pom.xml</span><br><span class="line">├── src</span><br><span class="line">│   ├── main</span><br><span class="line">│   │   ├── java</span><br><span class="line">│   │   └── resources</span><br><span class="line">│   └── test</span><br><span class="line">│       ├── java</span><br><span class="line">│       └── resources</span><br><span class="line">└── target</span><br></pre></td></tr></table></figure>
 <p>根目录<code>a-maven-project</code>是项目名，项目描述文件<code>pom.xml</code>，存放Java源码的目录是<code>src/main/java</code>，存放资源文件的目录是<code>src/main/resources</code>，存放测试源码的目录是<code>src/test/java</code>，存放测试资源的目录是<code>src/test/resources</code>，最后，所有编译、打包生成的文件都放在<code>target</code>目录里。</p>
 <p>项目描述文件<code>pom.xml</code>内容：</p>
@@ -298,20 +298,20 @@
 <p>引用其他第三方库的时候，也是通过这3个变量确定。例如，依赖<code>commons-logging</code>：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>使用<code>&lt;dependency&gt;</code>声明一个依赖后，Maven就会自动下载这个依赖包并把它放到classpath中。</p>
-<h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3><p><a target="_blank" rel="noopener" href="https://maven.apache.org/">Maven官网</a>下载，本地解压，设置环境变量：</p>
+<h3><span id="安装maven">安装Maven</span></h3><p><a target="_blank" rel="noopener" href="https://maven.apache.org/">Maven官网</a>下载，本地解压，设置环境变量：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">M2_HOME&#x3D;&#x2F;path&#x2F;to&#x2F;maven-3.6.x</span><br><span class="line">PATH&#x3D;$PATH:$M2_HOME&#x2F;bin</span><br></pre></td></tr></table></figure>
 <p>Windows把<code>%M2_HOME%\bin</code>添加到系统Path变量中。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>Maven是一个Java项目的管理和构建工具：</p>
+<h3><span id="小结">小结</span></h3><p>Maven是一个Java项目的管理和构建工具：</p>
 <ul>
 <li>Maven使用<code>pom.xml</code>定义项目内容，并使用预设的目录结构；</li>
 <li>在Maven中声明一个依赖项可以自动下载并导入classpath；</li>
 <li>Maven使用<code>groupId</code>，<code>artifactId</code>和<code>version</code>唯一定位一个依赖。</li>
 </ul>
 <hr>
-<h2 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h2><p>Maven解决了依赖管理问题。例如，我们的项目依赖<code>abc</code>这个jar包，而<code>abc</code>又依赖<code>xyz</code>这个jar包：</p>
+<h2><span id="依赖管理">依赖管理</span></h2><p>Maven解决了依赖管理问题。例如，我们的项目依赖<code>abc</code>这个jar包，而<code>abc</code>又依赖<code>xyz</code>这个jar包：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────┐</span><br><span class="line">│Sample Project│</span><br><span class="line">└──────────────┘</span><br><span class="line">        │</span><br><span class="line">        ▼</span><br><span class="line">┌──────────────┐</span><br><span class="line">│     abc      │</span><br><span class="line">└──────────────┘</span><br><span class="line">        │</span><br><span class="line">        ▼</span><br><span class="line">┌──────────────┐</span><br><span class="line">│     xyz      │</span><br><span class="line">└──────────────┘</span><br></pre></td></tr></table></figure>
 <p>当我们声明了<code>abc</code>的依赖时，Maven自动把<code>abc</code>和<code>xyz</code>都加入了项目依赖。</p>
-<h3 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h3><p>Maven定义了几种依赖关系，分别是<code>compile</code>、<code>test</code>、<code>runtime</code>和<code>provided</code>：</p>
+<h3><span id="依赖关系">依赖关系</span></h3><p>Maven定义了几种依赖关系，分别是<code>compile</code>、<code>test</code>、<code>runtime</code>和<code>provided</code>：</p>
 <table>
 <thead>
 <tr>
@@ -351,8 +351,8 @@
 <p>Maven维护了一个中央仓库（<a target="_blank" rel="noopener" href="https://repo1.maven.org/">repo1.maven.org</a>），所有第三方库将自身的jar以及相关信息上传至中央仓库，Maven就可以从中央仓库把所需依赖下载到本地。</p>
 <p>Maven并不会每次都从中央仓库下载jar包。一个jar包一旦被下载过，就会被Maven自动缓存在本地目录（用户主目录的<code>.m2</code>目录），所以，除了第一次编译时因为下载需要时间会比较慢，后续过程因为有本地缓存，并不会重复下载相同的jar包。</p>
 <hr>
-<h2 id="构建流程"><a href="#构建流程" class="headerlink" title="构建流程"></a>构建流程</h2><p>Maven有一套标准化的构建流程，可以自动化实现编译，打包，发布。</p>
-<h3 id="Lifecycle和Phase"><a href="#Lifecycle和Phase" class="headerlink" title="Lifecycle和Phase"></a>Lifecycle和Phase</h3><p>使用Maven时，我们首先要了解什么是Maven的生命周期（lifecycle）。</p>
+<h2><span id="构建流程">构建流程</span></h2><p>Maven有一套标准化的构建流程，可以自动化实现编译，打包，发布。</p>
+<h3><span id="lifecycle和phase">Lifecycle和Phase</span></h3><p>使用Maven时，我们首先要了解什么是Maven的生命周期（lifecycle）。</p>
 <p>Maven的生命周期由一系列阶段（phase）构成，以内置的生命周期<code>default</code>为例，它包含以下phase：</p>
 <ul>
 <li>validate</li>
@@ -421,7 +421,7 @@
 </ul>
 <p>大多数情况，我们只要指定phase，就默认执行这些phase默认绑定的goal，只有少数情况，我们可以直接指定运行一个goal，例如，启动Tomcat服务器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn tomcat:run</span><br></pre></td></tr></table></figure>
-<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>Maven通过lifecycle、phase和goal来提供标准的构建流程。</p>
+<h3><span id="小结">小结</span></h3><p>Maven通过lifecycle、phase和goal来提供标准的构建流程。</p>
 <p>最常用的构建命令是指定phase，然后让Maven执行到指定的phase：</p>
 <ul>
 <li>mvn clean</li>
@@ -431,7 +431,7 @@
 </ul>
 <p>通常情况，我们总是执行phase默认绑定的goal，因此不必指定goal。</p>
 <hr>
-<h2 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h2><p>Maven已经内置了一些常用的标准插件：</p>
+<h2><span id="使用插件">使用插件</span></h2><p>Maven已经内置了一些常用的标准插件：</p>
 <table>
 <thead>
 <tr>
@@ -467,11 +467,11 @@
 <li>cobertura-maven-plugin：生成单元测试覆盖率报告；</li>
 <li>findbugs-maven-plugin：对Java源码进行静态分析以找出潜在问题。</li>
 </ul>
-<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>Maven通过自定义插件可以执行项目构建时需要的额外功能，使用自定义插件必须在pom.xml中声明插件及配置；</p>
+<h3><span id="小结">小结</span></h3><p>Maven通过自定义插件可以执行项目构建时需要的额外功能，使用自定义插件必须在pom.xml中声明插件及配置；</p>
 <p>插件会在某个phase被执行时执行；</p>
 <p>插件的配置和用法需参考插件的官方文档。</p>
 <hr>
-<h2 id="模块管理"><a href="#模块管理" class="headerlink" title="模块管理"></a>模块管理</h2><p>对于Maven工程来说，原来是一个大项目：</p>
+<h2><span id="模块管理">模块管理</span></h2><p>对于Maven工程来说，原来是一个大项目：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">single-project</span><br><span class="line">├── pom.xml</span><br><span class="line">└── src</span><br></pre></td></tr></table></figure>
 <p>现在可以分拆成3个模块：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">single-project</span><br><span class="line">├── module-a</span><br><span class="line">│   ├── pom.xml</span><br><span class="line">│   └── src</span><br><span class="line">├── module-b</span><br><span class="line">│   ├── pom.xml</span><br><span class="line">│   └── src</span><br><span class="line">└── module-c</span><br><span class="line">    ├── pom.xml</span><br><span class="line">    └── src</span><br></pre></td></tr></table></figure>
@@ -484,8 +484,8 @@
 <p>推荐的做法是模块化编译，在编译的时候，告诉maven几个模块之间存在依赖关系，需要一块编译， maven就会自动按依赖顺序编译这些模块</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;modules&gt;</span><br><span class="line">    &lt;module&gt;模块A&lt;&#x2F;module&gt;</span><br><span class="line">    &lt;module&gt;模块B&lt;&#x2F;module&gt;</span><br><span class="line">    &lt;module&gt;模块C&lt;&#x2F;module&gt;</span><br><span class="line">&lt;&#x2F;modules&gt;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="使用mvnw"><a href="#使用mvnw" class="headerlink" title="使用mvnw"></a>使用mvnw</h2><p><code>mvnw</code>是Maven Wrapper的缩写，Maven Wrapper就是给一个项目提供一个独立的，指定版本的Maven给它使用。</p>
-<h3 id="安装Maven-Wrapper"><a href="#安装Maven-Wrapper" class="headerlink" title="安装Maven Wrapper"></a>安装Maven Wrapper</h3><p>安装Maven Wrapper最简单的方式是在项目的根目录（即<code>pom.xml</code>所在的目录）下运行安装命令：</p>
+<h2><span id="使用mvnw">使用mvnw</span></h2><p><code>mvnw</code>是Maven Wrapper的缩写，Maven Wrapper就是给一个项目提供一个独立的，指定版本的Maven给它使用。</p>
+<h3><span id="安装maven-wrapper">安装Maven Wrapper</span></h3><p>安装Maven Wrapper最简单的方式是在项目的根目录（即<code>pom.xml</code>所在的目录）下运行安装命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -N io.takari:maven:0.7.6:wrapper</span><br></pre></td></tr></table></figure>
 <p>如果要指定使用的Maven版本，使用下面的安装命令指定版本，例如<code>3.3.3</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -N io.takari:maven:0.7.6:wrapper -Dmaven&#x3D;3.3.3</span><br></pre></td></tr></table></figure>
@@ -717,7 +717,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">Maven项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Maven"><span class="toc-number">1.2.</span> <span class="toc-text">安装Maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">依赖管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="toc-number">2.1.</span> <span class="toc-text">依赖关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">构建流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Lifecycle%E5%92%8CPhase"><span class="toc-number">3.1.</span> <span class="toc-text">Lifecycle和Phase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">3.2.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">使用插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="toc-number">4.1.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">模块管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8mvnw"><span class="toc-number">6.</span> <span class="toc-text">使用mvnw</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Maven-Wrapper"><span class="toc-number">6.1.</span> <span class="toc-text">安装Maven Wrapper</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">Maven项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">安装Maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">依赖管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">依赖关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">构建流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">Lifecycle和Phase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">使用插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">模块管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">使用mvnw</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">6.1.</span> <span class="toc-text">安装Maven Wrapper</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -939,10 +939,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -955,15 +951,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1023,10 +1023,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -1035,19 +1031,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,6 +1056,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1095,11 +1095,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1107,15 +1107,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1135,11 +1131,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,6 +1140,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1167,6 +1163,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1183,11 +1183,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1195,15 +1199,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1227,6 +1231,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1240,22 +1248,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1275,6 +1267,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1287,11 +1295,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1511,19 +1519,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

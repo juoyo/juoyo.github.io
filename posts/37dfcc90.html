@@ -83,7 +83,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -278,8 +278,8 @@
         <p>建立推荐系统，第一步，推荐系统简介。</p>
 <a id="more"></a>
 
-<h2 id="Introduction-and-Motivation"><a href="#Introduction-and-Motivation" class="headerlink" title="Introduction and Motivation"></a>Introduction and Motivation</h2><p>Well, now that we’re done producing all those Coursera videos, it’s time for some fun and relaxation. &gt;&gt; Let’s watch something cool on Netflix. &gt;&gt; Hey, I made cookies last night, help yourselves. &gt;&gt; So, what should we watch? &gt;&gt; I don’t know. It’s been so long since I had any free time to watch anything. &gt;&gt; Well, Netflix has some suggestions, maybe one of those could be good &gt;&gt; How do you think they come up with these recommendations? I mean it seems like it would be a pretty complicated algorithm, requiring lots of data. &gt;&gt; Yes, Netflix has something complex and proprietary. But the basic concepts aren’t that hard. I bet any of the learners that completed our Coursera courses could implement one. &gt;&gt; Speaking of your Coursera courses, you all aren’t quite done yet. You still have to make the Capstone. &gt;&gt; The Capstone, so much for movie night. &gt;&gt; Hey, I bet a recommender system would make a great capstone. &gt;&gt; Yeah, the algorithm has real world uses for our learners. &gt;&gt; And they can make a webpage to go with it and let everyone see what they can do. &gt;&gt; Let’s get to it. &gt;&gt; I’m excited to provide a bit of background for our capstone project, a DIY or do it yourself recommendation engine. For finding recommendations and information about current movies. When you first visit the Coursera.com website, you’ll see recommendations like the ones you see here. Recommendations for every learner that include data science, Python, machine learning, and more. How does Coursera make these recommendations? Do they show you popular courses? That might increase the number of learners who participate well and completely. Perhaps they show you different recommendations based on what your browsing history is or what websites you visited. They might be able to do that if they partner with a business that knows information about you. In this capstone, we’ll write code to recommend movies based on different criteria, criteria based on user ratings of those movies. You might want to learn about programming from Coursera. You would ask the website for recommendations by searching for programming, thus filtering all the recommendations available to roughly 375 recommendations, based on the query programming. How does the engine behind the creation of this webpage decide what courses to show? Is it based on ratings, some other criteria? Note the third recommendation is for the first course in the specialization for this capstone. You can also get restaurant recommendations rather than programming recommendations. Suppose you’re going to be in San Francisco and you’re looking for Asian food near the financial district. You could use Yelp, an app and website for getting recommendation from users, that is diners. You could filter by location as I’ve shown here finding Asian food near San Francisco. These restaurants all have four stars. I filtered to find restaurants near the financial district, but you could filter based on price or other criteria. You can use Yelp in cities around the world. Diners from many countries can contribute ratings through Yelp so that other users can use these ratings to find information about restaurants in cities ranging from San Francisco to the Hague in the Netherlands. You may want to sort the data so that good recommendations appear near the top of the results. Sometimes these ratings are sorted by criteria other than how many stars they have. In this example you can see the first restaurant has fewer stars than the third restaurant. You can search by whether a restaurant is nearby or by recent ratings instead of total ratings. All this talk about restaurant ratings is making me hungry. Instead of restaurants you can also get recommendations about movies, and this is what you’ll write for this capstone project. The website twitflicks.com mines Twitter for tweets that include comments about current movies. These comments are turned into ratings that are made part of the input to your program. To use these ratings, you’d have to get them, parse them, and write a program to determine which movies someone should watch. Rather than using Twitflicks, we´ll use another Twitter based source of data that´s easier to parse. And you´ll be able to use these collected tweets, to explore recommendations. Instead of relying on your peers, you might decide to rely on movie critics, who have more experience rating movies. Instead of using your friends or regular viewers to decide whether to see a movie, you could rely on so called experts. These are critics who see movies and then rate them. The website Rotten Tomatoes aggregates these professional review and ratings and makes them available to everyone. This site uses average ratings as the basis by which to make recommendations to a user. You’ll be able to replicate some of this functionality in this Capstone experience. You’ll also be able to make recommendations by filtering based on genre, or co-stars, or by any other criteria. Those were recommendations based on critics rather than on viewers you know or your own ratings of movies. You might want to know what viewers like you watched, since the like you means that these people likely share some of your tastes in the kinds of movies that they’d watch. Netflix makes this easy, for example, by showing you recommendations based on what viewers, like you, are watching. You’ll be designing and writing classes to implement a recommendation engine that makes recommendations along the lines we’ve just discussed. Your program could make recommendations from many sources. Food, movies, books, or more. It just depends on the data that you read in. As we’ve told you, you’ll be making recommendations based on crowdsourced movie comments and ratings from Twitter posts. Your recommendations will take several forms. This is the URL for the webservice that provides live data that we’re using. But you’ll also be able to obtain all the ratings from our specialization website, dukelearntoprogram.com. You’ll write code to parse the recommendation ratings and movie data so that your program can make recommendations. Your recommendations could be like those found on Twitter or Yelp, based on ratings and averages of those ratings. This is a useful and straight forward coding exercise. Alternately, ratings and recommendations could be based on what Netflix or Amazon do. Find viewers or buyers similar to you and provide recommendations based on what these buyers purchase. In this case, you’ll be able to find users, like you, or like another viewer, as part of the code you’ll design and implement. Let’s get to it.</p>
-<h2 id="Reading-and-Storing-Data"><a href="#Reading-and-Storing-Data" class="headerlink" title="Reading and Storing Data"></a>Reading and Storing Data</h2><p>Let’s discuss how the rating dating for creating recommendations about movies, is stored and accessed in the programs that you’ll be writing. You’ll be creating a sequence of recommendation programs as part of this capstone. The first step in creating programming recommendations is to get data about the items that can form the basis of the recommendations your program will generate. You will need to write programs to read the data into structures, your program can access and process to make recommendations. Although you won’t be using Yelp or Netflix data to generate your recommendations, you will be using Twitter data about movie recommendations, to write your own recommender program. You’ll do this as part of a sequence of exercises we’ve designed for this capstone. You’ll be using programming and design concepts from all of the courses you’ve taken, as part of this specialization to create these capstone Java programs. You’ll have access to a large number of ratings for thousands of movies. You’ll be using recommendations for movies that have come from Twitter posts, via a project called MovieTweetings. We’ve curated the data to provide a good learning experience for this capstone. You can get access to all of the data from the website associated with this URL. All the data will be updated frequently, based on new Tweets. The data you’ll use is stored in CSV files. So you’ll be using the packages from the edu.dukelibraries, an Apache CSV project to access this data. You’ll read the data and store the rating movie data in collections your program will access to create recommendations. You’ll start with simple storage techniques, and as you create more sophisticated recommendations, you’ll use more efficient data structures, using the software design principles you’ve learned in this specialization. You’ll use Plain Old Java Object, or POJO, to store the movie data. The movie.java class mirrors the CSV file storing the movie data. That CSV file contains one line of comma separated value data for each movie. The text shown here is a single line in the CSV file. Each line of the CSV file stores eight items of information about each movie. The first item is an IMDB or internet movie data base ID number, for the movie. The title of the movie is the next one on the line, followed by the year in which the movie was made, a country in which the movie was made, though sometimes there is more than one country. Then the genre of the movie, such as comedy, action, adventure, horror or more. There can also be more than one genre listed with the movie. Then there are the movie’s directors, followed by the length of the movie in minutes. This movie lasts about 126 minutes. And then finally, a URL for a poster image of the movie, such as the one you see here for the drama Good Will Hunting, created in 1997. You’ll read the CSV file and use the POJO class we’ve created, to store data for each movie. The Movie.java class has a constructor and several getter methods for accessing data about the movie. Once a movie object is created it doesn’t change. The get methods include, get title, get I.D., get year and more to access information about each movie. You will read this data using the edu.duke file resource class and the Apache CSV parser you’ve had practice with using. In addition to movie data, you’ll need data rating each movie. Another CSV file will store ratings for many movies. These ratings have been curated from the Twitter posts. Each line in the CSV file stores data for one rating, that is one rater on Twitter writing about a specific movie. Each line stores an ID for the person creating a rating, the IMDB Movie ID for the movie being rated, and the rating given to the movie on a scale of one to ten. The CSV file also stores information about the date and time, but we won’t use that number in the recommendations you’ll be creating. The Movie ID is key in obtaining information about the movie being rated. It can be used in the data structure you’ll create, when reading the movie CSV file we’ve already discussed. The Rater class supports several operations, so it’s more complex than a POJO, which would support only simple get operations. You’ll be able to determine if the rater has provided a rating for a specific movie, that’s a parameter to a boolean method, has rating. You’ll be able to obtain the rating for a movie specified by a movie I.D., using the method get rating, that returns a double. You’ll be able to add a rating, which you might do when reading the rating data CSV file, for example. And you’ll be able to get all the Movie IDs rated, so you can write code to iterate over all movies with ratings, see the Rater.java class file for details. Let’s summarize the three classes you’ll be using to read and store data to create recommendations. You’ll use Movie.java, Rater.java and Rating.java in creating programmatic recommendations, by reading CSV files and storing data in ArrayLists in this first part of the capstone project. The Rater.java class stores movie ratings for one rater. This might be ratings from several movies. Each of these rating objects stores the movie ID and the rating for that movie in an instance of the rating.java class. This makes both movie.java and rating.java POJO classes. Each has a constructor to create an object and get methods to access information about the movie or the rating. The Rater.java class supports queries about ratings made by one rater, like what movies have been rated, and what the rating for a specific movie is. That’s an overview of the first part of the capstone project.</p>
+<h2><span id="introduction-and-motivation">Introduction and Motivation</span></h2><p>Well, now that we’re done producing all those Coursera videos, it’s time for some fun and relaxation. &gt;&gt; Let’s watch something cool on Netflix. &gt;&gt; Hey, I made cookies last night, help yourselves. &gt;&gt; So, what should we watch? &gt;&gt; I don’t know. It’s been so long since I had any free time to watch anything. &gt;&gt; Well, Netflix has some suggestions, maybe one of those could be good &gt;&gt; How do you think they come up with these recommendations? I mean it seems like it would be a pretty complicated algorithm, requiring lots of data. &gt;&gt; Yes, Netflix has something complex and proprietary. But the basic concepts aren’t that hard. I bet any of the learners that completed our Coursera courses could implement one. &gt;&gt; Speaking of your Coursera courses, you all aren’t quite done yet. You still have to make the Capstone. &gt;&gt; The Capstone, so much for movie night. &gt;&gt; Hey, I bet a recommender system would make a great capstone. &gt;&gt; Yeah, the algorithm has real world uses for our learners. &gt;&gt; And they can make a webpage to go with it and let everyone see what they can do. &gt;&gt; Let’s get to it. &gt;&gt; I’m excited to provide a bit of background for our capstone project, a DIY or do it yourself recommendation engine. For finding recommendations and information about current movies. When you first visit the Coursera.com website, you’ll see recommendations like the ones you see here. Recommendations for every learner that include data science, Python, machine learning, and more. How does Coursera make these recommendations? Do they show you popular courses? That might increase the number of learners who participate well and completely. Perhaps they show you different recommendations based on what your browsing history is or what websites you visited. They might be able to do that if they partner with a business that knows information about you. In this capstone, we’ll write code to recommend movies based on different criteria, criteria based on user ratings of those movies. You might want to learn about programming from Coursera. You would ask the website for recommendations by searching for programming, thus filtering all the recommendations available to roughly 375 recommendations, based on the query programming. How does the engine behind the creation of this webpage decide what courses to show? Is it based on ratings, some other criteria? Note the third recommendation is for the first course in the specialization for this capstone. You can also get restaurant recommendations rather than programming recommendations. Suppose you’re going to be in San Francisco and you’re looking for Asian food near the financial district. You could use Yelp, an app and website for getting recommendation from users, that is diners. You could filter by location as I’ve shown here finding Asian food near San Francisco. These restaurants all have four stars. I filtered to find restaurants near the financial district, but you could filter based on price or other criteria. You can use Yelp in cities around the world. Diners from many countries can contribute ratings through Yelp so that other users can use these ratings to find information about restaurants in cities ranging from San Francisco to the Hague in the Netherlands. You may want to sort the data so that good recommendations appear near the top of the results. Sometimes these ratings are sorted by criteria other than how many stars they have. In this example you can see the first restaurant has fewer stars than the third restaurant. You can search by whether a restaurant is nearby or by recent ratings instead of total ratings. All this talk about restaurant ratings is making me hungry. Instead of restaurants you can also get recommendations about movies, and this is what you’ll write for this capstone project. The website twitflicks.com mines Twitter for tweets that include comments about current movies. These comments are turned into ratings that are made part of the input to your program. To use these ratings, you’d have to get them, parse them, and write a program to determine which movies someone should watch. Rather than using Twitflicks, we´ll use another Twitter based source of data that´s easier to parse. And you´ll be able to use these collected tweets, to explore recommendations. Instead of relying on your peers, you might decide to rely on movie critics, who have more experience rating movies. Instead of using your friends or regular viewers to decide whether to see a movie, you could rely on so called experts. These are critics who see movies and then rate them. The website Rotten Tomatoes aggregates these professional review and ratings and makes them available to everyone. This site uses average ratings as the basis by which to make recommendations to a user. You’ll be able to replicate some of this functionality in this Capstone experience. You’ll also be able to make recommendations by filtering based on genre, or co-stars, or by any other criteria. Those were recommendations based on critics rather than on viewers you know or your own ratings of movies. You might want to know what viewers like you watched, since the like you means that these people likely share some of your tastes in the kinds of movies that they’d watch. Netflix makes this easy, for example, by showing you recommendations based on what viewers, like you, are watching. You’ll be designing and writing classes to implement a recommendation engine that makes recommendations along the lines we’ve just discussed. Your program could make recommendations from many sources. Food, movies, books, or more. It just depends on the data that you read in. As we’ve told you, you’ll be making recommendations based on crowdsourced movie comments and ratings from Twitter posts. Your recommendations will take several forms. This is the URL for the webservice that provides live data that we’re using. But you’ll also be able to obtain all the ratings from our specialization website, dukelearntoprogram.com. You’ll write code to parse the recommendation ratings and movie data so that your program can make recommendations. Your recommendations could be like those found on Twitter or Yelp, based on ratings and averages of those ratings. This is a useful and straight forward coding exercise. Alternately, ratings and recommendations could be based on what Netflix or Amazon do. Find viewers or buyers similar to you and provide recommendations based on what these buyers purchase. In this case, you’ll be able to find users, like you, or like another viewer, as part of the code you’ll design and implement. Let’s get to it.</p>
+<h2><span id="reading-and-storing-data">Reading and Storing Data</span></h2><p>Let’s discuss how the rating dating for creating recommendations about movies, is stored and accessed in the programs that you’ll be writing. You’ll be creating a sequence of recommendation programs as part of this capstone. The first step in creating programming recommendations is to get data about the items that can form the basis of the recommendations your program will generate. You will need to write programs to read the data into structures, your program can access and process to make recommendations. Although you won’t be using Yelp or Netflix data to generate your recommendations, you will be using Twitter data about movie recommendations, to write your own recommender program. You’ll do this as part of a sequence of exercises we’ve designed for this capstone. You’ll be using programming and design concepts from all of the courses you’ve taken, as part of this specialization to create these capstone Java programs. You’ll have access to a large number of ratings for thousands of movies. You’ll be using recommendations for movies that have come from Twitter posts, via a project called MovieTweetings. We’ve curated the data to provide a good learning experience for this capstone. You can get access to all of the data from the website associated with this URL. All the data will be updated frequently, based on new Tweets. The data you’ll use is stored in CSV files. So you’ll be using the packages from the edu.dukelibraries, an Apache CSV project to access this data. You’ll read the data and store the rating movie data in collections your program will access to create recommendations. You’ll start with simple storage techniques, and as you create more sophisticated recommendations, you’ll use more efficient data structures, using the software design principles you’ve learned in this specialization. You’ll use Plain Old Java Object, or POJO, to store the movie data. The movie.java class mirrors the CSV file storing the movie data. That CSV file contains one line of comma separated value data for each movie. The text shown here is a single line in the CSV file. Each line of the CSV file stores eight items of information about each movie. The first item is an IMDB or internet movie data base ID number, for the movie. The title of the movie is the next one on the line, followed by the year in which the movie was made, a country in which the movie was made, though sometimes there is more than one country. Then the genre of the movie, such as comedy, action, adventure, horror or more. There can also be more than one genre listed with the movie. Then there are the movie’s directors, followed by the length of the movie in minutes. This movie lasts about 126 minutes. And then finally, a URL for a poster image of the movie, such as the one you see here for the drama Good Will Hunting, created in 1997. You’ll read the CSV file and use the POJO class we’ve created, to store data for each movie. The Movie.java class has a constructor and several getter methods for accessing data about the movie. Once a movie object is created it doesn’t change. The get methods include, get title, get I.D., get year and more to access information about each movie. You will read this data using the edu.duke file resource class and the Apache CSV parser you’ve had practice with using. In addition to movie data, you’ll need data rating each movie. Another CSV file will store ratings for many movies. These ratings have been curated from the Twitter posts. Each line in the CSV file stores data for one rating, that is one rater on Twitter writing about a specific movie. Each line stores an ID for the person creating a rating, the IMDB Movie ID for the movie being rated, and the rating given to the movie on a scale of one to ten. The CSV file also stores information about the date and time, but we won’t use that number in the recommendations you’ll be creating. The Movie ID is key in obtaining information about the movie being rated. It can be used in the data structure you’ll create, when reading the movie CSV file we’ve already discussed. The Rater class supports several operations, so it’s more complex than a POJO, which would support only simple get operations. You’ll be able to determine if the rater has provided a rating for a specific movie, that’s a parameter to a boolean method, has rating. You’ll be able to obtain the rating for a movie specified by a movie I.D., using the method get rating, that returns a double. You’ll be able to add a rating, which you might do when reading the rating data CSV file, for example. And you’ll be able to get all the Movie IDs rated, so you can write code to iterate over all movies with ratings, see the Rater.java class file for details. Let’s summarize the three classes you’ll be using to read and store data to create recommendations. You’ll use Movie.java, Rater.java and Rating.java in creating programmatic recommendations, by reading CSV files and storing data in ArrayLists in this first part of the capstone project. The Rater.java class stores movie ratings for one rater. This might be ratings from several movies. Each of these rating objects stores the movie ID and the rating for that movie in an instance of the rating.java class. This makes both movie.java and rating.java POJO classes. Each has a constructor to create an object and get methods to access information about the movie or the rating. The Rater.java class supports queries about ratings made by one rater, like what movies have been rated, and what the rating for a specific movie is. That’s an overview of the first part of the capstone project.</p>
 
       
 	
@@ -473,7 +473,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-and-Motivation"><span class="toc-number">1.</span> <span class="toc-text">Introduction and Motivation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reading-and-Storing-Data"><span class="toc-number">2.</span> <span class="toc-text">Reading and Storing Data</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Introduction and Motivation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Reading and Storing Data</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -695,10 +695,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -711,15 +707,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -779,10 +779,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -791,19 +787,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,6 +812,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -851,11 +851,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,15 +863,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -891,11 +887,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,6 +896,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,6 +919,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -939,11 +939,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,15 +955,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,6 +987,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -996,22 +1004,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1031,6 +1023,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1043,11 +1051,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1267,19 +1275,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

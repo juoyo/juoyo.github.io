@@ -90,7 +90,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -285,7 +285,7 @@
         <p>本文主要内容包括自底向上分析概述、LR分析法概述、LR（0）分析及分析表构造</p>
 <a id="more"></a>
 
-<h2 id="自底向上分析概述"><a href="#自底向上分析概述" class="headerlink" title="自底向上分析概述"></a>自底向上分析概述</h2><h3 id="自底向上的语法分析"><a href="#自底向上的语法分析" class="headerlink" title="自底向上的语法分析"></a>自底向上的语法分析</h3><p>从分析树的底部(叶节点)向顶部(根节点)方向构造分析树，可以看成是将<strong>输入串w</strong>归约到<strong>文法开始符号S</strong>的过程<br>自顶向下的语法分析采用<strong>最左推导</strong>方式<br>自底向上的语法分析采用<strong>最左归约</strong>方式（反向构造最右推导）</p>
+<h2><span id="自底向上分析概述">自底向上分析概述</span></h2><h3><span id="自底向上的语法分析">自底向上的语法分析</span></h3><p>从分析树的底部(叶节点)向顶部(根节点)方向构造分析树，可以看成是将<strong>输入串w</strong>归约到<strong>文法开始符号S</strong>的过程<br>自顶向下的语法分析采用<strong>最左推导</strong>方式<br>自底向上的语法分析采用<strong>最左归约</strong>方式（反向构造最右推导）</p>
 <p>自底向上语法分析的通用框架：移入-归约分析(Shift-Reduce Parsing) </p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">文法</span><br><span class="line">① <span class="built_in">E</span> → <span class="built_in">E</span><span class="operator">+</span><span class="built_in">E</span></span><br><span class="line">② <span class="built_in">E</span> → <span class="built_in">E</span><span class="operator">*</span><span class="built_in">E</span></span><br><span class="line">③ <span class="built_in">E</span> → <span class="punctuation">(</span><span class="built_in">E</span><span class="punctuation">)</span></span><br><span class="line">④ <span class="built_in">E</span> → <span class="variable">id</span> </span><br></pre></td></tr></table></figure>
 
@@ -293,7 +293,7 @@
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">栈 			剩余输入 		动作</span><br><span class="line"><span class="variable">$</span> 			<span class="variable">id</span><span class="operator">+</span><span class="punctuation">(</span><span class="variable">id</span><span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span></span><br><span class="line"><span class="variable">$</span> <span class="variable">id</span> 		<span class="operator">+</span><span class="punctuation">(</span><span class="variable">id</span><span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 		移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span> 		<span class="operator">+</span><span class="punctuation">(</span><span class="variable">id</span><span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 		归约<span class="operator">:</span> <span class="built_in">E</span>→<span class="variable">id</span></span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span> 		<span class="punctuation">(</span><span class="variable">id</span><span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 		移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span> 		<span class="variable">id</span><span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 		移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="variable">id</span> 	<span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 			移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="built_in">E</span> 		<span class="operator">+</span><span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 			归约<span class="operator">:</span> <span class="built_in">E</span>→<span class="variable">id</span></span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="built_in">E</span><span class="operator">+</span> 	<span class="variable">id</span><span class="punctuation">)</span> <span class="variable">$</span> 			移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="built_in">E</span><span class="operator">+</span><span class="variable">id</span> 	<span class="punctuation">)</span> <span class="variable">$</span> 			移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="built_in">E</span><span class="operator">+</span><span class="built_in">E</span> 	<span class="punctuation">)</span> <span class="variable">$</span> 			归约<span class="operator">:</span> <span class="built_in">E</span>→<span class="variable">id</span></span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="built_in">E</span> 		<span class="punctuation">)</span> <span class="variable">$</span> 			归约<span class="operator">:</span> <span class="built_in">E</span>→<span class="built_in">E</span><span class="operator">+</span><span class="built_in">E</span></span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="punctuation">(</span><span class="built_in">E</span><span class="punctuation">)</span> 	<span class="variable">$</span> 				移入</span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span><span class="operator">+</span><span class="built_in">E</span> 		<span class="variable">$</span> 				归约<span class="operator">:</span> <span class="built_in">E</span>→<span class="punctuation">(</span><span class="built_in">E</span><span class="punctuation">)</span></span><br><span class="line"><span class="variable">$</span> <span class="built_in">E</span> 		<span class="variable">$</span> 				归约<span class="operator">:</span> <span class="built_in">E</span>→<span class="built_in">E</span><span class="operator">+</span><span class="built_in">E</span></span><br></pre></td></tr></table></figure>
 <p>每次归约的符号串称为“<strong>句柄</strong>” </p>
 <p>栈内符号串 + 剩余输入 =“规范句型” </p>
-<h3 id="移入-归约分析的工作过程"><a href="#移入-归约分析的工作过程" class="headerlink" title="移入-归约分析的工作过程"></a>移入-归约分析的工作过程</h3><ol>
+<h3><span id="移入-归约分析的工作过程">移入-归约分析的工作过程</span></h3><ol>
 <li><p>在对输入串的一次从左到右扫描过程中，语法分析器将零个或多个输入符号移入到栈的顶端，直到它可以对栈顶的一个文法符号串β进行归约为止 </p>
 </li>
 <li><p>然后，它将符号串β归约为某个产生式的左部 </p>
@@ -301,7 +301,7 @@
 <li><p>语法分析器不断地重复这个循环，直到它检测到一个语法错误，或者栈中包含了开始符号且输入缓冲区为空(当进入这样的格局时，语法分析器停止运行，并宣称成功完成了语法分析)为止 </p>
 </li>
 </ol>
-<h3 id="移入-归约分析器可采取的4种动作"><a href="#移入-归约分析器可采取的4种动作" class="headerlink" title="移入-归约分析器可采取的4种动作"></a>移入-归约分析器可采取的4种动作</h3><ol>
+<h3><span id="移入-归约分析器可采取的4种动作">移入-归约分析器可采取的4种动作</span></h3><ol>
 <li><p>移入：将下一个输入符号移到栈的顶端</p>
 </li>
 <li><p>归约：被归约的符号串的右端必然处于栈顶。语法分析器在栈中确定这个串的左端，并决定用哪个非终结符来替换这个串</p>
@@ -311,10 +311,10 @@
 <li><p>报错：发现一个语法错误，并调用错误恢复子例程 </p>
 </li>
 </ol>
-<h3 id="移入-归约分析中存在的问题"><a href="#移入-归约分析中存在的问题" class="headerlink" title="移入-归约分析中存在的问题"></a>移入-归约分析中存在的问题</h3><p>造成错误的原因：错误地识别了句柄 </p>
+<h3><span id="移入-归约分析中存在的问题">移入-归约分析中存在的问题</span></h3><p>造成错误的原因：错误地识别了句柄 </p>
 <p>句柄：句型的最左直接短语 </p>
 <p><strong>自底向上分析的关键问题 是如何正确识别句柄。</strong></p>
-<h2 id="LR分析法"><a href="#LR分析法" class="headerlink" title="LR分析法"></a>LR分析法</h2><p>LR文法(Knuth, 1963) 是最大的、可以构造出相应<font color="red">移入-归约语法分析器</font>的文法类 </p>
+<h2><span id="lr分析法">LR分析法</span></h2><p>LR文法(Knuth, 1963) 是最大的、可以构造出相应<font color="red">移入-归约语法分析器</font>的文法类 </p>
 <ol>
 <li><p>L: 对输入进行从左到右的扫描</p>
 </li>
@@ -323,9 +323,9 @@
 </ol>
 <p>LR(k)分析: 需要向前查看k个输入符号的LR分析 </p>
 <p>当省略(k)时，表示k =1 </p>
-<h3 id="LR分析表结构"><a href="#LR分析表结构" class="headerlink" title="LR分析表结构"></a>LR分析表结构</h3><p><img src="/posts/79936e54.htm/1.gif" alt="LR分析表"></p>
+<h3><span id="lr分析表结构">LR分析表结构</span></h3><p><img src="/posts/79936e54.htm/1.gif" alt="LR分析表"></p>
 <p>符号a进入符号栈中，状态n进入状态栈中。</p>
-<h3 id="LR-分析器的工作过程"><a href="#LR-分析器的工作过程" class="headerlink" title="LR 分析器的工作过程"></a>LR 分析器的工作过程</h3><p>初始化（状态栈中只有s0，符号栈中只有$，输入缓冲区中符号串为a1a2…an）</p>
+<h3><span id="lr-分析器的工作过程">LR 分析器的工作过程</span></h3><p>初始化（状态栈中只有s0，符号栈中只有$，输入缓冲区中符号串为a1a2…an）</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">s0</span></span><br><span class="line"><span class="variable">$</span>				<span class="variable">a1a2</span>…<span class="variable">an</span> <span class="variable">$</span> </span><br></pre></td></tr></table></figure>
 
 
@@ -358,22 +358,22 @@
 <li>如果ACTION[sm , ai]=acc，那么分析成功</li>
 <li>如果ACTION[sm , ai]=err ，那么出现语法错误 </li>
 </ol>
-<h3 id="如何构造给定文法的LR分析表"><a href="#如何构造给定文法的LR分析表" class="headerlink" title="如何构造给定文法的LR分析表"></a>如何构造给定文法的LR分析表</h3><p><font color="red">不同分析法对应LR分析表构成方法不同</font></p>
+<h3><span id="如何构造给定文法的lr分析表">如何构造给定文法的LR分析表</span></h3><p><font color="red">不同分析法对应LR分析表构成方法不同</font></p>
 <p>LR(0)分析<br>SLR分析<br>LR(1)分析<br>LALR分析 </p>
-<h2 id="LR-0-分析"><a href="#LR-0-分析" class="headerlink" title="LR(0)分析"></a>LR(0)分析</h2><h3 id="LR（0）项目"><a href="#LR（0）项目" class="headerlink" title="LR（0）项目"></a>LR（0）项目</h3><p>右部某位置标有圆点的产生式称为相应文法的一个LR(0)项目（简称为项目） </p>
+<h2><span id="lr0分析">LR(0)分析</span></h2><h3><span id="lr0项目">LR（0）项目</span></h3><p>右部某位置标有圆点的产生式称为相应文法的一个LR(0)项目（简称为项目） </p>
 <p>S→bBB </p>
 <p>S → ·bBB  （ .后面为终结符，称<font color="red">移进项目</font> ）<br>S → b·BB    （ .后面为非终结符，称<font color="red">待约项目</font> ）<br>S → bB·B<br>S → bBB·     （ .在最后，称<font color="red">归约项目</font> ）</p>
 <p>产生式A→ε 只生成一个项目A→ · </p>
 <p>项目描述了<strong>句柄识别的状态</strong> </p>
-<h3 id="增广文法-Augmented-Grammar"><a href="#增广文法-Augmented-Grammar" class="headerlink" title="增广文法 (Augmented Grammar)"></a>增广文法 (Augmented Grammar)</h3><p>如果G 是一个以S为开始符号的文法，则G的增广文法 G’ 就是在G中加上新开始符号S’ 和产生式S’ → S而得到的文法 </p>
+<h3><span id="增广文法-augmented-grammar">增广文法 (Augmented Grammar)</span></h3><p>如果G 是一个以S为开始符号的文法，则G的增广文法 G’ 就是在G中加上新开始符号S’ 和产生式S’ → S而得到的文法 </p>
 <p>引入这个新的开始产生式的目的是使得<strong>文法开始符号仅出现在一个产生式的左边</strong>，从而使得<strong>分析器只有一个接受状态</strong> </p>
-<h3 id="LR-0-自动机"><a href="#LR-0-自动机" class="headerlink" title="LR(0)自动机"></a>LR(0)自动机</h3><p>把等价的项目组成一个项目集(I) ，称为<font color="red">项目集闭包(Closure of Item Sets)</font>&gt;，</p>
+<h3><span id="lr0自动机">LR(0)自动机</span></h3><p>把等价的项目组成一个项目集(I) ，称为<font color="red">项目集闭包(Closure of Item Sets)</font>&gt;，</p>
 <p>每个项目集闭包对应着<font color="blue">自动机的一个<strong>状态</strong> </font></p>
 <p><img src="/posts/79936e54.htm/LR%EF%BC%880%EF%BC%89.gif" alt="LR（0）"></p>
-<h2 id="LR（0）分析表构造算法"><a href="#LR（0）分析表构造算法" class="headerlink" title="LR（0）分析表构造算法"></a>LR（0）分析表构造算法</h2><h3 id="LR-0-分析过程中的冲突"><a href="#LR-0-分析过程中的冲突" class="headerlink" title="LR(0) 分析过程中的冲突"></a>LR(0) 分析过程中的冲突</h3><p><img src="/posts/79936e54.htm/3.gif"></p>
-<h3 id="LR-0-分析表含有移进-归约冲突"><a href="#LR-0-分析表含有移进-归约冲突" class="headerlink" title="LR(0)分析表含有移进/归约冲突"></a>LR(0)分析表含有移进/归约冲突</h3><p><img src="/posts/79936e54.htm/4.gif"></p>
-<h3 id="移进-归约冲突和归约-归约冲突"><a href="#移进-归约冲突和归约-归约冲突" class="headerlink" title="移进/归约冲突和归约/归约冲突"></a><strong>移进/归约</strong>冲突和<strong>归约/归约</strong>冲突</h3><p><img src="/posts/79936e54.htm/5.gif"></p>
-<p><strong>不是所有CFG都能用LR(0)方法进行分析，也就是说， CFG不总是LR(0)文法</strong> </p>
+<h2><span id="lr0分析表构造算法">LR（0）分析表构造算法</span></h2><h3><span id="lr0-分析过程中的冲突">LR(0) 分析过程中的冲突</span></h3><p><img src="/posts/79936e54.htm/3.gif"></p>
+<h3><span id="lr0分析表含有移进归约冲突">LR(0)分析表含有移进/归约冲突</span></h3><p><img src="/posts/79936e54.htm/4.gif"></p>
+<h3><span id="移进归约冲突和归约归约冲突"><strong>移进/归约</strong>冲突和<strong>归约/归约</strong>冲突</span></h3><p><img src="/posts/79936e54.htm/5.gif"></p>
+<p><strong>不是所有CFG都能用LR(0)方法进行分析，也就是说， CFG不总是LR(0)文法</strong></p>
 
       
 	
@@ -568,7 +568,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">自底向上分析概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">自底向上的语法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%85%A5-%E5%BD%92%E7%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">移入-归约分析的工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%85%A5-%E5%BD%92%E7%BA%A6%E5%88%86%E6%9E%90%E5%99%A8%E5%8F%AF%E9%87%87%E5%8F%96%E7%9A%844%E7%A7%8D%E5%8A%A8%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">移入-归约分析器可采取的4种动作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%85%A5-%E5%BD%92%E7%BA%A6%E5%88%86%E6%9E%90%E4%B8%AD%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">移入-归约分析中存在的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LR%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">LR分析法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LR%E5%88%86%E6%9E%90%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">LR分析表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-%E5%88%86%E6%9E%90%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">LR 分析器的工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E9%80%A0%E7%BB%99%E5%AE%9A%E6%96%87%E6%B3%95%E7%9A%84LR%E5%88%86%E6%9E%90%E8%A1%A8"><span class="toc-number">2.3.</span> <span class="toc-text">如何构造给定文法的LR分析表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LR-0-%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">LR(0)分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LR%EF%BC%880%EF%BC%89%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.1.</span> <span class="toc-text">LR（0）项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%B9%BF%E6%96%87%E6%B3%95-Augmented-Grammar"><span class="toc-number">3.2.</span> <span class="toc-text">增广文法 (Augmented Grammar)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">3.3.</span> <span class="toc-text">LR(0)自动机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LR%EF%BC%880%EF%BC%89%E5%88%86%E6%9E%90%E8%A1%A8%E6%9E%84%E9%80%A0%E7%AE%97%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">LR（0）分析表构造算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%86%B2%E7%AA%81"><span class="toc-number">4.1.</span> <span class="toc-text">LR(0) 分析过程中的冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-%E5%88%86%E6%9E%90%E8%A1%A8%E5%90%AB%E6%9C%89%E7%A7%BB%E8%BF%9B-%E5%BD%92%E7%BA%A6%E5%86%B2%E7%AA%81"><span class="toc-number">4.2.</span> <span class="toc-text">LR(0)分析表含有移进&#x2F;归约冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E8%BF%9B-%E5%BD%92%E7%BA%A6%E5%86%B2%E7%AA%81%E5%92%8C%E5%BD%92%E7%BA%A6-%E5%BD%92%E7%BA%A6%E5%86%B2%E7%AA%81"><span class="toc-number">4.3.</span> <span class="toc-text">移进&#x2F;归约冲突和归约&#x2F;归约冲突</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">自底向上分析概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">自底向上的语法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">移入-归约分析的工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">移入-归约分析器可采取的4种动作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">移入-归约分析中存在的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">LR分析法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">LR分析表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">LR 分析器的工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text">如何构造给定文法的LR分析表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">LR(0)分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">LR（0）项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">增广文法 (Augmented Grammar)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">LR(0)自动机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">LR（0）分析表构造算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">LR(0) 分析过程中的冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">LR(0)分析表含有移进&#x2F;归约冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">移进&#x2F;归约冲突和归约&#x2F;归约冲突</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -790,10 +790,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -806,15 +802,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,10 +874,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -886,19 +882,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -915,6 +907,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,11 +946,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -958,15 +958,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -986,11 +982,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,6 +991,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1018,6 +1014,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1034,11 +1034,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,15 +1050,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,6 +1082,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1091,22 +1099,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1126,6 +1118,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1138,11 +1146,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1362,19 +1370,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

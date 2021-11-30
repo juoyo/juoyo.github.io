@@ -91,7 +91,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -289,20 +289,20 @@
 <p>论文介绍<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1702.01978">https://arxiv.org/abs/1702.01978</a></p>
 <p>论文下载<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1702.01978.pdf">https://arxiv.org/pdf/1702.01978.pdf</a></p>
 <hr>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>情绪分析理论已经用于解决金融市场波动性预测，调查股票市场年度披露的情绪来预测市场波动。探索使用最新信息检索（IR）术语权重模型，通过使用相关术语词嵌入进行高效扩展。除了文本信息外，真实市场数据已经被用作主流方法，来预测市场风险。我们融合文本和市场数据，基于词嵌入的方法明显优于其他最好方法，我们还研究了不同金融领域公司报告的特点。</p>
+<h1><span id="摘要">摘要</span></h1><p>情绪分析理论已经用于解决金融市场波动性预测，调查股票市场年度披露的情绪来预测市场波动。探索使用最新信息检索（IR）术语权重模型，通过使用相关术语词嵌入进行高效扩展。除了文本信息外，真实市场数据已经被用作主流方法，来预测市场风险。我们融合文本和市场数据，基于词嵌入的方法明显优于其他最好方法，我们还研究了不同金融领域公司报告的特点。</p>
 <hr>
-<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>我们的研究是建立在以前的研究基础上的波动率预测与10-K报告情绪信息分析。在利用文本内容对波动率进行预测方面，本文给出了最先进的收益于词嵌入信息的信息检索(IR)项权重模型，对预测精度有显著的正向影响。最近关于这个话题的研究(Tsai and Wang, 2014)使用词内嵌获得的相关词汇来扩展情感性词汇的词汇量。相反，与Rekabsaz等人(2016b)相似，我们通过将每个词汇扩展到文档中相似的词汇来定义每个词汇的权重。该方法在文献检索方面有显著改进，通过抓住词汇的重要性促使我们将其应用于情感分析。</p>
+<h1><span id="引言">引言</span></h1><p>我们的研究是建立在以前的研究基础上的波动率预测与10-K报告情绪信息分析。在利用文本内容对波动率进行预测方面，本文给出了最先进的收益于词嵌入信息的信息检索(IR)项权重模型，对预测精度有显著的正向影响。最近关于这个话题的研究(Tsai and Wang, 2014)使用词内嵌获得的相关词汇来扩展情感性词汇的词汇量。相反，与Rekabsaz等人(2016b)相似，我们通过将每个词汇扩展到文档中相似的词汇来定义每个词汇的权重。该方法在文献检索方面有显著改进，通过抓住词汇的重要性促使我们将其应用于情感分析。</p>
 <p>此外，我们还阐明了针对每个部门调整分析的效果:预期特定领域的训练将导致提升，我们的常规模型泛化能力好，并优于行业特定的训练模型。</p>
 <hr>
-<h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><p>Xie等(2013)提出了一种基于语义树的模型来表示预测股价走势的新闻数据。Luss等人(2015)也利用新闻与回报价格相结合来预测当天的价格走势。他们使用多内核学习(MKL)算法来结合这两个特性。与单独使用每个特性相比，这种组合在最终预测方面显示出改进。在那些研究的推动下，我们研究了将文本信息与非文本信息相结合的MKL算法的性能。</p>
+<h1><span id="相关工作">相关工作</span></h1><p>Xie等(2013)提出了一种基于语义树的模型来表示预测股价走势的新闻数据。Luss等人(2015)也利用新闻与回报价格相结合来预测当天的价格走势。他们使用多内核学习(MKL)算法来结合这两个特性。与单独使用每个特性相比，这种组合在最终预测方面显示出改进。在那些研究的推动下，我们研究了将文本信息与非文本信息相结合的MKL算法的性能。</p>
 <p>上述研究使用短文本(句子或段落级)，而接近长文本(文档级)进行市场预测主要基于n克袋词法。Nopp和Hanbury(2015)使用Loughran和McDonald(2011)提供的金融专用词汇研究了银行年报的情绪，以评估银行系统风险因素。</p>
 <p>Kogan等人(2009)对1996-2006年发表的报告使用线性支持向量机(SVM)算法，这与10-K波动预测报告的信息量更直接相关。Wang et al.(2013)利用Loughran和McDonald(2011)的词典对其进行了改进，观察了预测的改进。之后，Tsai和Wang(2014)采用了与Wang et al.(2013)相同的方法，并在此基础上增加了词内嵌来扩展金融词汇。我们复制了这些研究中的所有方法，并展示了我们的情绪分析方法的优势。</p>
 <hr>
-<h1 id="问题公式化"><a href="#问题公式化" class="headerlink" title="问题公式化"></a>问题公式化</h1><p>在这一节中，我们阐述了波动率预测问题和我们实验的预测目标。波动率被定义为的自然对数的标准差(调整)返回τ天的价格在一个窗口。这个定义称为标准波动率(Li and Hong, 2011)或已实现波动率(Liu and Tse,2013)，定义如下:</p>
+<h1><span id="问题公式化">问题公式化</span></h1><p>在这一节中，我们阐述了波动率预测问题和我们实验的预测目标。波动率被定义为的自然对数的标准差(调整)返回τ天的价格在一个窗口。这个定义称为标准波动率(Li and Hong, 2011)或已实现波动率(Liu and Tse,2013)，定义如下:</p>
 <p><img src="/posts/9e956bc.htm/%E8%AF%BB%E8%AE%BA%E6%96%874-Volatility-Prediction-using-Financial-Disclosures-Sentiments-with-Word-Embedding-based-IR-Models%5C1.gif"></p>
 <hr>
-<h1 id="方法论"><a href="#方法论" class="headerlink" title="方法论"></a>方法论</h1><p>首先描述了文本情绪分析方法，然后介绍了从实际市场数据中获得的特征，最后解释了将文本和市场特征集结合起来的方法。</p>
-<h2 id="情绪分析"><a href="#情绪分析" class="headerlink" title="情绪分析"></a>情绪分析</h2><p>与之前的研究相似(Nopp and Hanbury, 2015;Wang et al.， 2013)，我们使用<strong>积极组、消极组和不确定组</strong>从一个特定金融的词汇库中提取关键字集(Loughran and McDonald, 2011)，使用英文分词算法。我们将这个关键字集称为Lex。Tsai和Wang(2014)对该集合进行了扩展，将每一项的前20个相关项添加到原集合中，利用所有报告语料库构建的Word2Vec (Mikolov et al.， 2013)模型得到相关项，具有余弦相似性。我们还在实验中使用了这个扩展集，并将其称为LexExt。</p>
+<h1><span id="方法论">方法论</span></h1><p>首先描述了文本情绪分析方法，然后介绍了从实际市场数据中获得的特征，最后解释了将文本和市场特征集结合起来的方法。</p>
+<h2><span id="情绪分析">情绪分析</span></h2><p>与之前的研究相似(Nopp and Hanbury, 2015;Wang et al.， 2013)，我们使用<strong>积极组、消极组和不确定组</strong>从一个特定金融的词汇库中提取关键字集(Loughran and McDonald, 2011)，使用英文分词算法。我们将这个关键字集称为Lex。Tsai和Wang(2014)对该集合进行了扩展，将每一项的前20个相关项添加到原集合中，利用所有报告语料库构建的Word2Vec (Mikolov et al.， 2013)模型得到相关项，具有余弦相似性。我们还在实验中使用了这个扩展集，并将其称为LexExt。</p>
 <p>在检索资讯时，我们常用以下字词加权方案，并在我们的研究中加以考虑:</p>
 <p><img src="/posts/9e956bc.htm/%E8%AF%BB%E8%AE%BA%E6%96%874-Volatility-Prediction-using-Financial-Disclosures-Sentiments-with-Word-Embedding-based-IR-Models%5C2.gif"></p>
 <p>除了标准的加权方案,我们使用先进的信息检索中的直接受益于词嵌入模型的权重方法(Rekabsaz et al ., 2016 b)：它们利用词嵌入模型提供的词与词之间的相似度值，通过扩展每个词库关键字的相似词的权重，实现加权方案:</p>
@@ -312,23 +312,23 @@
 <p>内核可以看作是文档的特征向量与其他所有文档的特征向量之间的(相似性)函数。我们的初步实验表明，径向基函数(RBF)核的性能优于线性核和余弦核，因此本文采用了径向基函数核。</p>
 <p>我们使用人工神经网络(ANN)算法来测试神经网络用于自动特征学习的有效性。我们尝试了几种不同正则化方法的神经网络结构(早期停止、正则化项、退出)。采用两层隐层(分别为400和500个节点)，tanh为激活函数，梯度学习率为0.001，梯度学习效果较好，且提前停止。然而，这些网络不能提供比SVM回归器更好的结果。因此，对于本报告，我们只报告SVM方法。</p>
 <hr>
-<h2 id="市场特点"><a href="#市场特点" class="headerlink" title="市场特点"></a>市场特点</h2><p>除了文本特征外，我们还使用真实市场数据和历史价格(称为市场特征)定义了以下三个特征:</p>
+<h2><span id="市场特点">市场特点</span></h2><p>除了文本特征外，我们还使用真实市场数据和历史价格(称为市场特征)定义了以下三个特征:</p>
 <p>**Current Volatility **是按报告发出日期前的四分之一窗口计算:  v (si 64−si)</p>
 <p><strong>GARCH</strong> (Bollerslev, 1986)是一种常用的股票预测计量时间序列模型价格波动。</p>
 <p><strong>Sector</strong> 是报告对应公司所属的部门，即能源(ene)、基础产业(ind)、金融(fin)、科技(tech)、杂项(misc)、非耐用消费品(n-dur)、耐用消费品(dur)、资本货物(capt)、消费服务(serv)、公用事业(pub)、医疗(hlth)1。使用一种热编码将特征转换为数值表示。</p>
 <hr>
-<h2 id="特征融合"><a href="#特征融合" class="headerlink" title="特征融合"></a>特征融合</h2><p>晚期融合方法首先在每个特征集中学习一个模型，然后使用/学习一个元模型来组合它们的结果。作为我们的第二种方法，我们使用堆叠(Wolpert, 1992)，这是一种晚期融合的特殊情况。在堆叠过程中，我们首先将训练集分成两部分(70%-30%)。使用第一部分，我们为每个文本和市场特性集训练单独的机器学习模型。接下来，我们用训练好的模型预测第二部分的标签，最后训练另一个模型来捕捉基本模型输出之间的组合。在我们的实验中，最终的模型总是使用带有RBF核的SVM进行训练。</p>
+<h2><span id="特征融合">特征融合</span></h2><p>晚期融合方法首先在每个特征集中学习一个模型，然后使用/学习一个元模型来组合它们的结果。作为我们的第二种方法，我们使用堆叠(Wolpert, 1992)，这是一种晚期融合的特殊情况。在堆叠过程中，我们首先将训练集分成两部分(70%-30%)。使用第一部分，我们为每个文本和市场特性集训练单独的机器学习模型。接下来，我们用训练好的模型预测第二部分的标签，最后训练另一个模型来捕捉基本模型输出之间的组合。在我们的实验中，最终的模型总是使用带有RBF核的SVM进行训练。</p>
 <p>由于训练集的分割，基础模型或元模型可能会缺少训练数据。在一个模型中学习这两个特性集的一种潜在方法是MKL方法。MKL算法(也称为中间融合(Noble et al.， 2004))通过学习(同时学习参数)多个核心的最优组合，扩展了SVM模型的核心。</p>
 <p>优化可能在计算上具有挑战性。我们使用mklaren方法(Strazar和Curkˇ,2016),线性复杂性数据实例的数量和内核。它已被证明优于最近的多核近似方法。我们对文本和市场特性集都使用RBF内核。</p>
 <hr>
-<h2 id="实验设计"><a href="#实验设计" class="headerlink" title="实验设计"></a>实验设计</h2><p>我们从美国证券交易委员会(SEC)网站下载了2006年至2015年美国股市公司的报告。</p>
+<h2><span id="实验设计">实验设计</span></h2><p>我们从美国证券交易委员会(SEC)网站下载了2006年至2015年美国股市公司的报告。</p>
 <p>基线GARCH：虽然GARCH模型包含市场事实信息，但是我们使用它作为基线来比较基于文本的方法和主流方法的有效性。</p>
 <p>评价指标作为一种常用的度量可合性预测指标，我们使用r^2度量(相关系数的平方)进行评价：</p>
 <p><img src="/posts/9e956bc.htm/%E8%AF%BB%E8%AE%BA%E6%96%874-Volatility-Prediction-using-Financial-Disclosures-Sentiments-with-Word-Embedding-based-IR-Models%5C4.gif"></p>
 <hr>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>让我们从观察这些年来报告的特征向量的变化开始我们的实验。为了进行比较，我们使用了Tsai and Wang(2014)提出的最先进的情绪分析方法。我们首先通过计算当年发表的所有报告的特征向量的质心(元素均值)来表示每年的特征向量，然后计算2006-2015年每对质心向量的余弦相似度。</p>
+<h2><span id="实验结果">实验结果</span></h2><p>让我们从观察这些年来报告的特征向量的变化开始我们的实验。为了进行比较，我们使用了Tsai and Wang(2014)提出的最先进的情绪分析方法。我们首先通过计算当年发表的所有报告的特征向量的质心(元素均值)来表示每年的特征向量，然后计算2006-2015年每对质心向量的余弦相似度。</p>
 <hr>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>在本文中，我们研究了最近10-K年披露的股票市场公司的情绪预测波动。我们的袋装词汇情感分析方法得益于最先进的信息检索模型，该模型使用单词嵌入将词汇的权重扩展到文档中的类似词汇。此外，我们还探索了将文本特征与真实市场特征相结合的融合方法，即GARCH预测模型和当前波动性。在这两种情况下，我们的方法都优于现有的10-K波动率预测方法，并证明了情绪分析在长期波动率预测中的有效性。</p>
+<h1><span id="结论">结论</span></h1><p>在本文中，我们研究了最近10-K年披露的股票市场公司的情绪预测波动。我们的袋装词汇情感分析方法得益于最先进的信息检索模型，该模型使用单词嵌入将词汇的权重扩展到文档中的类似词汇。此外，我们还探索了将文本特征与真实市场特征相结合的融合方法，即GARCH预测模型和当前波动性。在这两种情况下，我们的方法都优于现有的10-K波动率预测方法，并证明了情绪分析在长期波动率预测中的有效性。</p>
 <p>此外，我们研究了每个行业在风险敏感术语方面的特征。我们的分析表明，同一部门的报告有相当大的共同风险和不稳定因素。然而，尽管有预期，在不同部门培训不同的模型与一般模型相比并没有提高性能。我们将其追溯到每个部门可用数据的大小，并表明考虑部门仍然有好处，随着更多数据可用，未来可以进一步探索这些好处。</p>
 
       
@@ -557,7 +557,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%85%AC%E5%BC%8F%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">问题公式化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">方法论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E7%BB%AA%E5%88%86%E6%9E%90"><span class="toc-number">5.1.</span> <span class="toc-text">情绪分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%82%E5%9C%BA%E7%89%B9%E7%82%B9"><span class="toc-number">5.2.</span> <span class="toc-text">市场特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E8%9E%8D%E5%90%88"><span class="toc-number">5.3.</span> <span class="toc-text">特征融合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.4.</span> <span class="toc-text">实验设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">5.5.</span> <span class="toc-text">实验结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">问题公式化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">方法论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.1.</span> <span class="toc-text">情绪分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.2.</span> <span class="toc-text">市场特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.3.</span> <span class="toc-text">特征融合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.4.</span> <span class="toc-text">实验设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.5.</span> <span class="toc-text">实验结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -779,10 +779,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -795,15 +791,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,10 +863,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -875,19 +871,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,6 +896,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -935,11 +935,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -947,15 +947,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -975,11 +971,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -988,6 +980,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,6 +1003,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1023,11 +1023,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1035,15 +1039,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1067,6 +1071,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1080,22 +1088,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,6 +1107,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1127,11 +1135,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1351,19 +1359,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

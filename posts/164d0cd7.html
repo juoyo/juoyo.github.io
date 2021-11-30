@@ -89,7 +89,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -283,23 +283,23 @@
 
         <p>词法分析主要是读入远程的输入字符，组成词素，生成词法单元序列，每个词法单元对应一个词素。</p>
 <a id="more"></a>
-<h2 id="词法分析的主要任务"><a href="#词法分析的主要任务" class="headerlink" title="词法分析的主要任务"></a>词法分析的主要任务</h2><p>词法分析的主要任务是从左向右逐行扫描源程序的字符，识别出各个单词，确定单词的类型。<br>将识别出的单词转换成统一的机内表示——词法单元(token)形式<br><img src="/posts/164d0cd7.htm/token.gif" alt="token"><br><img src="/posts/164d0cd7.htm/token%E7%A4%BA%E4%BE%8B.jpg" alt="token"></p>
-<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>词法单元：由词法单元名和可选的属性组成；譬如关键字可以是一个词法单元；或者是代表标识符、数字常量、字符常量等。</p>
+<h2><span id="词法分析的主要任务">词法分析的主要任务</span></h2><p>词法分析的主要任务是从左向右逐行扫描源程序的字符，识别出各个单词，确定单词的类型。<br>将识别出的单词转换成统一的机内表示——词法单元(token)形式<br><img src="/posts/164d0cd7.htm/token.gif" alt="token"><br><img src="/posts/164d0cd7.htm/token%E7%A4%BA%E4%BE%8B.jpg" alt="token"></p>
+<h2><span id="名词解释">名词解释</span></h2><p>词法单元：由词法单元名和可选的属性组成；譬如关键字可以是一个词法单元；或者是代表标识符、数字常量、字符常量等。</p>
 <p>模式：一个词法单元的词素所具有的所有可能的形式。</p>
 <p>词素：源程序的一个具体的字符序列，能够匹配某个模式，并被词法分析器识别。</p>
-<h2 id="正规式"><a href="#正规式" class="headerlink" title="正规式"></a>正规式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>正规式又称正则表达式, 是一种特殊的字符串用来描述一类的字符串的集合。我们把可用正规式描述(其结构)的语言称为正规语言或正规集。</p>
+<h2><span id="正规式">正规式</span></h2><h3><span id="定义">定义</span></h3><p>正规式又称正则表达式, 是一种特殊的字符串用来描述一类的字符串的集合。我们把可用正规式描述(其结构)的语言称为正规语言或正规集。</p>
 <p>字母表：符号的有限集合， 例： $\sum$ = { 0, 1 }<br>串：符号的有穷序列，例：0110,  \varepsilon<br>语言：字母表上的一个串集 { \varepsilon , 0, 00, 000, …}, { \varepsilon },  \phi<br>句子：属于语言的串</p>
 <p>在词法分析中，最重要的语言上运算是并、连接和闭包运算。下面是运算的正规定义：<br><img src="/posts/164d0cd7.htm/1.png" alt="正则"></p>
-<h3 id="正规式举例"><a href="#正规式举例" class="headerlink" title="正规式举例"></a>正规式举例</h3><p>如果字母集 $\sum$ = {a, b}</p>
+<h3><span id="正规式举例">正规式举例</span></h3><p>如果字母集 $\sum$ = {a, b}</p>
 <p>–则a | b表示的语言是 {a, b}</p>
 <p>–(a | b) (a | b ) 表示的语言是{aa, ab, ba, bb}</p>
 <p>–aa | ab | ba | bb表示的语言是 {aa, ab, ba, bb}</p>
 <p>–a* 由字母a构成的所有串集</p>
 <p>–(a | b)* 由a和b构成的所有串集</p>
-<h3 id="C语言中无符号整数的RE"><a href="#C语言中无符号整数的RE" class="headerlink" title="C语言中无符号整数的RE"></a>C语言中无符号整数的RE</h3><ol>
+<h3><span id="c语言中无符号整数的re">C语言中无符号整数的RE</span></h3><ol>
 <li>十进制<br>(1|…|9)(0|…|9)*|0</li>
 <li>八进制<br>0(1|…|7)(0|…|7)*</li>
-<li>十六进制<br>0x(1|…|9|a|…|f|A|…|F)(0|…|9|a|…|f|A|…|F)*<h3 id="RE的代数定律"><a href="#RE的代数定律" class="headerlink" title="RE的代数定律"></a>RE的代数定律</h3><table>
+<li>十六进制<br>0x(1|…|9|a|…|f|A|…|F)(0|…|9|a|…|f|A|…|F)*<h3><span id="re的代数定律">RE的代数定律</span></h3><table>
 <thead>
 <tr>
 <th>定律</th>
@@ -321,15 +321,15 @@
 </tbody></table>
 </li>
 </ol>
-<h2 id="状态转换图"><a href="#状态转换图" class="headerlink" title="状态转换图"></a>状态转换图</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>在定义好正则表达式之后，怎么基于正则表达式构造代码来检查输入字符串，并返回和模式匹配的词素呢？作为构造词法分析器的中间步骤，首先将模式转换为具有特定风格的流图，称为“状态转换图”。</p>
+<h2><span id="状态转换图">状态转换图</span></h2><h3><span id="定义">定义</span></h3><p>在定义好正则表达式之后，怎么基于正则表达式构造代码来检查输入字符串，并返回和模式匹配的词素呢？作为构造词法分析器的中间步骤，首先将模式转换为具有特定风格的流图，称为“状态转换图”。</p>
 <p>状态转换图（transitiondiagram）包括称为状态（state）的节点，图中还包括有向边，每条边上面有一个或多个标号，代表从一个状态转到另一个状态的条件。转换图的每一个状态代表了词法分析器扫描输入串的过程中可能遇到的情况。</p>
-<h3 id="重要约定"><a href="#重要约定" class="headerlink" title="重要约定"></a>重要约定</h3><p>状态转换图重要约定如下：</p>
+<h3><span id="重要约定">重要约定</span></h3><p>状态转换图重要约定如下：</p>
 <ol>
 <li>某些状态被称为接收状态或者最终状态，这些状态表明已经找到了一个词素，可以有多个接收状态。</li>
 <li>如果相应的词素并不包括在最后一步使我们到达接受状态的符号，那么可以在该接受状态附近加一个*。</li>
 <li>有一个状态被指定为开始状态，也成为初始状态，该状态由一条没有出发节点的，标号为start的边指明。在读入任何输入符号之前，状态转换图总是处于开始状态。</li>
 </ol>
-<h3 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h3><p>转换图可能存在的问题是，会将保留的关键字作为标识符识别出来。<br>问题可以通过两种方式解决。</p>
+<h3><span id="存在问题">存在问题</span></h3><p>转换图可能存在的问题是，会将保留的关键字作为标识符识别出来。<br>问题可以通过两种方式解决。</p>
 <ol>
 <li>初始化时将各个保留字填入符号表。符号表中的相关字段会指出该串不是普通的标识符，并指出它们代表的词法单元，当使用installID函数向符号表中插入条目时，根据匹配的词素以及符号表中的信息，就可以判断出来是一般的标识符还是关键字。</li>
 <li>为每个关键字建立单独的状态转换图。<br><img src="/posts/164d0cd7.htm/2.jpg" alt="状态转换图"><br>如果使用这种方式，需要制定词法单元之间的优先级，使得then作为关键字而不是标识符返回。</li>
@@ -528,7 +528,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.</span> <span class="toc-text">词法分析的主要任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">正规式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E8%A7%84%E5%BC%8F%E4%B8%BE%E4%BE%8B"><span class="toc-number">3.2.</span> <span class="toc-text">正规式举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84RE"><span class="toc-number">3.3.</span> <span class="toc-text">C语言中无符号整数的RE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RE%E7%9A%84%E4%BB%A3%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-number">3.4.</span> <span class="toc-text">RE的代数定律</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E5%9B%BE"><span class="toc-number">4.</span> <span class="toc-text">状态转换图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">4.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%BA%A6%E5%AE%9A"><span class="toc-number">4.2.</span> <span class="toc-text">重要约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-number">4.3.</span> <span class="toc-text">存在问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">词法分析的主要任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">正规式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.2.</span> <span class="toc-text">正规式举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.3.</span> <span class="toc-text">C语言中无符号整数的RE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.4.</span> <span class="toc-text">RE的代数定律</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">状态转换图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">重要约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">存在问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -750,10 +750,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -766,15 +762,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,10 +834,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -846,19 +842,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -875,6 +867,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -906,11 +906,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,15 +918,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,11 +942,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,6 +951,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,6 +974,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -994,11 +994,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1006,15 +1010,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,6 +1042,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1051,22 +1059,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,6 +1078,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1098,11 +1106,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1322,19 +1330,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>

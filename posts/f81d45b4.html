@@ -84,7 +84,7 @@
 		</nav>
 		
 		<nav>
-			总文章数104
+			总文章数107
 		</nav>
 		
 		
@@ -283,11 +283,11 @@
         <p>切题模板，强记！</p>
 <a id="more"></a>
 
-<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="1-递归"><a href="#1-递归" class="headerlink" title="1. 递归"></a>1. 递归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recursion</span>(<span class="params">level, param1, param2. ...</span>)</span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    # <span class="title">recursion</span> <span class="title">terminator</span> 递归终止条件</span></span><br><span class="line"><span class="function"> 	<span class="title">if</span> <span class="title">level</span> &gt; <span class="title">MAX_LEVEL</span>:</span></span><br><span class="line">    	print_result</span><br><span class="line">    	<span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># process logic in current level</span></span><br><span class="line">    process_data(level, data...)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># drill down</span></span><br><span class="line">    self.recursion(level + <span class="number">1</span>, p1, p2, ...)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># reverse the current level status if needed</span></span><br><span class="line">    reverse_state(level)</span><br></pre></td></tr></table></figure>
+<h2><span id="模板">模板</span></h2><h3><span id="1-递归">1. 递归</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recursion</span>(<span class="params">level, param1, param2. ...</span>)</span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    # <span class="title">recursion</span> <span class="title">terminator</span> 递归终止条件</span></span><br><span class="line"><span class="function"> 	<span class="title">if</span> <span class="title">level</span> &gt; <span class="title">MAX_LEVEL</span>:</span></span><br><span class="line">    	print_result</span><br><span class="line">    	<span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># process logic in current level</span></span><br><span class="line">    process_data(level, data...)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># drill down</span></span><br><span class="line">    self.recursion(level + <span class="number">1</span>, p1, p2, ...)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># reverse the current level status if needed</span></span><br><span class="line">    reverse_state(level)</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h3 id="2-DFS代码"><a href="#2-DFS代码" class="headerlink" title="2. DFS代码"></a>2. DFS代码</h3><p>递归写法（推荐）</p>
+<h3><span id="2-dfs代码">2. DFS代码</span></h3><p>递归写法（推荐）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">visited = <span class="built_in">set</span>()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">node, visited</span>):</span></span><br><span class="line">    visited.add(node)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># process(node).</span></span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> next_node <span class="keyword">in</span> node.children():</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> next_node <span class="keyword">in</span> visited:</span><br><span class="line">            dfs(next_node, visited)</span><br></pre></td></tr></table></figure>
 
 
@@ -296,23 +296,23 @@
 
 
 <hr>
-<h3 id="3-BFS代码"><a href="#3-BFS代码" class="headerlink" title="3. BFS代码"></a>3. BFS代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">graph, start, end</span>):</span></span><br><span class="line">    queue = []</span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    </span><br><span class="line">    queue.append([start])</span><br><span class="line">    visited.add(start)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.pop()</span><br><span class="line">        visited.add(node)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># process(node)</span></span><br><span class="line">        </span><br><span class="line">        nodes = generate_related_unvisited_nodes(node)</span><br><span class="line">        queue.push(nodes)</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># other processing work</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<h3><span id="3-bfs代码">3. BFS代码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">graph, start, end</span>):</span></span><br><span class="line">    queue = []</span><br><span class="line">    visited = <span class="built_in">set</span>()</span><br><span class="line">    </span><br><span class="line">    queue.append([start])</span><br><span class="line">    visited.add(start)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        node = queue.pop()</span><br><span class="line">        visited.add(node)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># process(node)</span></span><br><span class="line">        </span><br><span class="line">        nodes = generate_related_unvisited_nodes(node)</span><br><span class="line">        queue.push(nodes)</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># other processing work</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h3 id="4-二分查找"><a href="#4-二分查找" class="headerlink" title="4. 二分查找"></a>4. 二分查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(array) - <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">    mid = left + (right - left) // <span class="number">2</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> array[mid] == target:</span><br><span class="line">        <span class="keyword">break</span> <span class="keyword">or</span> <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">        left = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = mid - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3><span id="4-二分查找">4. 二分查找</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">left, right = <span class="number">0</span>, <span class="built_in">len</span>(array) - <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">    mid = left + (right - left) // <span class="number">2</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> array[mid] == target:</span><br><span class="line">        <span class="keyword">break</span> <span class="keyword">or</span> <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">        left = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = mid - <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h3 id="5-DP"><a href="#5-DP" class="headerlink" title="5. DP"></a>5. DP</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 状态定义</span></span><br><span class="line">dp = [m + <span class="number">1</span>][n + <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始状态</span></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = x</span><br><span class="line">dp[<span class="number">0</span>][<span class="number">1</span>] = y</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># DP状态的推导</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, m + <span class="number">1</span>):</span><br><span class="line">        dp[i][j] = <span class="built_in">min</span>(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>], etc.)</span><br><span class="line">        </span><br><span class="line"><span class="keyword">return</span> dp[m][n] <span class="comment"># 最优解</span></span><br></pre></td></tr></table></figure>
+<h3><span id="5-dp">5. DP</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 状态定义</span></span><br><span class="line">dp = [m + <span class="number">1</span>][n + <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始状态</span></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = x</span><br><span class="line">dp[<span class="number">0</span>][<span class="number">1</span>] = y</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># DP状态的推导</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, m + <span class="number">1</span>):</span><br><span class="line">        dp[i][j] = <span class="built_in">min</span>(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>], etc.)</span><br><span class="line">        </span><br><span class="line"><span class="keyword">return</span> dp[m][n] <span class="comment"># 最优解</span></span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><h3 id="1-回溯算法"><a href="#1-回溯算法" class="headerlink" title="1.回溯算法"></a>1.回溯算法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span>(<span class="params">路径， 选择列表</span>):</span></span><br><span class="line">    <span class="keyword">if</span> 满足结束条件:</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> 选择 <span class="keyword">in</span> 选择列表:</span><br><span class="line">        <span class="comment"># 做选择</span></span><br><span class="line">        将该选择从选择列表中移除</span><br><span class="line">        路径.add(选择)</span><br><span class="line">        </span><br><span class="line">        backtrack(路径， 选择列表)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 撤销选择</span></span><br><span class="line">        路径.remove(选择)</span><br><span class="line">        将该选择再加入到选择列表中</span><br></pre></td></tr></table></figure>
+<h2><span id="框架">框架</span></h2><h3><span id="1回溯算法">1.回溯算法</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backtrack</span>(<span class="params">路径， 选择列表</span>):</span></span><br><span class="line">    <span class="keyword">if</span> 满足结束条件:</span><br><span class="line">        result.add(路径)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> 选择 <span class="keyword">in</span> 选择列表:</span><br><span class="line">        <span class="comment"># 做选择</span></span><br><span class="line">        将该选择从选择列表中移除</span><br><span class="line">        路径.add(选择)</span><br><span class="line">        </span><br><span class="line">        backtrack(路径， 选择列表)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 撤销选择</span></span><br><span class="line">        路径.remove(选择)</span><br><span class="line">        将该选择再加入到选择列表中</span><br></pre></td></tr></table></figure>
 
 
 <hr>
-<h3 id="2-计算图中最短距离-BFS"><a href="#2-计算图中最短距离-BFS" class="headerlink" title="2.计算图中最短距离(BFS)"></a>2.计算图中最短距离(BFS)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算从起点start到终点target的最短距离</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">graph, start, target</span>):</span></span><br><span class="line">	queue = []</span><br><span class="line">	visited = <span class="built_in">set</span>()</span><br><span class="line">    </span><br><span class="line">    queue.append(start)  <span class="comment"># 将起点加入到队列中</span></span><br><span class="line">    visited.add(start)</span><br><span class="line">    step = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">while</span> queue:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(queue)):</span><br><span class="line">            cur_node = queue.pop(<span class="number">0</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> cur_node <span class="keyword">is</span> target:</span><br><span class="line">                <span class="keyword">return</span> step</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 将cur_node相邻节点中未被访问的加入队列</span></span><br><span class="line">            <span class="keyword">for</span> (node <span class="keyword">in</span> graph[cur_node]):</span><br><span class="line">                <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                    queue.append(node)</span><br><span class="line">                    visited.add(x)</span><br><span class="line">        <span class="comment"># 更新步长 </span></span><br><span class="line">        step = step + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3><span id="2计算图中最短距离bfs">2.计算图中最短距离(BFS)</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算从起点start到终点target的最短距离</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">graph, start, target</span>):</span></span><br><span class="line">	queue = []</span><br><span class="line">	visited = <span class="built_in">set</span>()</span><br><span class="line">    </span><br><span class="line">    queue.append(start)  <span class="comment"># 将起点加入到队列中</span></span><br><span class="line">    visited.add(start)</span><br><span class="line">    step = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">while</span> queue:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(queue)):</span><br><span class="line">            cur_node = queue.pop(<span class="number">0</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> cur_node <span class="keyword">is</span> target:</span><br><span class="line">                <span class="keyword">return</span> step</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 将cur_node相邻节点中未被访问的加入队列</span></span><br><span class="line">            <span class="keyword">for</span> (node <span class="keyword">in</span> graph[cur_node]):</span><br><span class="line">                <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">                    queue.append(node)</span><br><span class="line">                    visited.add(x)</span><br><span class="line">        <span class="comment"># 更新步长 </span></span><br><span class="line">        step = step + <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -555,7 +555,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%80%92%E5%BD%92"><span class="toc-number">1.1.</span> <span class="toc-text">1. 递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-DFS%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">2. DFS代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-BFS%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">3. BFS代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-number">1.4.</span> <span class="toc-text">4. 二分查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-DP"><span class="toc-number">1.5.</span> <span class="toc-text">5. DP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">1.回溯算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97%E5%9B%BE%E4%B8%AD%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB-BFS"><span class="toc-number">2.2.</span> <span class="toc-text">2.计算图中最短距离(BFS)</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. DFS代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. BFS代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 二分查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. DP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">1.回溯算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">2.计算图中最短距离(BFS)</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -777,10 +777,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -793,15 +789,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tricks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">判断</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,10 +861,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
@@ -873,19 +869,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -902,6 +894,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RMI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -933,11 +933,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -945,15 +945,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">三数之和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -973,11 +969,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -986,6 +978,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LRU缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1005,6 +1001,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回溯算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分治算法</a>
               </li>
              
@@ -1021,11 +1021,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">导入数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">好书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1033,15 +1037,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Lesson 1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Lesson 2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1065,6 +1069,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">word2vec</a>
               </li>
              
@@ -1078,22 +1086,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">情感分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">观点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1113,6 +1105,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多模态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">观点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">观点摘要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指北</a>
               </li>
              
@@ -1125,11 +1133,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
+                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">xgboost</a>
+                <a href="javascript:void(0)" class="js-tag color3">Numpy答案</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,19 +1357,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">juoyoXC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">分类顺序表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">好文</a>
               </li>
             
             <div class="clearfix"></div>
