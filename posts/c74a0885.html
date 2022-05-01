@@ -16,7 +16,7 @@
 <meta property="og:description" content="行测。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-11-23T07:42:03.000Z">
-<meta property="article:modified_time" content="2021-11-30T16:14:14.337Z">
+<meta property="article:modified_time" content="2022-03-28T13:13:09.237Z">
 <meta property="article:author" content="Yao Zhu">
 <meta property="article:tag" content="juoyoXC">
 <meta name="twitter:card" content="summary">
@@ -237,7 +237,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">6.9k字</span>
+        <span class="post-count">7.2k字</span>
       </span>
     </span>
 
@@ -246,7 +246,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">25分</span>
+        <span class="post-count">26分</span>
       </span>
     </span>
 </div>
@@ -812,14 +812,15 @@
 <li>难题表现：复合规律；细化看图</li>
 </ol>
 <h4><span id="21位置规律">2.1位置规律</span></h4><p>题型特征：元素组成相同（图形<strong>形状一样、数量不变</strong>，多考<strong>位置</strong>）</p>
-<p>考点：1.平移；2.旋转；3.翻转</p>
-<h5><span id="211平移">2.1.1平移</span></h5><p>1.方向：直线（上下、左右）、顺逆时针</p>
+<p>考点：1.平移；2.旋转；3.翻转；4.六面体展开；5.四面体展开；6.立体拼合</p>
+<h5><span id="211平移">2.1.1平移</span></h5><p>1.方向：直线（上下、左右）、顺逆时针、对角线</p>
 <p>平移方向如何判断：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">移动元素同一行的数量不变，左右平移</span><br><span class="line">移动元素同一列的数量不变，上下平移</span><br><span class="line">移动元素最外框的数量不变，顺逆平移</span><br></pre></td></tr></table></figure>
-<p>2.常见步数：恒定、等差(一般为递增)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">移动元素同一行的数量不变，左右平移</span><br><span class="line">移动元素同一列的数量不变，上下平移</span><br><span class="line">移动元素在圈的数量不变，顺逆平移</span><br><span class="line">移动元素在对角线上的数量不变，对角线平移</span><br></pre></td></tr></table></figure>
+<p>2.常见步数：恒定常数、等差(一般为递增)</p>
 <p>3.路径</p>
 <p>循环–穿墙（不变）</p>
 <p>反弹–触壁（方向变）</p>
+<p>分区域+方向（分区域移动）</p>
 <p>4.分部分各自平移</p>
 <p>分部分：1.不同移动元素各自平移；2.相同移动元素分内外各自平移；</p>
 <h5><span id="212-旋转-翻转">2.1.2 旋转、翻转</span></h5><p>1.辨识</p>
@@ -830,7 +831,8 @@
 <p>3.翻转</p>
 <p>（1）左右翻转</p>
 <p>（2）上下翻转</p>
-<p>4.翻转/旋转  +  叠加</p>
+<p>（3）对角线翻转（多结合九宫格考查）</p>
+<p>4.复合考查：翻转或旋转  +  叠加</p>
 <p>图推常规考点：</p>
 <p>1.平移/旋转翻转</p>
 <p>2.六面体/四面体</p>
@@ -996,8 +998,8 @@
 <p>1.关系一致</p>
 <p>2.顺序一致</p>
 <p>3.关系亲密</p>
-<p>4.对应填空看词性，带入验证，确保2个一致，1个亲密</p>
-<h4><span id="31概念关系">3.1概念关系</span></h4><p>1.全同关系</p>
+<p>4.对应填空型可带入验证，确保2个一致，1个亲密</p>
+<h4><span id="31概念关系外延关系">3.1概念关系（外延关系）</span></h4><p>1.全同关系（相同关系）</p>
 <ul>
 <li>古今全同       金陵：南京</li>
 <li>中外全通        罗曼蒂克：浪漫</li>
@@ -1006,10 +1008,17 @@
 </ul>
 <p>2.包含关系</p>
 <ul>
-<li>种属包含（政府官员：公务员，造句：公务员<strong>是一种</strong>政府官员；中国：国家，造句：中国<strong>是一个</strong>国家）</li>
-<li>组成关系（内蒙古：中国，内蒙古<strong>属于</strong>中国）</li>
+<li><p>种属关系  </p>
+<p>小为种大为属   A是B的一种/个/类</p>
+<p>（政府官员：公务员，造句：公务员<strong>是一种</strong>政府官员；中国：国家，造句：中国<strong>是一个</strong>国家）</p>
+</li>
+<li><p>组成关系</p>
+<p>A是B的一部分</p>
+<p>（内蒙古：中国，内蒙古<strong>属于</strong>中国）</p>
+</li>
 </ul>
-<p>3.交叉关系（中药：植物）</p>
+<p>3.交叉关系</p>
+<p>例如，中药：植物</p>
 <p>造句：</p>
 <ul>
 <li>有的A是B = 有的B是A</li>
@@ -1018,26 +1027,53 @@
 </ul>
 <p>4.并列关系（无交叉）</p>
 <ul>
-<li>矛盾（曲直）</li>
-<li>反对（黑白）</li>
-<li>全异（牛顿：黄山）</li>
+<li>矛盾、对立关系、非此即彼（曲：直）</li>
+<li>反对、互斥关系、二者不可同时发生可能有第三者（黑色：红色）</li>
+<li>全异、没关系（牛顿：黄山）</li>
 </ul>
-<h4><span id="32逻辑关系">3.2逻辑关系</span></h4><p>1.必要条件关系</p>
-<p>2.因果关系（或然/必然）</p>
-<p>3.顺承关系（先后）</p>
+<h4><span id="32逻辑关系词语之间的逻辑关系">3.2逻辑关系（词语之间的逻辑关系）</span></h4><p>1.条件关系</p>
 <ul>
-<li>纯先后</li>
-<li>主体是否一致</li>
+<li>必要条件</li>
+<li>充分条件</li>
 </ul>
-<p>4.对应关系</p>
+<p>2.因果关系（或然（可能）/必然）</p>
+<p>3.顺承关系（逻辑上的先后）</p>
 <ul>
-<li>功能对应（主次功能）</li>
-<li>属性对应（本质/非本质）</li>
-<li>职业角色对应</li>
-<li>方位处所对应</li>
-<li>原材料对应（物理变化/化学变化）</li>
-<li>配套对应（马对鞍）</li>
-<li>常识对应</li>
+<li><p>先-&gt;后</p>
+</li>
+<li><p>后-&gt;先</p>
+</li>
+</ul>
+<p>顺序一致后判断：</p>
+<p>（1）主体对象是否一致</p>
+<p>（2）对象的主被动是否一致</p>
+<p>（3）结果好坏是否一致</p>
+<p>4.对应关系（考最多）</p>
+<ul>
+<li><p>功能对应（主次功能）</p>
+</li>
+<li><p>属性对应（必然属性/或然属性，本质/非本质）</p>
+</li>
+<li><p>目的对应</p>
+<p>例如，学习：成功</p>
+</li>
+<li><p>工具对应</p>
+<p>例如，医生：手术刀</p>
+</li>
+<li><p>地点、方位处所对应</p>
+<p>例如，天空：飞机，土地：庄稼</p>
+</li>
+<li><p>职业角色、职责对应</p>
+<p>例如，医生：救死扶伤，消防员：救火</p>
+</li>
+<li><p>原材料对应（物理变化/化学变化，必然材料/或然材料，主材料/次材料）</p>
+</li>
+<li><p>配套对应</p>
+<p>例如，马：鞍，牙膏：牙刷</p>
+</li>
+<li><p>常识对应</p>
+<p>例如，三顾茅庐：诸葛亮，负荆请罪：蔺相如（负荆请罪：廉颇    错误，主体、主被动不同）</p>
+</li>
 </ul>
 <h4><span id="33语义语法关系">3.3语义语法关系</span></h4><p>1.语义关系（反义/近义/感情色彩/象征义/引申义）</p>
 <p>2.语法关系（主谓/动宾/主宾/偏正（暴力：影片）/状谓（狂：吃）</p>
@@ -1124,7 +1160,7 @@
 		2020-11-23
 		<br>
 		<strong class="update-time">最后更新：</strong>
-		2021-12-01
+		2022-03-28
 		<br>
 		
 		<strong>本文链接：</strong>
@@ -1303,7 +1339,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一、判断推理-章晓铭</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1逻辑判断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1形式逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.1.1假言命题–条件关系命题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1.1.2联言、选言命题–且&#x2F;或</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">1.1.3 直言命题–所有&#x2F;有的&#x2F;某个</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">1.1.4真假推理（综合利用矛盾）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2分析推理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3论证逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1.3.1考点一：削弱题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">1.3.2考点二：加强题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2图形推理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1位置规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.1.1平移</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.1.2 旋转、翻转</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2样式（形状）规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1 加减同异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2黑白叠加运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.2.3遍历-缺啥补啥</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3属性规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1对称性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.3.2曲直性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.3.3开闭性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4数量规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">2.4.1点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">2.4.2线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">2.4.3面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">2.4.4素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.5.</span> <span class="toc-text">2.4.5角</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5立体视图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3类比推理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1概念关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2逻辑关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3语义语法关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4定义判断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二、判断推理-钩不了沉</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">1.图推</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1封闭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2曲直</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3对称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.4.</span> <span class="toc-text">1.4组成部分数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.5.</span> <span class="toc-text">1.5元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.6.</span> <span class="toc-text">1.6笔画数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.7.</span> <span class="toc-text">1.7点角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.8.</span> <span class="toc-text">1.8叠加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.9.</span> <span class="toc-text">1.9位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.10.</span> <span class="toc-text">1.10遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.11.</span> <span class="toc-text">1.11拆分</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一、判断推理-章晓铭</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1逻辑判断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1形式逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.1.1假言命题–条件关系命题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1.1.2联言、选言命题–且&#x2F;或</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">1.1.3 直言命题–所有&#x2F;有的&#x2F;某个</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">1.1.4真假推理（综合利用矛盾）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2分析推理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3论证逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1.3.1考点一：削弱题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">1.3.2考点二：加强题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2图形推理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1位置规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.1.1平移</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.1.2 旋转、翻转</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2样式（形状）规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1 加减同异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2黑白叠加运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.2.3遍历-缺啥补啥</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3属性规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1对称性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.3.2曲直性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.3.3开闭性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4数量规律</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">2.4.1点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">2.4.2线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">2.4.3面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">2.4.4素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.2.4.5.</span> <span class="toc-text">2.4.5角</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5立体视图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3类比推理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1概念关系（外延关系）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2逻辑关系（词语之间的逻辑关系）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3语义语法关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4定义判断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二、判断推理-钩不了沉</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">1.图推</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1封闭</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2曲直</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3对称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.4.</span> <span class="toc-text">1.4组成部分数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.5.</span> <span class="toc-text">1.5元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.6.</span> <span class="toc-text">1.6笔画数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.7.</span> <span class="toc-text">1.7点角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.8.</span> <span class="toc-text">1.8叠加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.9.</span> <span class="toc-text">1.9位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.10.</span> <span class="toc-text">1.10遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.11.</span> <span class="toc-text">1.11拆分</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -1354,7 +1390,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 Yao Zhu
+    		&copy; 2022 Yao Zhu
     	</div>
 		
 		<!-- 站点运行时间 -->

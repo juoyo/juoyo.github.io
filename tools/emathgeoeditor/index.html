@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EmathGeoeditor - A jQuery-plugin</title>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="jsxgraph.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jsxgraphcore.js"></script>
+    <script type="text/javascript" src="jquery.colpicker.js"></script>
+    <script type="text/javascript" src="gedit.js"></script>
+    <script type="text/javascript">
+        jQuery(function () {
+            var data = { editable: true };
+
+            jQuery('#box1').geditor(data);  // 编辑模式
+            jQuery('#iseditable').attr('checked', data.editable).change(function () {
+                var editable = jQuery(this).is(':checked');
+                var gedata = jQuery('#box1').geditor('getdata');
+                if (gedata.editable) {
+                    data = gedata;
+                }
+                data.editable = editable;
+                jQuery('#box1').geditor(data);
+            });
+
+            var data2 =
+            {
+                "editable": true,
+                "width": "100%",
+                "height": "500px",
+                "browsingMode": "tabs",
+                "scenes": [
+                    {
+                        "type": "Scene",
+                        "name": "Tangents",
+                        "geoid": "GeoScene_{0}",
+                        "objects": [
+                            {
+                                "type": "Point",
+                                "name": "A",
+                                "geoid": "GeoPoint_{0}",
+                                "x": -4.05,
+                                "y": 0.51,
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000",
+                                "snapToGrid": false
+                            },
+                            {
+                                "type": "Point",
+                                "name": "B",
+                                "geoid": "GeoPoint_{1}",
+                                "x": -6.42,
+                                "y": 1.12,
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000",
+                                "snapToGrid": false
+                            },
+                            {
+                                "type": "Circle",
+                                "name": "k_{b}",
+                                "geoid": "GeoCircle_{0}",
+                                "p1": "GeoPoint_{0}",
+                                "p2": "GeoPoint_{1}",
+                                "dash": "1",
+                                "showName": false,
+                                "visible": true,
+                                "strokeColor": "#00aa00ff",
+                                "fillColor": "#ffff0055",
+                                "radius": 2.4
+                            },
+                            {
+                                "type": "Point",
+                                "name": "C",
+                                "geoid": "GeoPoint_{2}",
+                                "x": 3.23,
+                                "y": 0.45,
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000",
+                                "snapToGrid": false
+                            },
+                            {
+                                "type": "Tangent",
+                                "name": "d",
+                                "geoid": "GeoTangent_{0}",
+                                "p1": "GeoCircle_{0}",
+                                "p2": "GeoPoint_{2}",
+                                "i1Name": "D",
+                                "i2Name": "E",
+                                "dash": "0",
+                                "showName": true,
+                                "visible": true,
+                                "color": "#0000ff",
+                                "strokeWidth": 2
+                            }
+                        ],
+                        "boundingBox": [
+                            -10,
+                            5,
+                            10,
+                            -5
+                        ],
+                        "description": "You can draw two tangents for a circle through a point that is outside of the circle.\nTry to drag points <i>A</i>, <i>B</i> and <i>C</i> and the green circle.",
+                        "showGrid": false,
+                        "showAxis": false,
+                        "isStatic": false,
+                        "allowControls": true
+                    },
+
+
+                    {
+                        "type": "Scene",
+                        "name": "Perpendicular bisector",
+                        "geoid": "GeoScene_{1}",
+                        "objects": [
+                            {
+                                "type": "Point",
+                                "name": "A",
+                                "geoid": "GeoPoint_{3}",
+                                "x": -2.84,
+                                "y": -2.74,
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000",
+                                "snapToGrid": false
+                            },
+                            {
+                                "type": "Point",
+                                "name": "B",
+                                "geoid": "GeoPoint_{4}",
+                                "x": -1.93,
+                                "y": 3.85,
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000",
+                                "snapToGrid": false
+                            },
+                            {
+                                "type": "Point",
+                                "name": "C",
+                                "geoid": "GeoPoint_{5}",
+                                "x": 4.69,
+                                "y": -0.68,
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000",
+                                "snapToGrid": false
+                            },
+                            {
+                                "type": "Triangle",
+                                "name": "△ABC",
+                                "geoid": "GeoTriangle_{0}",
+                                "p1": "GeoPoint_{3}",
+                                "p2": "GeoPoint_{4}",
+                                "p3": "GeoPoint_{5}",
+                                "dash": "0",
+                                "showName": false,
+                                "visible": true,
+                                "strokeColor": "#0000ff",
+                                "fillColor": "#ffff002b"
+                            },
+                            {
+                                "type": "Midpoint",
+                                "name": "E",
+                                "geoid": "GeoMidpoint_{0}",
+                                "p1": "GeoPoint_{3}",
+                                "p2": "GeoPoint_{4}",
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000"
+                            },
+                            {
+                                "type": "Midpoint",
+                                "name": "F",
+                                "geoid": "GeoMidpoint_{1}",
+                                "p1": "GeoPoint_{4}",
+                                "p2": "GeoPoint_{5}",
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000"
+                            },
+                            {
+                                "type": "Midpoint",
+                                "name": "G",
+                                "geoid": "GeoMidpoint_{2}",
+                                "p1": "GeoPoint_{5}",
+                                "p2": "GeoPoint_{3}",
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 3,
+                                "color": "#ff0000"
+                            },
+                            {
+                                "type": "Normal",
+                                "name": "a",
+                                "geoid": "GeoNormal_{0}",
+                                "p1": "GeoTriangle_{0}-side1",
+                                "p2": "GeoMidpoint_{0}",
+                                "dash": "0",
+                                "showName": true,
+                                "visible": true,
+                                "color": "#00aa00ff",
+                                "strokeWidth": 2
+                            },
+                            {
+                                "type": "Normal",
+                                "name": "b",
+                                "geoid": "GeoNormal_{1}",
+                                "p1": "GeoTriangle_{0}-side3",
+                                "p2": "GeoMidpoint_{2}",
+                                "dash": "0",
+                                "showName": true,
+                                "visible": true,
+                                "color": "#00aa00ff",
+                                "strokeWidth": 2
+                            },
+                            {
+                                "type": "Normal",
+                                "name": "c",
+                                "geoid": "GeoNormal_{2}",
+                                "p1": "GeoTriangle_{0}-side2",
+                                "p2": "GeoMidpoint_{1}",
+                                "dash": "0",
+                                "showName": true,
+                                "visible": true,
+                                "color": "#00aa00ff",
+                                "strokeWidth": 2
+                            },
+                            {
+                                "type": "Intersection",
+                                "name": "M",
+                                "geoid": "GeoIntersection_{0}",
+                                "parent1": "GeoNormal_{1}",
+                                "parent2": "GeoNormal_{0}",
+                                "showName": true,
+                                "visible": true,
+                                "fixed": false,
+                                "size": 6,
+                                "color": "#ff0000",
+                                "showPoints": "both"
+                            },
+                            {
+                                "type": "Circle",
+                                "name": "c1",
+                                "geoid": "GeoCircle_{0}",
+                                "p1": "GeoIntersection_{0}_1",
+                                "p2": "GeoPoint_{3}",
+                                "showName": false
+                            }
+                        ],
+                        "boundingBox": [
+                            -10,
+                            5,
+                            10,
+                            -5
+                        ],
+                        "description": "Perpendicular bisectors of the sides of a triangle intersect all in one point.\nThis point is equally far from all three cornerpoints.",
+                        "showGrid": true,
+                        "showAxis": false,
+                        "isStatic": false,
+                        "allowControls": true
+                    }
+                ]
+            };
+
+            // 编辑模式（有数据）
+            jQuery('#box2').geditor(data2);
+
+            // 视图模式（选项卡）
+            data2.editable = false;
+            jQuery('#box3').geditor(data2);
+
+            // 视图模式（无选项卡、用导航点）
+            data2.browsingMode = 'tabless';
+            jQuery('#box4').geditor(data2);
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="head-content">
+            <img id="logo" src="images/emath-logo.png" alt="E-Math" />
+            <h1>EmathGeoeditor</h1>
+            <h2>Create geometric constructions</h2>
+        </div>
+    </header>
+    <a href="https://github.com/e-math/emathgeoeditor"><img style="position: absolute; top: 0; left: 0; border: 0;"
+            src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <article class="content">
+        <p>EmathGeoeditor depends on <a href="http://jquery.com/">jQuery</a>, <a
+                href="http://jsxgraph.uni-bayreuth.de/">JSXGraph</a>.</p>
+
+        <h2>Example 编辑模式</h2>
+        <p>Here is an example, how to use <code>gedit.js</code>.</p>
+        <div class="codewrapper">
+            <div class="codeexample">
+                &lt;div id="box1"&gt;
+                &lt;/div&gt;
+                &lt;script type="text/javascript"&gt;
+                jQuery('#box1').geditor({editable: true});
+                &lt;/script&gt;
+            </div>
+        </div>
+        <p>The geoeditor is started in edit mode. You can click the checkbox to toggle between edit mode and show mode.
+        </p>
+        <p>
+            <input id="iseditable" type="checkbox" /><label for="iseditable">Editable</label>
+        </p>
+        <div id="box1"></div>
+        <h2>Example 编辑模式（有数据）</h2>
+
+
+
+        <div id="box2"></div>
+
+
+
+
+        <h2>Example 视图模式（选项卡）</h2>
+
+        <div id="box3"></div>
+
+
+
+
+        <h2>Example 视图模式（无选项卡、用导航点）</h2>
+
+        <div id="box4"></div>
+
+
+
+
+        <h2>...</h2>
+
+
+
+        <pre id="databox"></pre>
+    </article>
+    <footer>
+        <div id="disclaimerbox">
+            <div id="leftlogo">
+                <img src="images/CB_logo-200.png" alt="" />
+            </div>
+            <div id="rightlogo">
+                <img src="images/EU_with_references-300.png" alt="" />
+            </div>
+            <div id="disclaimer">
+                content.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
