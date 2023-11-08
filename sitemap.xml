@@ -872,13 +872,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/%E5%88%A4%E6%96%AD/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -887,6 +880,13 @@
   
   <url>
     <loc>https://juoyo.github.io/tags/%E5%BE%AA%E7%8E%AF/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -928,20 +928,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E5%8F%8D%E5%B0%84/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/Reflection/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/%E6%B3%A8%E8%A7%A3/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -956,7 +942,28 @@
   </url>
   
   <url>
+    <loc>https://juoyo.github.io/tags/%E5%8F%8D%E5%B0%84/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/Reflection/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juoyo.github.io/tags/%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/IO/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -970,7 +977,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/IO/</loc>
+    <loc>https://juoyo.github.io/tags/JUnit/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -991,49 +998,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/JUnit/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/%E6%AD%A3%E5%88%99/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/Maven/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/XML/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/JSON/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1068,14 +1033,42 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/JDBC/</loc>
+    <loc>https://juoyo.github.io/tags/Maven/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/Spring/</loc>
+    <loc>https://juoyo.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/XML/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/JSON/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/JDBC/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1096,21 +1089,14 @@
   </url>
   
   <url>
+    <loc>https://juoyo.github.io/tags/Spring/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juoyo.github.io/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1124,6 +1110,20 @@
   </url>
   
   <url>
+    <loc>https://juoyo.github.io/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juoyo.github.io/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1131,7 +1131,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/</loc>
+    <loc>https://juoyo.github.io/tags/Linux/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1145,21 +1145,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E5%93%88%E5%B8%8C/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/Linux/</loc>
+    <loc>https://juoyo.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1180,13 +1166,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1194,7 +1173,21 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://juoyo.github.io/tags/%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E5%93%88%E5%B8%8C/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1202,6 +1195,13 @@
   
   <url>
     <loc>https://juoyo.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1243,13 +1243,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1271,14 +1264,21 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://juoyo.github.io/tags/Python%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/Python%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://juoyo.github.io/tags/%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1292,21 +1292,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/Lesson-2/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/Lesson-1/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/word2vec/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1327,7 +1313,21 @@
   </url>
   
   <url>
+    <loc>https://juoyo.github.io/tags/Lesson-2/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juoyo.github.io/tags/jieba%E5%88%86%E8%AF%8D/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/word2vec/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1362,13 +1362,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E8%A7%82%E7%82%B9%E6%8C%96%E6%8E%98/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/%E8%AF%84%E8%AE%BA/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1384,6 +1377,13 @@
   
   <url>
     <loc>https://juoyo.github.io/tags/%E8%A7%82%E7%82%B9%E6%91%98%E8%A6%81/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E8%A7%82%E7%82%B9%E6%8C%96%E6%8E%98/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1411,6 +1411,13 @@
   </url>
   
   <url>
+    <loc>https://juoyo.github.io/tags/NumPy/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juoyo.github.io/tags/%E6%8C%87%E5%8C%97/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1425,20 +1432,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/NumPy/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/Numpy%E7%AD%94%E6%A1%88/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/tags/xgboost/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1446,7 +1439,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</loc>
+    <loc>https://juoyo.github.io/tags/Numpy%E7%AD%94%E6%A1%88/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1461,6 +1454,13 @@
   
   <url>
     <loc>https://juoyo.github.io/tags/Git/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1516,6 +1516,13 @@
   </url>
   
   <url>
+    <loc>https://juoyo.github.io/tags/%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E5%9B%BE/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://juoyo.github.io/tags/NFA/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1530,7 +1537,14 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/tags/%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E5%9B%BE/</loc>
+    <loc>https://juoyo.github.io/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/LL%EF%BC%881%EF%BC%89/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1552,34 +1566,6 @@
   
   <url>
     <loc>https://juoyo.github.io/tags/%E9%A2%84%E6%B5%8B%E5%88%86%E6%9E%90%E6%B3%95/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/LR%EF%BC%880%EF%BC%89/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://juoyo.github.io/tags/LL%EF%BC%881%EF%BC%89/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1608,6 +1594,20 @@
   
   <url>
     <loc>https://juoyo.github.io/tags/%E4%BA%8C%E4%B9%89%E6%80%A7%E6%96%87%E6%B3%95/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/tags/LR%EF%BC%880%EF%BC%89/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1896,14 +1896,14 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://juoyo.github.io/categories/Linux/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/categories/Linux/</loc>
+    <loc>https://juoyo.github.io/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1917,13 +1917,6 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/categories/Python%E6%B1%82%E7%94%9F/</loc>
-    <lastmod>2023-11-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://juoyo.github.io/categories/Python-For-Data-Science/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1931,7 +1924,7 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/categories/AI%E6%8C%87%E5%8C%97/</loc>
+    <loc>https://juoyo.github.io/categories/Python%E6%B1%82%E7%94%9F/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1939,6 +1932,13 @@
   
   <url>
     <loc>https://juoyo.github.io/categories/English/</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://juoyo.github.io/categories/AI%E6%8C%87%E5%8C%97/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1959,14 +1959,14 @@
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/</loc>
+    <loc>https://juoyo.github.io/categories/%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://juoyo.github.io/categories/%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://juoyo.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/</loc>
     <lastmod>2023-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
